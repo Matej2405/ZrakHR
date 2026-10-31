@@ -84,7 +84,9 @@ git clone https://github.com/Matej2405/ZrakHR.git
 cd ZrakHR
 python3 -m venv .venv
 source .venv/bin/activate
+python -m pip install --upgrade pip
 pip install -r requirements.txt
+pip install -e .
 ```
 
 Windows (PowerShell):
@@ -94,7 +96,30 @@ git clone https://github.com/Matej2405/ZrakHR.git
 cd ZrakHR
 py -m venv .venv
 .venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
 pip install -r requirements.txt
+pip install -e .
+```
+
+`pip install -e .` instalira paket `zrakhr` iz `src/` u načinu za razvoj, pa
+izmjene koda vrijede odmah, bez ponovne instalacije.
+
+Dohvat podataka za jedan grad (iz korijena repozitorija, s aktiviranim venvom):
+
+```bash
+python -m zrakhr fetch --city Zagreb
+python -m zrakhr fetch --city "Slavonski Brod"
+```
+
+Naredba pokreće oba kolektora (vrijeme i kvaliteta zraka), sprema sirove
+odgovore u `data/raw/<izvor>_<grad>_<timestamp>.json` te ispisuje broj
+normaliziranih zapisa i prvih 5 redaka. Podržani gradovi: Zagreb, Rijeka, Split,
+Osijek, Slavonski Brod. Sve opcije: `python -m zrakhr fetch --help`.
+
+Testovi:
+
+```bash
+pytest
 ```
 
 Virtualno okruženje se isključuje naredbom `deactivate`.

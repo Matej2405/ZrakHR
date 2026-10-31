@@ -1,0 +1,18 @@
+# Omogućuje `pip install -e .` (paket je u src/) i konfigurira pytest.
+# Ovisnosti se instaliraju iz requirements.txt.
+
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "zrakhr"
+version = "0.1.0"
+description = "Prikupljanje i vizualizacija podataka o vremenu i kvaliteti zraka za hrvatske gradove"
+requires-python = ">=3.10"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
