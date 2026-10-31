@@ -1,0 +1,22 @@
+# Virtualno okruženje
+.venv/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+
+# Tajne i lokalne postavke
+.env
+
+# Podaci (sirovi odgovori i baza se ne commitaju)
+data/raw/*
+!data/raw/.gitkeep
+*.db
+
+# macOS
+.DS_Store
