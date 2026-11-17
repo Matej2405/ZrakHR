@@ -1,0 +1,52 @@
+/*
+ * Dizajnerski tokeni: boje, tipografija i razmaci.
+ * Sučelje je mirno (tinta na papiru), a boja je rezervirana za podatke.
+ * light-dark() bira vrijednost prema aktivnoj shemi boja, pa svaka boja ima jednu definiciju.
+ */
+:root {
+  color-scheme: light dark;
+
+  --color-paper: light-dark(#f3f5f6, #0e1820);
+  --color-surface: light-dark(#ffffff, #15222c);
+  --color-ink: light-dark(#15232e, #e3e9ed);
+  --color-ink-muted: light-dark(#4a5964, #9fb0bc);
+  --color-line: light-dark(#d3dbe0, #2a3a46);
+
+  /* Archivo ima os širine (62–125 %), koju naslovi koriste kao izražajno sredstvo */
+  --font-sans: 'Archivo Variable', system-ui, sans-serif;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.3125rem;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+
+  --radius-sm: 4px;
+  --header-height: 3.5rem;
+  --tabbar-height: 3.5rem;
+
+  /* Bočni razmak sadržaja; zaglavlje i stranice ga dijele kako bi im lijevi rub bio poravnat */
+  --gutter: var(--space-6);
+}
+
+/* Izbor korisnika (ThemeToggle) nadjačava postavku sustava */
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
+
+/* 40rem je prijelomna točka mobilnog prikaza; ista vrijednost stoji u AppShell.module.css */
+@media (max-width: 40rem) {
+  :root {
+    --gutter: var(--space-4);
+  }
+}

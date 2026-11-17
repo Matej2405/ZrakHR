@@ -1,0 +1,93 @@
+# Web dashboard: provjere na svakom PR-u, a na main nakon njih i objava na GitHub Pages.
+# Svaka provjera je zaseban job, pa se na PR-u odmah vidi što je palo.
+name: Web
+
+on:
+  pull_request:
+    paths:
+      - web/**
+      - .github/actions/setup-web/**
+      - .github/scripts/**
+      - .github/workflows/web.yml
+  push:
+    branches: [main]
+    paths:
+      - web/**
+      - .github/actions/setup-web/**
+      - .github/scripts/**
+      - .github/workflows/web.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Na PR-u novi push prekida staru provjeru; objava s main se nikad ne prekida usred posla
+concurrency:
+  group: web-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+defaults:
+  run:
+    working-directory: web
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup-web
+      - run: npm run lint
+      - run: npm run format:check
+
+  typecheck:
+    name: Type check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup-web
+      - run: npm run typecheck
+
+  test:
+    name: Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup-web
+      # Vitest u GitHub Actionsu sam dodaje anotacije neuspjelih testova i sažetak rezultata
+      - run: npm test -- --coverage
+      - name: Coverage summary
+        run: ../.github/scripts/coverage-summary.sh coverage/coverage-summary.json >> "$GITHUB_STEP_SUMMARY"
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ./.github/actions/setup-web
+      # Isti build se provjerava na PR-u i objavljuje s main, pa se uvijek gradi s putanjom Pagesa
+      - run: npx vite build --base "/$REPOSITORY/"
+        env:
+          REPOSITORY: ${{ github.event.repository.name }}
+      # Pages za nepostojeću datoteku vraća 404.html; kopija index.html prepušta adresu routeru
+      - run: cp dist/index.html dist/404.html
+      - name: Bundle size summary
+        run: ../.github/scripts/bundle-size.sh dist >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: web/dist
+
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.ref == 'refs/heads/main'
+    needs: [lint, typecheck, test, build]
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

@@ -1,0 +1,21 @@
+.toggle {
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.toggle:hover {
+  border-color: var(--color-ink-muted);
+}
+
+.icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="hr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Kvaliteta zraka i vremenski uvjeti u hrvatskim gradovima: mjerenja DHMZ-a i AZO-a te prognoze Open-Meteo."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>ZrakHR</title>
+    <script>
+      // Spremljena tema primjenjuje se prije prvog iscrtavanja, inače bi stranica
+      // na trenutak bljesnula temom sustava. Ključ mora odgovarati useColorScheme.ts.
+      try {
+        const theme = localStorage.getItem('zrakhr-theme')
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme
+      } catch {
+        // localStorage nije dostupan (npr. blokirani kolačići); vrijedi tema sustava
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
