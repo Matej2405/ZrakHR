@@ -1,0 +1,45 @@
+# Python dio projekta: testovi na svim verzijama Pythona koje projekt podržava (pyproject.toml).
+name: Python
+
+on:
+  pull_request:
+    paths:
+      - src/**
+      - tests/**
+      - pyproject.toml
+      - requirements.txt
+      - .github/workflows/python.yml
+  push:
+    branches: [main]
+    paths:
+      - src/**
+      - tests/**
+      - pyproject.toml
+      - requirements.txt
+      - .github/workflows/python.yml
+
+permissions:
+  contents: read
+
+concurrency:
+  group: python-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: pytest (Python ${{ matrix.python }})
+    runs-on: ubuntu-latest
+    strategy:
+      # Ostale verzije se ne prekidaju, pa se vidi na kojima točno test pada
+      fail-fast: false
+      matrix:
+        python: ['3.10', '3.11', '3.12', '3.13', '3.14', '3.15']
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - run: pip install -r requirements.txt -e .
+      - run: pytest -ra
