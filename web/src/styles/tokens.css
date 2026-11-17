@@ -12,6 +12,11 @@
   --color-ink-muted: light-dark(#4a5964, #9fb0bc);
   --color-line: light-dark(#d3dbe0, #2a3a46);
 
+  /* Boje podataka. DHMZ je plava iz palete Okabe–Ito, razlučiva i uz poremećaj raspoznavanja
+     boja; AZO je zasad u tinti, a boju će mu davati indeks kvalitete zraka */
+  --color-dhmz: light-dark(#0072b2, #56b4e9);
+  --color-azo: var(--color-ink);
+
   /* Archivo ima os širine (62–125 %), koju naslovi koriste kao izražajno sredstvo */
   --font-sans: 'Archivo Variable', system-ui, sans-serif;
   --text-sm: 0.875rem;

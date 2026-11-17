@@ -1,0 +1,143 @@
+/*
+ * Elemente karte (oznake, oblačiće, natpise gradova, kontrole) stvara Leaflet izvan Reacta,
+ * pa se stiliziraju globalnim klasama s prefiksom zr- i nadjačavanjem Leafletovih klasa,
+ * umjesto CSS modulima kao ostale komponente. Datoteka se učitava nakon leaflet.css.
+ */
+
+.leaflet-container {
+  background: var(--color-paper);
+  font-family: var(--font-sans);
+}
+
+/* Podloga OpenStreetMapa: prigušene boje, a za tamnu temu invertirana (more ostaje plavkasto) */
+.zr-tiles {
+  filter: saturate(0.3) contrast(0.9) brightness(1.04);
+}
+
+.zr-tiles-dark {
+  filter: invert(1) hue-rotate(180deg) saturate(0.3) brightness(0.85) contrast(0.85);
+}
+
+/* Oznake postaja: element je cilj dodira, a oblik nosi pseudoelement */
+.zr-marker::before {
+  content: '';
+  position: absolute;
+  box-sizing: border-box;
+}
+
+/* DHMZ: puni krug */
+.zr-marker-dhmz::before {
+  inset: 6px;
+  border: 2px solid var(--color-surface);
+  border-radius: 50%;
+  background: var(--color-dhmz);
+}
+
+/* AZO: šuplji romb; kad stignu mjerenja, ispunit će ga boja indeksa kvalitete zraka */
+.zr-marker-azo::before {
+  inset: 6px;
+  border: 2px solid var(--color-azo);
+  background: var(--color-surface);
+  transform: rotate(45deg);
+}
+
+.zr-marker:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: -2px;
+  border-radius: 50%;
+}
+
+/* Isprekidani krug oko grada projekta */
+.zr-city-area {
+  fill: var(--color-ink);
+  fill-opacity: 0.05;
+  stroke: var(--color-ink);
+  stroke-opacity: 0.7;
+  stroke-width: 1.5;
+  stroke-dasharray: 4 4;
+}
+
+/* Natpis grada: bez okvira, s obrubom boje podloge da ostane čitljiv iznad karte */
+.leaflet-tooltip.zr-city-label {
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  color: var(--color-ink);
+  font-size: var(--text-sm);
+  font-weight: 750;
+  font-stretch: 112%;
+  text-shadow:
+    0 0 2px var(--color-surface),
+    0 0 4px var(--color-surface);
+}
+
+.leaflet-tooltip.zr-city-label::before {
+  display: none;
+}
+
+/* Oblačić postaje */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: var(--color-ink-muted);
+}
+
+.zr-popup {
+  display: grid;
+  gap: var(--space-3);
+  min-width: 14rem;
+  font-size: var(--text-sm);
+  line-height: 1.4;
+}
+
+.zr-popup-name {
+  font-size: var(--text-base);
+  font-stretch: 112%;
+}
+
+.zr-popup dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 var(--space-2);
+  margin: var(--space-1) 0 0;
+}
+
+.zr-popup dt {
+  color: var(--color-ink-muted);
+}
+
+.zr-popup dd {
+  margin: 0;
+}
+
+.zr-popup p {
+  margin: 0;
+  color: var(--color-ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Kontrole karte u bojama aplikacije, da i u tamnoj temi ne ostanu bijele */
+.leaflet-bar a {
+  border-bottom-color: var(--color-line);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+}
+
+.leaflet-bar a:hover,
+.leaflet-bar a:focus {
+  background-color: var(--color-paper);
+}
+
+.leaflet-container .leaflet-control-attribution {
+  background: color-mix(in srgb, var(--color-surface) 85%, transparent);
+  color: var(--color-ink-muted);
+}
+
+.leaflet-container .leaflet-control-attribution a {
+  color: inherit;
+}
