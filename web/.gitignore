@@ -1,0 +1,3 @@
+# Ovisnosti i produkcijski build
+node_modules/
+dist/

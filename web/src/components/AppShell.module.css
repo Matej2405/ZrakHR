@@ -1,0 +1,118 @@
+.shell {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100dvh;
+}
+
+.skipLink {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  z-index: 20;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  translate: 0 -200%;
+}
+
+.skipLink:focus {
+  translate: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: var(--header-height);
+  padding-inline: var(--gutter);
+  border-bottom: 1px solid var(--color-line);
+  background: var(--color-surface);
+}
+
+.wordmark {
+  font-size: var(--text-lg);
+  font-weight: 800;
+  font-stretch: 125%;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+/* Navigacija seže preko donjeg ruba zaglavlja, pa oznaka aktivne stranice prekriva tu liniju */
+.nav {
+  align-self: stretch;
+  margin-bottom: -1px;
+}
+
+.navList {
+  display: flex;
+  gap: var(--space-6);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border-block: 2px solid transparent;
+  color: var(--color-ink-muted);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  color: var(--color-ink);
+}
+
+/* Oznaka aktivne stranice leži na donjem rubu zaglavlja */
+.navLink[aria-current='page'] {
+  border-bottom-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.actions {
+  margin-inline-start: auto;
+}
+
+/* main dobiva fokus preko poveznice za preskakanje; nije interaktivan, pa mu ne treba obrub */
+.main:focus {
+  outline: none;
+}
+
+/* Na mobitelu navigacija prelazi u traku pri dnu zaslona, nadohvat palca */
+@media (max-width: 40rem) {
+  .nav {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 10;
+    margin-bottom: 0;
+    border-top: 1px solid var(--color-line);
+    background: var(--color-surface);
+  }
+
+  /* Jednako široke stavke; lista seže preko gornjeg ruba trake iz istog razloga kao na desktopu */
+  .navList {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    gap: 0;
+    margin-top: -1px;
+  }
+
+  .navLink {
+    justify-content: center;
+    min-height: var(--tabbar-height);
+  }
+
+  .navLink[aria-current='page'] {
+    border-top-color: var(--color-ink);
+    border-bottom-color: transparent;
+  }
+
+  .main {
+    padding-bottom: var(--tabbar-height);
+  }
+}
