@@ -1,4 +1,2 @@
-requests>=2.32
-pytest>=9.2.0
 requests>=2.34.2
-pytest>=8
+pytest>=9.2.0
