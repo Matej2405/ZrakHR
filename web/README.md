@@ -57,13 +57,15 @@ npx vite preview --base /ZrakHR/
 ```
 web/
 ├── public/            statične datoteke (favicon)
+│   └── data/          izvoz postaja za kartu (generira ga skripta, ne uređuje se ručno)
 └── src/
-    ├── api/           klijent za REST API backenda
+    ├── api/           dohvat i provjera podataka (zasad izvoz postaja, kasnije REST API)
     ├── components/    dijelovi koje dijele stranice (okvir aplikacije, prekidač teme)
+    │   └── map/       karta postaja: Leaflet, oznake, ploča s kontrolama
     ├── hooks/         React hookovi
     ├── pages/         po jedna komponenta za svaku rutu
     ├── styles/        dizajnerski tokeni i osnovni stilovi
-    ├── test/          postavke testova
+    ├── test/          postavke testova i zajednički primjeri podataka
     ├── main.tsx       ulazna točka
     └── router.tsx     rute
 ```
@@ -74,6 +76,26 @@ Rute su `/` (pregled), `/karta`, `/analiza` i `/status`. Nepoznata adresa prikaz
 Komponente se stiliziraju CSS modulima (`*.module.css`), a zajedničke vrijednosti su u
 `src/styles/tokens.css`. Svaka boja definirana je jednom, funkcijom `light-dark()`, za svijetlu i
 tamnu temu. Tema prati postavku sustava dok je korisnik ne promijeni prekidačem u zaglavlju.
+Iznimka su elementi koje stvara Leaflet (oznake, oblačići, natpisi gradova): stilizirani su
+globalnim klasama s prefiksom `zr-` u `src/components/map/map.css`.
+
+## Karta postaja
+
+Dok REST API ne postoji, karta čita statički izvoz `public/data/stations.json`. Izvoz stvara
+Python skripta iz korijena repozitorija (s aktiviranim venvom):
+
+```bash
+python scripts/export_stations.py
+```
+
+Skripta dohvaća DHMZ-ov XML trenutnog vremena i AZO-ov popis koordinata postaja, provjerava jesu
+li koordinate unutar Hrvatske i dodaje pet gradova projekta iz `zrakhr.cities`. DHMZ objavljuje
+samo postaje koje su javile podatke u tekućem satu, pa skripta zadržava postaje iz prethodnog
+izvoza koje u tom satu nedostaju. Aplikacija pri učitavanju provjerava oblik izvoza i javlja
+točno polje koje ne odgovara.
+
+Karta se učitava tek kad je korisnik otvori (zaseban JavaScript paket), a podloga je
+OpenStreetMap, prigušena CSS filterom, odnosno invertirana u tamnoj temi.
 
 ## Odluke o alatima
 
