@@ -1,0 +1,38 @@
+# Skripte i automatizacija: Bash skripte (ShellCheck) i sami GitHub Actions workflowi (actionlint).
+name: Scripts
+
+on:
+  pull_request:
+    paths:
+      - '**.sh'
+      - .github/**
+  push:
+    branches: [main]
+    paths:
+      - '**.sh'
+      - .github/**
+
+permissions:
+  contents: read
+
+concurrency:
+  group: scripts-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: git ls-files -z '*.sh' | xargs -0 --no-run-if-empty shellcheck
+
+  actionlint:
+    name: actionlint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      # actionlint provjerava i Bash u run: koracima, preko ugrađenog ShellChecka
+      - uses: docker://rhysd/actionlint:1.7.12
+        with:
+          args: -color
