@@ -43,7 +43,10 @@ jobs:
           cache-dependency-path: requirements.txt
       - run: pip install -r requirements.txt -e .
       - run: scripts/collect.sh "$WHAT" data-branch
+      # Sprema i kad prikupljanje djelomično padne (jedan grad bez prognoze, neobradiv DHMZ feed
+      # spremljen kao *_neobradeno.xml), da te datoteke ne propadnu; job svejedno ostaje crven
       - name: Commit to the data branch
+        if: ${{ !cancelled() }}
         working-directory: data-branch
         run: |
           git config user.name 'github-actions[bot]'
