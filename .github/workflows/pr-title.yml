@@ -1,0 +1,20 @@
+# Naslov PR-a postaje poruka commita pri squash mergeu, pa mora pratiti Conventional Commits.
+name: PR title
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Conventional Commits
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - run: .github/scripts/check-pr-title.sh
+        env:
+          # Naslov ide kroz varijablu okruženja, a ne izravno u skriptu, jer ga autor PR-a zadaje proizvoljno
+          PR_TITLE: ${{ github.event.pull_request.title }}
