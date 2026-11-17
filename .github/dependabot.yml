@@ -1,0 +1,41 @@
+# Dependabot jednom mjesečno predlaže ažuriranja ovisnosti, grupirana da PR-ova bude što manje.
+# Poruke počinju s chore/ci, pa naslovi PR-ova prolaze provjeru Conventional Commits.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /web
+    schedule:
+      interval: monthly
+    groups:
+      web:
+        patterns: ['*']
+        update-types: [minor, patch]
+    ignore:
+      # typescript-eslint zasad podržava TypeScript < 6.1 (vidi web/README.md)
+      - dependency-name: typescript
+        update-types: ['version-update:semver-major', 'version-update:semver-minor']
+    labels: [frontend, infra]
+    commit-message:
+      prefix: chore
+      include: scope
+
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: monthly
+    labels: [backend, infra]
+    commit-message:
+      prefix: chore
+      include: scope
+
+  - package-ecosystem: github-actions
+    directories: ['/', '/.github/actions/*']
+    schedule:
+      interval: monthly
+    groups:
+      actions:
+        patterns: ['*']
+    labels: [infra]
+    commit-message:
+      prefix: ci
+      include: scope

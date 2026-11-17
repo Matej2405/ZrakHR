@@ -1,3 +1,4 @@
-# Ovisnosti i produkcijski build
+# Ovisnosti, produkcijski build i izvještaj pokrivenosti testova
 node_modules/
 dist/
+coverage/

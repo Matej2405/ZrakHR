@@ -1,0 +1,16 @@
+# Pravila za workflow Labels: oznaka se dodaje ako PR mijenja barem jednu datoteku iz popisa.
+frontend:
+  - changed-files:
+      - any-glob-to-any-file: web/**
+
+backend:
+  - changed-files:
+      - any-glob-to-any-file: [src/**, api/**, tests/**, pyproject.toml, requirements.txt]
+
+docs:
+  - changed-files:
+      - any-glob-to-any-file: [docs/**, '**/*.md']
+
+infra:
+  - changed-files:
+      - any-glob-to-any-file: [.github/**, scripts/**]

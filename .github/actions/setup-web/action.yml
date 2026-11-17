@@ -1,0 +1,14 @@
+name: Setup web
+description: Node.js iz web/.nvmrc i ovisnosti web dashboarda (npm ci uz cache), zajedničko svim web jobovima.
+
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v7
+      with:
+        node-version-file: web/.nvmrc
+        cache: npm
+        cache-dependency-path: web/package-lock.json
+    - run: npm ci
+      shell: bash
+      working-directory: web
