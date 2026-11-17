@@ -26,18 +26,31 @@ svakoj izmjeni koda.
 
 ## Naredbe
 
-| Naredba             | Što radi                                                          |
-| ------------------- | ----------------------------------------------------------------- |
-| `npm run dev`       | razvojni poslužitelj s automatskim osvježavanjem                  |
-| `npm run build`     | provjera tipova, lint i produkcijski build u `dist/`              |
-| `npm run preview`   | lokalno poslužuje produkcijski build                              |
-| `npm test`          | jednom pokreće testove (Vitest); `npm run test:watch` ih ponavlja |
-| `npm run typecheck` | provjera tipova (`tsc -b`)                                        |
-| `npm run lint`      | ESLint; ne prolazi ni uz jedno upozorenje                         |
-| `npm run format`    | formatira kod Prettierom; `npm run format:check` samo provjerava  |
+| Naredba                  | Što radi                                                          |
+| ------------------------ | ----------------------------------------------------------------- |
+| `npm run dev`            | razvojni poslužitelj s automatskim osvježavanjem                  |
+| `npm run build`          | provjera tipova, lint i produkcijski build u `dist/`              |
+| `npm run preview`        | lokalno poslužuje produkcijski build                              |
+| `npm test`               | jednom pokreće testove (Vitest); `npm run test:watch` ih ponavlja |
+| `npm test -- --coverage` | testovi uz izvještaj pokrivenosti u `coverage/`                   |
+| `npm run typecheck`      | provjera tipova (`tsc -b`)                                        |
+| `npm run lint`           | ESLint; ne prolazi ni uz jedno upozorenje                         |
+| `npm run format`         | formatira kod Prettierom; `npm run format:check` samo provjerava  |
 
-GitHub Actions (`.github/workflows/web.yml`) na svakom pull requestu koji mijenja `web/` provjerava
-format, pokreće testove i radi build.
+## CI i objava
+
+Workflow `.github/workflows/web.yml` na svakom pull requestu koji mijenja `web/` pokreće četiri
+paralelne provjere: Lint, Type check, Tests i Build. Pokrivenost testova i veličina bundlea
+upisuju se u sažetak joba, a greške se prikazuju kao anotacije u diffu PR-a.
+
+Nakon mergea u `main` isti build se objavljuje na GitHub Pages, na
+https://matej2405.github.io/ZrakHR/, ali samo ako su sve četiri provjere prošle. Stranica se
+poslužuje s putanje `/ZrakHR/`, pa CI gradi s `--base /ZrakHR/`. Isti build lokalno:
+
+```bash
+npx vite build --base /ZrakHR/
+npx vite preview --base /ZrakHR/
+```
 
 ## Struktura
 

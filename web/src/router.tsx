@@ -28,4 +28,5 @@ export const routes: RouteObject[] = [
   },
 ]
 
-export const router = createBrowserRouter(routes)
+// BASE_URL je '/' lokalno, a '/ZrakHR/' na GitHub Pagesu (CI gradi s vite build --base)
+export const router = createBrowserRouter(routes, { basename: import.meta.env.BASE_URL })
