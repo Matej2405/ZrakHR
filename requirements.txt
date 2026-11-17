@@ -1,4 +1,4 @@
-requests>=2.32
-pytest>=9.2.0
 requests>=2.34.2
-pytest>=8
+pytest>=9.2.0
+# Windows nema bazu vremenskih zona koju zoneinfo treba (Europe/Zagreb u DHMZ kolektoru)
+tzdata; sys_platform == "win32"
