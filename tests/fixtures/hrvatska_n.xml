@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Isječak https://vrijeme.hr/hrvatska_n.xml od 17.11.2026. u 23 h, s razmacima kao u izvoru -->
+<Hrvatska>
+<DatumTermin>
+<Datum>17.11.2026</Datum>
+<Termin>23</Termin>
+</DatumTermin>
+<Grad autom="1">
+<GradIme>Rijeka</GradIme>
+<Lat>45.337</Lat>
+<Lon>14.443 </Lon>
+<Podatci>
+<Temp> 14.5</Temp>
+<Vlaga>96</Vlaga>
+<Tlak>1000.6</Tlak>
+<TlakTend>-0.5</TlakTend>
+<VjetarSmjer>SE</VjetarSmjer>
+<VjetarBrzina> 1.8</VjetarBrzina>
+<Vrijeme>povjetarac</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Zagreb-Maksimir</GradIme>
+<Lat>45.822</Lat>
+<Lon>16.034 </Lon>
+<Podatci>
+<Temp> 12.0</Temp>
+<Vlaga>93</Vlaga>
+<Tlak> 998.8</Tlak>
+<TlakTend>-0.5</TlakTend>
+<VjetarSmjer>C</VjetarSmjer>
+<VjetarBrzina> 0.0</VjetarBrzina>
+<Vrijeme>-</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Bosiljevo</GradIme>
+<Lat>45.419</Lat>
+<Lon>15.287 </Lon>
+<Podatci>
+<Temp> 14.6</Temp>
+<Vlaga>0</Vlaga>
+<Tlak>998.9</Tlak>
+<TlakTend>-0.1</TlakTend>
+<VjetarSmjer>SW</VjetarSmjer>
+<VjetarBrzina> 2.5</VjetarBrzina>
+<Vrijeme>povjetarac</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Zavižan</GradIme>
+<Lat>44.815</Lat>
+<Lon> 14.975 </Lon>
+<Podatci>
+<Temp> -2.4</Temp>
+<Vlaga>74</Vlaga>
+<Tlak> 836.8*</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>E</VjetarSmjer>
+<VjetarBrzina> 6.2</VjetarBrzina>
+<Vrijeme>umjeren vjetar</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Otočac</GradIme>
+<Lat>44.868</Lat>
+<Lon> 15.227 </Lon>
+<Podatci>
+<Temp> 11.7</Temp>
+<Vlaga>100</Vlaga>
+<Tlak>-</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>-</VjetarSmjer>
+<VjetarBrzina>-</VjetarBrzina>
+<Vrijeme>-</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<!-- Izmišljena postaja s neispravnim vrijednostima kakve izvor može poslati -->
+<Grad autom="1">
+<GradIme>Izmišljena postaja</GradIme>
+<Lat>45.000</Lat>
+<Lon>15.000</Lon>
+<Podatci>
+<Temp>12,5</Temp>
+<Vlaga>abc</Vlaga>
+<Tlak>1013,2</Tlak>
+<TlakTend>+0.3</TlakTend>
+<VjetarSmjer>X</VjetarSmjer>
+<VjetarBrzina>99</VjetarBrzina>
+<Vrijeme>-</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+</Hrvatska>
