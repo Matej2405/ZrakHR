@@ -158,7 +158,10 @@ def insert_measurements(conn: sqlite3.Connection, records: Iterable[Record]) -> 
 
 
 def insert_forecasts(conn: sqlite3.Connection, records: Iterable[Record], issue_time: datetime) -> int:
-    """Sprema jedno pokretanje prognoze izdano u issue_time; vraća broj novih zapisa."""
+    """Sprema jedno pokretanje prognoze izdano u issue_time; vraća broj novih zapisa.
+
+    Sati prije izdavanja nisu prognoza nego procjena prošlosti, pa se preskaču.
+    """
     records = list(records)
     ids = _station_ids(conn, records)
     issued = utc(issue_time)
@@ -166,6 +169,8 @@ def insert_forecasts(conn: sqlite3.Connection, records: Iterable[Record], issue_
     for r in records:
         valid = datetime.fromisoformat(r["timestamp"])
         lead_hours = round((valid - issue_time).total_seconds() / 3600)
+        if lead_hours < 0:
+            continue
         rows.append((ids[(r["source"], r["location"])], r["metric"], issued, utc(valid), lead_hours,
                      r["value"], r["unit"]))
     before = conn.total_changes
