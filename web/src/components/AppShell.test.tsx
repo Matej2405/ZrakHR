@@ -1,8 +1,11 @@
 import { render, screen, within } from '@testing-library/react'
 import { createMemoryRouter, RouterProvider } from 'react-router'
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
 import { routes } from '../router'
+
+// Test provjerava okvir i navigaciju, pa karta (Leaflet i dohvat postaja) nije potrebna
+vi.mock('../pages/MapPage', () => ({ MapPage: () => <h1>Karta postaja</h1> }))
 
 function renderAt(path: string) {
   const router = createMemoryRouter(routes, { initialEntries: [path] })
@@ -20,12 +23,14 @@ describe('AppShell', () => {
     expect(labels).toEqual(['Pregled', 'Karta', 'Analiza', 'Status'])
   })
 
-  it('označava trenutnu stranicu u navigaciji', () => {
+  it('označava trenutnu stranicu u navigaciji', async () => {
     const nav = renderAt('/karta')
 
     expect(within(nav).getByRole('link', { name: 'Karta' })).toHaveAttribute('aria-current', 'page')
     expect(within(nav).getByRole('link', { name: 'Pregled' })).not.toHaveAttribute('aria-current')
-    expect(screen.getByRole('heading', { level: 1, name: 'Karta postaja' })).toBeInTheDocument()
+    expect(
+      await screen.findByRole('heading', { level: 1, name: 'Karta postaja' }),
+    ).toBeInTheDocument()
   })
 
   it('nepoznatu adresu prikazuje unutar okvira, uz dostupnu navigaciju', () => {

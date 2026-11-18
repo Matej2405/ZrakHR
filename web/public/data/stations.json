@@ -1,0 +1,1476 @@
+{
+  "generated_at": "2026-11-17T21:57:50+00:00",
+  "sources": {
+    "dhmz": "https://vrijeme.hr/hrvatska_n.xml",
+    "azo": "https://iszz.azo.hr/iskzl/rs/postaja/koordinate"
+  },
+  "cities": [
+    {
+      "name": "Zagreb",
+      "lat": 45.815,
+      "lon": 15.9819
+    },
+    {
+      "name": "Rijeka",
+      "lat": 45.3271,
+      "lon": 14.4422
+    },
+    {
+      "name": "Split",
+      "lat": 43.5081,
+      "lon": 16.4402
+    },
+    {
+      "name": "Osijek",
+      "lat": 45.555,
+      "lon": 18.6955
+    },
+    {
+      "name": "Slavonski Brod",
+      "lat": 45.1603,
+      "lon": 18.0156
+    }
+  ],
+  "stations": [
+    {
+      "source": "azo",
+      "external_id": "285",
+      "name": "AMP Kaštijun",
+      "lat": 44.837778,
+      "lon": 13.883889,
+      "network": "Mreža za praćenje kvalitete zraka ŽCGO Kaštijun"
+    },
+    {
+      "source": "azo",
+      "external_id": "173",
+      "name": "AMS1 Kaštel Sućurac",
+      "lat": 43.548119,
+      "lon": 16.434961,
+      "network": "Mjerna mreža Cemex Hrvatska d.o.o."
+    },
+    {
+      "source": "azo",
+      "external_id": "179",
+      "name": "AMS2 Sveti Kajo",
+      "lat": 43.545906,
+      "lon": 16.467836,
+      "network": "Mjerna mreža Cemex Hrvatska d.o.o."
+    },
+    {
+      "source": "azo",
+      "external_id": "325",
+      "name": "Babina Gora",
+      "lat": 45.389833,
+      "lon": 15.640011,
+      "network": "Mreža za praćenje kvalitete zraka CGO Babina Gora"
+    },
+    {
+      "source": "azo",
+      "external_id": "302",
+      "name": "Bakar- Luka",
+      "lat": 45.305833,
+      "lon": 14.542222,
+      "network": "Monitoring Luka Rijeka- Terminal Bakar"
+    },
+    {
+      "source": "azo",
+      "external_id": "137",
+      "name": "Banija 18",
+      "lat": 45.498733,
+      "lon": 15.555861,
+      "network": "Mjerna mreža Grada Karlovca"
+    },
+    {
+      "source": "azo",
+      "external_id": "265",
+      "name": "Bijenik",
+      "lat": 45.846775,
+      "lon": 15.939175,
+      "network": "Mreža za praćenje kakvoće zraka HEP Zagreb"
+    },
+    {
+      "source": "azo",
+      "external_id": "321",
+      "name": "Biljane Donje",
+      "lat": 44.13365,
+      "lon": 15.423583,
+      "network": "Mreža za praćenje kvalitete zraka CGO Biljane Donje"
+    },
+    {
+      "source": "azo",
+      "external_id": "316",
+      "name": "Bjelovar",
+      "lat": 45.895278,
+      "lon": 16.841389,
+      "network": "Mreža za praćenje kvalitete zraka Bjelovarsko-bilogorske županije"
+    },
+    {
+      "source": "azo",
+      "external_id": "256",
+      "name": "DESINIĆ",
+      "lat": 46.169056,
+      "lon": 15.660639,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "307",
+      "name": "DUBROVNIK",
+      "lat": 42.644833,
+      "lon": 18.085167,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "140",
+      "name": "Domobranska ulica 2",
+      "lat": 45.49125,
+      "lon": 15.555489,
+      "network": "Mjerna mreža Grada Karlovca"
+    },
+    {
+      "source": "azo",
+      "external_id": "141",
+      "name": "Dr.V.Mačeka 48",
+      "lat": 45.493667,
+      "lon": 15.546556,
+      "network": "Mjerna mreža Grada Karlovca"
+    },
+    {
+      "source": "azo",
+      "external_id": "46",
+      "name": "Gripe",
+      "lat": 43.507472,
+      "lon": 16.459139,
+      "network": "Lokalna mjerna mreža Split"
+    },
+    {
+      "source": "azo",
+      "external_id": "262",
+      "name": "HUM (otok Vis)",
+      "lat": 43.031333,
+      "lon": 16.115972,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "274",
+      "name": "Jakuševec",
+      "lat": 45.763728,
+      "lon": 16.018014,
+      "network": "Mreža za praćenje kvalitete zraka Zagrebački holding d.o.o."
+    },
+    {
+      "source": "azo",
+      "external_id": "278",
+      "name": "KARLOVAC-1",
+      "lat": 45.493525,
+      "lon": 15.565131,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "255",
+      "name": "KOPAČKI RIT",
+      "lat": 45.698028,
+      "lon": 18.834639,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "294",
+      "name": "KOPRIVNICA-1",
+      "lat": 46.154389,
+      "lon": 16.836661,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "295",
+      "name": "KOPRIVNICA-2",
+      "lat": 46.161289,
+      "lon": 16.84325,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "161",
+      "name": "KUTINA-1",
+      "lat": 45.479056,
+      "lon": 16.780667,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "293",
+      "name": "KUTINA-2",
+      "lat": 45.485631,
+      "lon": 16.768519,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "308",
+      "name": "Karepovac",
+      "lat": 43.516275,
+      "lon": 16.516897,
+      "network": "Mreža za praćenje kvalitete zraka Čistoća d.d."
+    },
+    {
+      "source": "azo",
+      "external_id": "309",
+      "name": "Karepovac 2",
+      "lat": 43.516389,
+      "lon": 16.516667,
+      "network": "Mreža za praćenje kvalitete zraka Grad Split"
+    },
+    {
+      "source": "azo",
+      "external_id": "191",
+      "name": "Klavar",
+      "lat": 45.134306,
+      "lon": 14.167167,
+      "network": "Mjerna mreža Termoelektrane Plomin"
+    },
+    {
+      "source": "azo",
+      "external_id": "40",
+      "name": "Koromačno",
+      "lat": 44.980422,
+      "lon": 14.122108,
+      "network": "Mreža za praćenje kakvoće zraka cementare Koromačno"
+    },
+    {
+      "source": "azo",
+      "external_id": "215",
+      "name": "Kostrena - Martinšćica",
+      "lat": 45.313333,
+      "lon": 14.482778,
+      "network": "Monitoring Viktor Lenac"
+    },
+    {
+      "source": "azo",
+      "external_id": "243",
+      "name": "Krasica",
+      "lat": 45.308333,
+      "lon": 14.551667,
+      "network": "Mjerna mreža INA Rafinerija nafte Rijeka"
+    },
+    {
+      "source": "azo",
+      "external_id": "245",
+      "name": "Krešimirova ul.",
+      "lat": 45.331667,
+      "lon": 14.425556,
+      "network": "Mjerna mreža Primorsko-goranske županije"
+    },
+    {
+      "source": "azo",
+      "external_id": "41",
+      "name": "Ksaverska cesta",
+      "lat": 45.835389,
+      "lon": 15.978417,
+      "network": "Mjerna mreža grada Zagreba"
+    },
+    {
+      "source": "azo",
+      "external_id": "322",
+      "name": "Luka Ploče",
+      "lat": 43.050517,
+      "lon": 17.432344,
+      "network": "Mreža za praćenje kvalitete zraka Luka Ploče"
+    },
+    {
+      "source": "azo",
+      "external_id": "323",
+      "name": "Luka Zadar 1",
+      "lat": 44.118064,
+      "lon": 15.220592,
+      "network": "Mreža za praćenje kvalitete zraka Luke Zadar"
+    },
+    {
+      "source": "azo",
+      "external_id": "324",
+      "name": "Luka Zadar 2",
+      "lat": 44.09385,
+      "lon": 15.259661,
+      "network": "Mreža za praćenje kvalitete zraka Luke Zadar"
+    },
+    {
+      "source": "azo",
+      "external_id": "315",
+      "name": "Lučka uprava Split",
+      "lat": 43.506628,
+      "lon": 16.439094,
+      "network": "Mreža za praćenje kvalitete zraka Lučka uprava Split"
+    },
+    {
+      "source": "azo",
+      "external_id": "279",
+      "name": "Međunarodna zračna luka Zagreb",
+      "lat": 45.746619,
+      "lon": 16.080225,
+      "network": "Mreža za praćenje kvalitete zraka Međunarodne zračne luke Zagreb"
+    },
+    {
+      "source": "azo",
+      "external_id": "280",
+      "name": "Mirogojska cesta",
+      "lat": 45.832103,
+      "lon": 15.980547,
+      "network": "Mjerne postaje posebne namjene Grada Zagreba"
+    },
+    {
+      "source": "azo",
+      "external_id": "276",
+      "name": "Mlaka",
+      "lat": 45.338889,
+      "lon": 14.4125,
+      "network": "Mjerna mreža Primorsko-goranske županije"
+    },
+    {
+      "source": "azo",
+      "external_id": "301",
+      "name": "OMIŠALJ (Otok Krk)",
+      "lat": 45.211278,
+      "lon": 14.559222,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "263",
+      "name": "OPUZEN (Delta Neretve)",
+      "lat": 43.008728,
+      "lon": 17.566025,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "160",
+      "name": "OSIJEK-1",
+      "lat": 45.558792,
+      "lon": 18.698769,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "299",
+      "name": "OSIJEK-2",
+      "lat": 45.557722,
+      "lon": 18.730861,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "300",
+      "name": "OSIJEK-2 PPI PM2,5",
+      "lat": 45.557722,
+      "lon": 18.730861,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "290",
+      "name": "Omišalj LNG",
+      "lat": 45.213611,
+      "lon": 14.5575,
+      "network": "Monitoring LNG terminala Krk"
+    },
+    {
+      "source": "azo",
+      "external_id": "241",
+      "name": "Opatija - Gorovo",
+      "lat": 45.336667,
+      "lon": 14.306667,
+      "network": "Mjerna mreža Primorsko-goranske županije"
+    },
+    {
+      "source": "azo",
+      "external_id": "258",
+      "name": "PARG",
+      "lat": 45.593481,
+      "lon": 14.630464,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "257",
+      "name": "PLITVIČKA JEZERA",
+      "lat": 44.899333,
+      "lon": 15.609778,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "261",
+      "name": "POLAČA (Ravni kotari)",
+      "lat": 44.021094,
+      "lon": 15.516111,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "320",
+      "name": "POLAČA (Ravni kotari) EMEP level 2",
+      "lat": 44.004439,
+      "lon": 15.515914,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "286",
+      "name": "PULA FIŽELA",
+      "lat": 44.862469,
+      "lon": 13.816858,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "318",
+      "name": "PUNTIJARKA EMEP level 1",
+      "lat": 45.907667,
+      "lon": 15.968333,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "224",
+      "name": "Paveki",
+      "lat": 45.294167,
+      "lon": 14.513889,
+      "network": "Mjerna mreža INA Rafinerija nafte Rijeka"
+    },
+    {
+      "source": "azo",
+      "external_id": "102",
+      "name": "Pešćenica",
+      "lat": 45.804278,
+      "lon": 16.0265,
+      "network": "Mjerna mreža grada Zagreba"
+    },
+    {
+      "source": "azo",
+      "external_id": "190",
+      "name": "Plomin",
+      "lat": 45.139583,
+      "lon": 14.179139,
+      "network": "Mjerna mreža Termoelektrane Plomin"
+    },
+    {
+      "source": "azo",
+      "external_id": "48",
+      "name": "Poljud",
+      "lat": 43.523144,
+      "lon": 16.426333,
+      "network": "Lokalna mjerna mreža Split"
+    },
+    {
+      "source": "azo",
+      "external_id": "103",
+      "name": "Prilaz baruna Filipovića",
+      "lat": 45.802222,
+      "lon": 15.943611,
+      "network": "Mjerna mreža grada Zagreba"
+    },
+    {
+      "source": "azo",
+      "external_id": "39",
+      "name": "Pula Fižela - lokalna",
+      "lat": 44.862469,
+      "lon": 13.816858,
+      "network": "Mreža za praćenje kakvoće zraka grada Pule"
+    },
+    {
+      "source": "azo",
+      "external_id": "283",
+      "name": "RIJEKA - PPI PM2,5",
+      "lat": 45.320794,
+      "lon": 14.483511,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "158",
+      "name": "RIJEKA-1",
+      "lat": 45.3275,
+      "lon": 14.446633,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "159",
+      "name": "RIJEKA-2",
+      "lat": 45.320794,
+      "lon": 14.483511,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "180",
+      "name": "Ripenda",
+      "lat": 45.10975,
+      "lon": 14.138972,
+      "network": "Mjerna mreža Termoelektrane Plomin"
+    },
+    {
+      "source": "azo",
+      "external_id": "152",
+      "name": "Riva 4",
+      "lat": 44.872222,
+      "lon": 13.8785,
+      "network": "Mreža za praćenje kakvoće zraka grada Pule"
+    },
+    {
+      "source": "azo",
+      "external_id": "162",
+      "name": "SISAK-1",
+      "lat": 45.458125,
+      "lon": 16.388356,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "254",
+      "name": "SLAVONSKI BROD - privremena pokretna postaja",
+      "lat": 45.148197,
+      "lon": 18.023147,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "165",
+      "name": "SLAVONSKI BROD-1",
+      "lat": 45.159472,
+      "lon": 17.9951,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "275",
+      "name": "SLAVONSKI BROD-2",
+      "lat": 45.149114,
+      "lon": 18.02345,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "304",
+      "name": "SPLIT-2",
+      "lat": 43.518333,
+      "lon": 16.442222,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "305",
+      "name": "SPLIT-3",
+      "lat": 43.504167,
+      "lon": 16.453333,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "306",
+      "name": "SPLIT-3 PPI PM2,5",
+      "lat": 43.504167,
+      "lon": 16.453333,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "314",
+      "name": "Sesvete",
+      "lat": 45.834,
+      "lon": 16.107111,
+      "network": "Mjerna mreža grada Zagreba"
+    },
+    {
+      "source": "azo",
+      "external_id": "119",
+      "name": "Siget (Dom zdravlja)",
+      "lat": 45.773333,
+      "lon": 15.979861,
+      "network": "Mjerna mreža grada Zagreba"
+    },
+    {
+      "source": "azo",
+      "external_id": "151",
+      "name": "Sisak 2 Galdovo",
+      "lat": 45.477961,
+      "lon": 16.399617,
+      "network": "Mjerna mreža INA Rafinerija nafte Sisak"
+    },
+    {
+      "source": "azo",
+      "external_id": "133",
+      "name": "Sisak 3",
+      "lat": 45.488956,
+      "lon": 16.373778,
+      "network": "Mreža za praćenje kakvoće zraka Sisačko-moslavačke županije"
+    },
+    {
+      "source": "azo",
+      "external_id": "313",
+      "name": "Sovjak",
+      "lat": 45.366833,
+      "lon": 14.3835,
+      "network": "Monitoring sanacije jame Sovjak"
+    },
+    {
+      "source": "azo",
+      "external_id": "168",
+      "name": "Split-1",
+      "lat": 43.510653,
+      "lon": 16.449342,
+      "network": "Mjerna mreža Cemex Hrvatska d.o.o."
+    },
+    {
+      "source": "azo",
+      "external_id": "319",
+      "name": "Strožanac",
+      "lat": 43.504097,
+      "lon": 16.531661,
+      "network": "Mreža za praćenje kvalitete zraka u naselju Podstrana"
+    },
+    {
+      "source": "azo",
+      "external_id": "118",
+      "name": "Susedgrad (Rasadnik Zrinjevac)",
+      "lat": 45.810139,
+      "lon": 15.879139,
+      "network": "Mjerna mreža grada Zagreba"
+    },
+    {
+      "source": "azo",
+      "external_id": "189",
+      "name": "Sv. Katarina",
+      "lat": 45.173444,
+      "lon": 14.045333,
+      "network": "Mjerna mreža Termoelektrane Plomin"
+    },
+    {
+      "source": "azo",
+      "external_id": "153",
+      "name": "Ulica Kamenjak (Dječji vrtić)",
+      "lat": 44.858889,
+      "lon": 13.83925,
+      "network": "Mreža za praćenje kakvoće zraka grada Pule"
+    },
+    {
+      "source": "azo",
+      "external_id": "127",
+      "name": "Umag",
+      "lat": 45.432917,
+      "lon": 13.524139,
+      "network": "Mjerna mreža grada Umaga"
+    },
+    {
+      "source": "azo",
+      "external_id": "128",
+      "name": "Umag sediment",
+      "lat": 45.433,
+      "lon": 13.524361,
+      "network": "Mjerna mreža grada Umaga"
+    },
+    {
+      "source": "azo",
+      "external_id": "221",
+      "name": "Urinj",
+      "lat": 45.288611,
+      "lon": 14.528333,
+      "network": "Mjerna mreža INA Rafinerija nafte Rijeka"
+    },
+    {
+      "source": "azo",
+      "external_id": "277",
+      "name": "VARAŽDIN-1",
+      "lat": 46.282911,
+      "lon": 16.363803,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "260",
+      "name": "VELA STRAŽA (Dugi otok)",
+      "lat": 43.9915,
+      "lon": 15.058111,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "310",
+      "name": "VELIKA GORICA",
+      "lat": 45.714847,
+      "lon": 16.068289,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "259",
+      "name": "VIŠNJAN",
+      "lat": 45.291203,
+      "lon": 13.749778,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "273",
+      "name": "Vatrogasni dom (K2) - Kutina",
+      "lat": 45.472778,
+      "lon": 16.785,
+      "network": "Lokalna mjerna mreža-Grad Kutina"
+    },
+    {
+      "source": "azo",
+      "external_id": "121",
+      "name": "Velika Gorica - lokalna",
+      "lat": 45.714847,
+      "lon": 16.068289,
+      "network": "Mreža za praćenje kakvoće zraka Grada Velike Gorice"
+    },
+    {
+      "source": "azo",
+      "external_id": "47",
+      "name": "Visoka",
+      "lat": 43.502142,
+      "lon": 16.469339,
+      "network": "Lokalna mjerna mreža Split"
+    },
+    {
+      "source": "azo",
+      "external_id": "312",
+      "name": "Viševac-Sovjak",
+      "lat": 45.366889,
+      "lon": 14.383417,
+      "network": "Monitoring sanacije jame Sovjak"
+    },
+    {
+      "source": "azo",
+      "external_id": "232",
+      "name": "Viškovo - Marišćina",
+      "lat": 45.402222,
+      "lon": 14.388333,
+      "network": "Mjerna mreža ŽCGO Marišćina"
+    },
+    {
+      "source": "azo",
+      "external_id": "235",
+      "name": "Viškovo-Viševac",
+      "lat": 45.368889,
+      "lon": 14.383889,
+      "network": "Mjerna mreža KD Čistoća"
+    },
+    {
+      "source": "azo",
+      "external_id": "246",
+      "name": "Vrh Martinšćice",
+      "lat": 45.311389,
+      "lon": 14.487222,
+      "network": "Mjerna mreža INA Rafinerija nafte Rijeka"
+    },
+    {
+      "source": "azo",
+      "external_id": "38",
+      "name": "Vrhovec",
+      "lat": 45.817961,
+      "lon": 15.94795,
+      "network": "Mreža za praćenje kakvoće zraka HEP Zagreb"
+    },
+    {
+      "source": "azo",
+      "external_id": "267",
+      "name": "ZAGREB PPI PM2,5 - Ksaverska cesta",
+      "lat": 45.834372,
+      "lon": 15.978394,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "155",
+      "name": "ZAGREB-1",
+      "lat": 45.800492,
+      "lon": 15.974278,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "156",
+      "name": "ZAGREB-2",
+      "lat": 45.823717,
+      "lon": 16.035825,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "157",
+      "name": "ZAGREB-3",
+      "lat": 45.764947,
+      "lon": 16.006469,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "303",
+      "name": "ZAGREB-4",
+      "lat": 45.774444,
+      "lon": 15.931111,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "317",
+      "name": "ZAVIŽAN EMEP level 1",
+      "lat": 44.814667,
+      "lon": 14.975278,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "14",
+      "name": "Zajci",
+      "lat": 45.204147,
+      "lon": 14.070761,
+      "network": "Mreža za praćenje kakvoće zraka Rockwool"
+    },
+    {
+      "source": "azo",
+      "external_id": "37",
+      "name": "Zoljan",
+      "lat": 45.472442,
+      "lon": 18.039125,
+      "network": "Mreža za praćenje kakvoće zraka NEXE d.d."
+    },
+    {
+      "source": "azo",
+      "external_id": "284",
+      "name": "Zračna luka Dubrovnik",
+      "lat": 42.553889,
+      "lon": 18.284722,
+      "network": "Mreža za praćenje kvalitete zraka Zračne luke Dubrovnik"
+    },
+    {
+      "source": "azo",
+      "external_id": "20",
+      "name": "Čambarelići",
+      "lat": 45.181331,
+      "lon": 14.101011,
+      "network": "Mreža za praćenje kakvoće zraka Rockwool"
+    },
+    {
+      "source": "azo",
+      "external_id": "101",
+      "name": "Đorđićeva ulica (Poliklinika za zaštitu djece i mladih Grada Zagreba)",
+      "lat": 45.810528,
+      "lon": 15.984667,
+      "network": "Mjerna mreža grada Zagreba"
+    },
+    {
+      "source": "azo",
+      "external_id": "264",
+      "name": "ŽARKOVICA (Dubrovnik)",
+      "lat": 42.644697,
+      "lon": 18.122611,
+      "network": "Državna mreža za trajno praćenje kvalitete zraka"
+    },
+    {
+      "source": "azo",
+      "external_id": "49",
+      "name": "Žrnovnica",
+      "lat": 43.517294,
+      "lon": 16.53595,
+      "network": "Lokalna mjerna mreža Split"
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Bilje",
+      "name": "Bilje",
+      "lat": 45.609,
+      "lon": 18.739,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Bjelovar",
+      "name": "Bjelovar",
+      "lat": 45.91,
+      "lon": 16.869,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Bosiljevo",
+      "name": "Bosiljevo",
+      "lat": 45.419,
+      "lon": 15.287,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Crikvenica",
+      "name": "Crikvenica",
+      "lat": 45.173,
+      "lon": 14.689,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Crni Lug - NP Risnjak",
+      "name": "Crni Lug - NP Risnjak",
+      "lat": 45.421,
+      "lon": 14.692,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Daruvar",
+      "name": "Daruvar",
+      "lat": 45.592,
+      "lon": 17.21,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Dubrovnik",
+      "name": "Dubrovnik",
+      "lat": 42.645,
+      "lon": 18.085,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Dubrovnik-aerodrom",
+      "name": "Dubrovnik-aerodrom",
+      "lat": 42.563,
+      "lon": 18.27,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Gospić",
+      "name": "Gospić",
+      "lat": 44.551,
+      "lon": 15.373,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Gračac",
+      "name": "Gračac",
+      "lat": 44.306,
+      "lon": 15.857,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Hrvatska Kostajnica",
+      "name": "Hrvatska Kostajnica",
+      "lat": 45.23,
+      "lon": 16.544,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Hvar",
+      "name": "Hvar",
+      "lat": 43.171,
+      "lon": 16.437,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Ilok",
+      "name": "Ilok",
+      "lat": 45.225,
+      "lon": 19.259,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Imotski",
+      "name": "Imotski",
+      "lat": 43.445,
+      "lon": 17.221,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Karlovac",
+      "name": "Karlovac",
+      "lat": 45.494,
+      "lon": 15.565,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Knin",
+      "name": "Knin",
+      "lat": 44.041,
+      "lon": 16.207,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Komiža",
+      "name": "Komiža",
+      "lat": 43.048,
+      "lon": 16.085,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Koprivnica",
+      "name": "Koprivnica",
+      "lat": 46.169,
+      "lon": 16.814,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Krapina",
+      "name": "Krapina",
+      "lat": 46.138,
+      "lon": 15.888,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Križevci",
+      "name": "Križevci",
+      "lat": 46.029,
+      "lon": 16.554,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Kutjevo",
+      "name": "Kutjevo",
+      "lat": 45.424,
+      "lon": 17.876,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Lastovo",
+      "name": "Lastovo",
+      "lat": 42.768,
+      "lon": 16.9,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Lekenik",
+      "name": "Lekenik",
+      "lat": 45.572,
+      "lon": 16.222,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Ličko Lešće",
+      "name": "Ličko Lešće",
+      "lat": 44.81,
+      "lon": 15.311,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Makarska",
+      "name": "Makarska",
+      "lat": 43.288,
+      "lon": 17.02,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Mali Lošinj",
+      "name": "Mali Lošinj",
+      "lat": 44.533,
+      "lon": 14.472,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Mali Lošinj - Ćunski",
+      "name": "Mali Lošinj - Ćunski",
+      "lat": 44.565,
+      "lon": 14.437,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Malinska",
+      "name": "Malinska",
+      "lat": 45.126,
+      "lon": 14.527,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Monte Kope",
+      "name": "Monte Kope",
+      "lat": 44.812,
+      "lon": 13.873,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "NP Plitvička jezera",
+      "name": "NP Plitvička jezera",
+      "lat": 44.881,
+      "lon": 15.62,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Ogulin",
+      "name": "Ogulin",
+      "lat": 45.263,
+      "lon": 15.222,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Opatija",
+      "name": "Opatija",
+      "lat": 45.341,
+      "lon": 14.313,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Osijek-aerodrom",
+      "name": "Osijek-aerodrom",
+      "lat": 45.468,
+      "lon": 18.806,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Otočac",
+      "name": "Otočac",
+      "lat": 44.868,
+      "lon": 15.227,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Parg-Čabar",
+      "name": "Parg-Čabar",
+      "lat": 45.594,
+      "lon": 14.631,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Pazin",
+      "name": "Pazin",
+      "lat": 45.241,
+      "lon": 13.945,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Plaški",
+      "name": "Plaški",
+      "lat": 45.079,
+      "lon": 15.358,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Ploče",
+      "name": "Ploče",
+      "lat": 43.048,
+      "lon": 17.443,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Porer - svjetionik",
+      "name": "Porer - svjetionik",
+      "lat": 44.758,
+      "lon": 13.89,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Poreč",
+      "name": "Poreč",
+      "lat": 45.222,
+      "lon": 13.604,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Požega",
+      "name": "Požega",
+      "lat": 45.343,
+      "lon": 17.703,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Prevlaka",
+      "name": "Prevlaka",
+      "lat": 42.393,
+      "lon": 18.531,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Pula-aerodrom",
+      "name": "Pula-aerodrom",
+      "lat": 44.896,
+      "lon": 13.932,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "RC Bilogora",
+      "name": "RC Bilogora",
+      "lat": 45.884,
+      "lon": 17.2,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "RC Gorice (kod Nove Gradiške)",
+      "name": "RC Gorice (kod Nove Gradiške)",
+      "lat": 45.224,
+      "lon": 17.278,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "RC Gradište (kod Županje)",
+      "name": "RC Gradište (kod Županje)",
+      "lat": 45.159,
+      "lon": 18.704,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "RC Osijek-Čepin",
+      "name": "RC Osijek-Čepin",
+      "lat": 45.503,
+      "lon": 18.561,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "RC Puntijarka",
+      "name": "RC Puntijarka",
+      "lat": 45.908,
+      "lon": 15.968,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Rab",
+      "name": "Rab",
+      "lat": 44.756,
+      "lon": 14.769,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Račinovci",
+      "name": "Račinovci",
+      "lat": 44.868,
+      "lon": 18.957,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Rašćane",
+      "name": "Rašćane",
+      "lat": 43.284,
+      "lon": 17.195,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Rijeka",
+      "name": "Rijeka",
+      "lat": 45.337,
+      "lon": 14.443,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Rijeka-aerodrom",
+      "name": "Rijeka-aerodrom",
+      "lat": 45.224,
+      "lon": 14.582,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Rovinj",
+      "name": "Rovinj",
+      "lat": 45.103,
+      "lon": 13.635,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Senj",
+      "name": "Senj",
+      "lat": 44.993,
+      "lon": 14.903,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Sinj",
+      "name": "Sinj",
+      "lat": 43.704,
+      "lon": 16.667,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Sisak",
+      "name": "Sisak",
+      "lat": 45.499,
+      "lon": 16.367,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Slavonski Brod",
+      "name": "Slavonski Brod",
+      "lat": 45.159,
+      "lon": 17.995,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Split-Marjan",
+      "name": "Split-Marjan",
+      "lat": 43.508,
+      "lon": 16.426,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Split-aerodrom",
+      "name": "Split-aerodrom",
+      "lat": 43.539,
+      "lon": 16.301,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Sv. Ivan na pučini - svjetionik",
+      "name": "Sv. Ivan na pučini - svjetionik",
+      "lat": 45.043,
+      "lon": 13.614,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Valpovo-Tiborjanci",
+      "name": "Valpovo-Tiborjanci",
+      "lat": 45.682,
+      "lon": 18.336,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Varaždin",
+      "name": "Varaždin",
+      "lat": 46.283,
+      "lon": 16.364,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Virovitica",
+      "name": "Virovitica",
+      "lat": 45.86,
+      "lon": 17.39,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Vukovar-Grabovo",
+      "name": "Vukovar-Grabovo",
+      "lat": 45.355,
+      "lon": 19.001,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Zadar",
+      "name": "Zadar",
+      "lat": 44.13,
+      "lon": 15.206,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Zadar-aerodrom",
+      "name": "Zadar-aerodrom",
+      "lat": 44.097,
+      "lon": 15.363,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Zagreb-Grič",
+      "name": "Zagreb-Grič",
+      "lat": 45.814,
+      "lon": 15.972,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Zagreb-Maksimir",
+      "name": "Zagreb-Maksimir",
+      "lat": 45.822,
+      "lon": 16.034,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Zagreb-aerodrom",
+      "name": "Zagreb-aerodrom",
+      "lat": 45.729,
+      "lon": 16.054,
+      "automatic": false
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Zavižan",
+      "name": "Zavižan",
+      "lat": 44.815,
+      "lon": 14.975,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Šibenik",
+      "name": "Šibenik",
+      "lat": 43.728,
+      "lon": 15.906,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Štrigova",
+      "name": "Štrigova",
+      "lat": 46.494,
+      "lon": 16.299,
+      "automatic": true
+    },
+    {
+      "source": "dhmz",
+      "external_id": "Živogošće",
+      "name": "Živogošće",
+      "lat": 43.17,
+      "lon": 17.179,
+      "automatic": true
+    }
+  ]
+}
