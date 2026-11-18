@@ -133,14 +133,22 @@ Dohvat podataka iz korijena repozitorija, s aktiviranim venvom:
 ```bash
 python -m zrakhr db init                   # stvara SQLite bazu data/zrakhr.db
 python -m zrakhr collect --source dhmz     # tekući sat DHMZ-ovih mjerenja
+python -m zrakhr collect --source azo      # AZO-ova mjerenja od jučer do danas
+python -m zrakhr collect --source azo --since 2026-10-01   # AZO-ova povijest od 1.10.
 python -m zrakhr fetch --city Zagreb       # Open-Meteo prognoza za jedan grad
 python -m zrakhr fetch --city "Slavonski Brod"
 ```
 
-`collect` sprema sirovi XML u `data/raw/dhmz_<vrijeme opažanja>.xml`, a mjerenja i postaje u
-bazu `data/zrakhr.db` (koju stvara i sam, ako ne postoji), i ispisuje broj postaja, zapisa,
-odbačenih vrijednosti i novih zapisa u bazi. Ponovljeno prikupljanje istog sata ne stvara
-duplikate, a svako pokretanje bilježi se u tablici `collection_runs`.
+`collect` sprema sirove odgovore u `data/raw/` (DHMZ kao `dhmz_<vrijeme opažanja>.xml`, AZO kao
+`azo_<vrijeme dohvata>.json`), a mjerenja i postaje u bazu `data/zrakhr.db` (koju stvara i sam,
+ako ne postoji), i ispisuje broj zapisa, odbačenih vrijednosti i novih zapisa u bazi. Ponovljeno
+prikupljanje istog razdoblja ne stvara duplikate, a svako pokretanje bilježi se u tablici
+`collection_runs`.
+
+AZO kolektor dohvaća PM10, PM2.5, NO₂ i O₃ s 11 postaja državne mreže u gradovima projekta
+(popis je u `src/zrakhr/collectors/azo.py`). Portal daje izvorne, još nevalidirane satne podatke,
+pa se odbacuju vrijednosti izvan mogućeg raspona (npr. negativne koncentracije). Između upita
+kolektor čeka 2 s, jer portal odbija prečeste upite, pa jedno prikupljanje traje oko minutu i pol.
 
 `fetch` sprema sirove odgovore u `data/raw/<izvor>_<grad>_<vrijeme dohvata>.json`, a prognozu
 vremena (iste veličine koje mjeri DHMZ, vjetar u m/s) i CAMS prognozu PM10 i PM2.5 u tablicu
@@ -160,8 +168,9 @@ Virtualno okruženje se isključuje naredbom `deactivate`.
 ## Prikupljanje podataka
 
 Podatke svaki sat prikuplja workflow [Collect](.github/workflows/collect.yml) na GitHub Actionsu:
-DHMZ mjerenja u :20 i :50 (dvaput na sat, jer GitHubov raspored zna kasniti), a Open-Meteo
-prognoze svakih 6 sati. Sirovi odgovori spremaju se u granu
+DHMZ mjerenja u :20 i :50 (dvaput na sat, jer GitHubov raspored zna kasniti), AZO mjerenja svaka
+3 sata (portal čuva povijest i objavljuje sa zakašnjenjem od oko 2 sata, pa se uvijek dohvaća od
+jučer) i Open-Meteo prognoze svakih 6 sati. Sirovi odgovori spremaju se u granu
 [`data`](https://github.com/Matej2405/ZrakHR/tree/data), koja služi kao arhiva. Arhiva je u
 zasebnoj grani jer računalo na kojem se workflow izvodi nakon svakog pokretanja nestaje, a sirovi
 podaci se ne commitaju u `main`.
@@ -177,6 +186,7 @@ Ista skripta radi i lokalno ili iz crona na stalno upaljenom računalu:
 
 ```bash
 scripts/collect.sh dhmz data        # u data/raw/dhmz/ i log u data/logs/
+scripts/collect.sh azo data         # u data/raw/azo/
 scripts/collect.sh forecasts data   # u data/raw/open-meteo/
 ```
 
