@@ -128,16 +128,23 @@ pip install -e .
 `pip install -e .` instalira paket `zrakhr` iz `src/` u načinu za razvoj, pa
 izmjene koda vrijede odmah, bez ponovne instalacije.
 
-Dohvat podataka iz korijena repozitorija, s aktiviranim venvom:
+Dohvat podataka iz korijena repozitorija, s aktiviranim venvom (`zrakhr` je isto što i
+`python -m zrakhr`):
 
 ```bash
-python -m zrakhr db init                   # stvara SQLite bazu data/zrakhr.db
-python -m zrakhr collect --source dhmz     # tekući sat DHMZ-ovih mjerenja
-python -m zrakhr collect --source azo      # AZO-ova mjerenja od jučer do danas
-python -m zrakhr collect --source azo --since 2026-10-01   # AZO-ova povijest od 1.10.
-python -m zrakhr fetch --city Zagreb       # Open-Meteo prognoza za jedan grad
-python -m zrakhr fetch --city "Slavonski Brod"
+zrakhr db init                   # stvara SQLite bazu data/zrakhr.db
+zrakhr collect --source dhmz     # tekući sat DHMZ-ovih mjerenja
+zrakhr collect --source azo      # AZO-ova mjerenja od jučer do danas
+zrakhr collect --source azo --since 2026-10-01   # AZO-ova povijest od 1.10.
+zrakhr fetch --city Zagreb       # Open-Meteo prognoza za jedan grad
+zrakhr fetch --city "Slavonski Brod"
+zrakhr stations                  # postaje u bazi; --source dhmz|azo|... za jedan izvor
 ```
+
+Svaka naredba prima `--db <putanja>` (zadano `data/zrakhr.db`) i `-v`/`--verbose`, koji uz
+upozorenja i greške ispisuje i pojedinosti rada, npr. svaki HTTP upit. Izlazni kod je 0 ako je
+sve uspjelo, 1 ako izvor nije uspio i 2 za pogrešnu upotrebu, pa ga cron i skripte mogu
+provjeravati.
 
 `collect` sprema sirove odgovore u `data/raw/` (DHMZ kao `dhmz_<vrijeme opažanja>.xml`, AZO kao
 `azo_<vrijeme dohvata>.json`), a mjerenja i postaje u bazu `data/zrakhr.db` (koju stvara i sam,
@@ -155,7 +162,7 @@ vremena (iste veličine koje mjeri DHMZ, vjetar u m/s) i CAMS prognozu PM10 i PM
 `forecasts` kao novo pokretanje prognoze. Vrijeme izdavanja je puni sat dohvata, a uz svaku
 vrijednost se čuva koliko sati unaprijed je prognozirana; sati prije izdavanja se ne spremaju, a
 ništa s Open-Meteo ne sprema se kao mjerenje. Podržani gradovi: Zagreb, Rijeka, Split, Osijek,
-Slavonski Brod. Sve opcije: `python -m zrakhr --help`.
+Slavonski Brod. Sve opcije: `zrakhr --help` i `zrakhr <naredba> --help`.
 
 Testovi:
 

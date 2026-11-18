@@ -11,6 +11,10 @@ version = "0.1.0"
 description = "Prikupljanje i vizualizacija podataka o vremenu i kvaliteti zraka za hrvatske gradove"
 requires-python = ">=3.10"
 
+# Naredba zrakhr, isto što i python -m zrakhr
+[project.scripts]
+zrakhr = "zrakhr.__main__:main"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
