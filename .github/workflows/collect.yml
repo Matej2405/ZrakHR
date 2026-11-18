@@ -1,0 +1,67 @@
+# Satno prikupljanje podataka (#2). Sirovi odgovori spremaju se u granu data, koja služi kao
+# arhiva; obrada i baza ih čitaju naknadno. DHMZ objavljuje samo tekući sat, pa se pokreće
+# dvaput na sat: GitHubov raspored zna kasniti, a datoteka nosi vrijeme opažanja, pa drugo
+# pokretanje u istom satu ne stvara duplikat.
+name: Collect
+
+on:
+  schedule:
+    - cron: '20,50 * * * *' # DHMZ mjerenja
+    - cron: '35 */6 * * *' # Open-Meteo prognoze, svakih 6 sati
+  workflow_dispatch:
+    inputs:
+      what:
+        description: Što prikupiti
+        type: choice
+        options: [dhmz, forecasts]
+        default: dhmz
+
+permissions:
+  contents: write
+
+# Pokretanja se ne preklapaju, pa ne guraju u granu data u isto vrijeme
+concurrency:
+  group: collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    name: Collect
+    runs-on: ubuntu-latest
+    env:
+      WHAT: ${{ github.event.schedule == '35 */6 * * *' && 'forecasts' || inputs.what || 'dhmz' }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/checkout@v7
+        with:
+          ref: data
+          path: data-branch
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - run: pip install -r requirements.txt -e .
+      - run: scripts/collect.sh "$WHAT" data-branch
+      # Sprema i kad prikupljanje djelomično padne (jedan grad bez prognoze, neobradiv DHMZ feed
+      # spremljen kao *_neobradeno.xml), da te datoteke ne propadnu; job svejedno ostaje crven
+      - name: Commit to the data branch
+        if: ${{ !cancelled() }}
+        working-directory: data-branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add raw logs
+          # Drugo pokretanje u istom satu prepisuje istu DHMZ datoteku; tada nema što spremiti
+          if git diff --cached --quiet -- raw; then
+            echo "Nema novih podataka."
+            exit 0
+          fi
+          git commit --quiet -m "data: $WHAT $(date -u +%Y-%m-%dT%H:%MZ)"
+          # Grana se navodi izričito, da push ne ovisi o tome je li checkout postavio praćenje
+          for attempt in 1 2 3; do
+            git push --quiet origin HEAD:data && exit 0
+            echo "Push nije uspio (pokušaj $attempt), preuzimam granu i ponavljam."
+            git pull --rebase --quiet origin data
+          done
+          exit 1
