@@ -9,6 +9,7 @@ echo '### Pokrivenost testovima'
 echo
 echo '| Metrika | Pokriveno | Ukupno | Postotak |'
 echo '| --- | ---: | ---: | ---: |'
+# Zagrade nisu nužne jer | veže najslabije, ali jasno pokazuju da se .total primjenjuje na sve četiri metrike
 jq -r '.total
-  | ["Linije", .lines], ["Naredbe", .statements], ["Grane", .branches], ["Funkcije", .functions]
+  | (["Linije", .lines], ["Naredbe", .statements], ["Grane", .branches], ["Funkcije", .functions])
   | "| \(.[0]) | \(.[1].covered) | \(.[1].total) | \(.[1].pct) % |"' "$summary"

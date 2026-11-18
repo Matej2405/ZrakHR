@@ -14,6 +14,9 @@ updates:
       # typescript-eslint zasad podržava TypeScript < 6.1 (vidi web/README.md)
       - dependency-name: typescript
         update-types: ['version-update:semver-major', 'version-update:semver-minor']
+      # Tipovi moraju odgovarati verziji Node.js-a iz web/.nvmrc (24)
+      - dependency-name: '@types/node'
+        update-types: ['version-update:semver-major']
     labels: [frontend, infra]
     commit-message:
       prefix: chore
