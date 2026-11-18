@@ -1,0 +1,21 @@
+{
+  "from": "2026-11-17",
+  "to": "2026-11-17",
+  "series": {
+    "157/5": [
+      {"vrijednost": 30.9, "mjernaJedinica": "µg/m3", "vrijeme": 1794873600000},
+      {"vrijednost": 27.5, "mjernaJedinica": "µg/m3", "vrijeme": 1794877200000},
+      {"vrijednost": 25.8, "mjernaJedinica": "µg/m3", "vrijeme": 1794880800000}
+    ],
+    "157/31": [
+      {"vrijednost": 2.6, "mjernaJedinica": "µg/m3", "vrijeme": 1794873600000},
+      {"vrijednost": 2.6, "mjernaJedinica": "µg/m3", "vrijeme": 1794877200000},
+      {"vrijednost": 2.8, "mjernaJedinica": "µg/m3", "vrijeme": 1794880800000}
+    ],
+    "155/28": [
+      {"vrijednost": 18.4, "mjernaJedinica": "µg/m3", "vrijeme": 1794873600000},
+      {"vrijednost": null, "mjernaJedinica": "µg/m3", "vrijeme": 1794877200000},
+      {"vrijednost": -3.1, "mjernaJedinica": "µg/m3", "vrijeme": 1794880800000}
+    ]
+  }
+}
