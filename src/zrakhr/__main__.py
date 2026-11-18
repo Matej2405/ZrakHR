@@ -15,10 +15,9 @@ from typing import Any
 
 import requests
 
-from zrakhr import db
+from zrakhr import archive, db
 from zrakhr.cities import CITIES, City
 from zrakhr.collectors import (
-    STATIONS,
     AzoCollector,
     BaseCollector,
     DhmzCollector,
@@ -85,9 +84,7 @@ def cmd_fetch(args: argparse.Namespace) -> int:
                 db.finish_run(conn, run, ok=False, message=f"neobradiv odgovor: {exc!r}")
                 failed += 1
                 continue
-            db.save_station(conn, collector.source, city.name, city.name, city.latitude,
-                            city.longitude, city.name)
-            stored = db.insert_forecasts(conn, records, issued)
+            stored = archive.store_forecast(conn, collector.source, city, records, issued)
             db.finish_run(conn, run, ok=True, records=stored)
             print(f"\n{collector.source} / {city.name}: prognoza izdana {issued.isoformat()}, "
                   f"zapisi {len(records)}, novih u bazi {stored}")
@@ -137,9 +134,7 @@ def collect_dhmz(args: argparse.Namespace) -> int:
         # Ime nosi vrijeme opažanja, pa ponovljeno prikupljanje istog sata prepisuje istu datoteku
         path = args.raw_dir / f"{collector.source}_{utc_stamp(snapshot.observed_at)}.xml"
         path.write_bytes(xml)
-        for name, (lat, lon) in snapshot.coordinates.items():
-            db.save_station(conn, collector.source, name, name, lat, lon)
-        stored = db.insert_measurements(conn, snapshot.records)
+        stored = archive.store_dhmz(conn, snapshot)
         db.finish_run(conn, run, ok=True, records=stored, rejected=len(snapshot.rejected))
 
     print(f"{collector.source} {snapshot.observed_at.isoformat()}: postaje {snapshot.stations}, "
@@ -183,10 +178,7 @@ def collect_azo(args: argparse.Namespace) -> int:
                          collector.source, exc, path)
             db.finish_run(conn, run, ok=False, message=f"neobradiv odgovor: {exc!r}")
             return 1
-        for station in STATIONS:
-            db.save_station(conn, collector.source, str(station.id), station.name, station.lat,
-                            station.lon, station.city)
-        stored = db.insert_measurements(conn, snapshot.records)
+        stored = archive.store_azo(conn, snapshot)
         db.finish_run(conn, run, ok=not failed, records=stored, rejected=len(snapshot.rejected),
                       message=f"nedohvaćeni nizovi: {', '.join(failed)}" if failed else None)
 
@@ -211,6 +203,30 @@ def cmd_db_init(args: argparse.Namespace) -> int:
             "SELECT name FROM sqlite_master WHERE type = 'table' ORDER BY name")]
     print(f"baza {args.db}: tablice {', '.join(tables)}")
     return 0
+
+
+def cmd_import(args: argparse.Namespace) -> int:
+    """Učitava arhivu sirovih odgovora u bazu; vraća 1 ako neku datoteku nije moguće učitati."""
+    if not args.raw_dir.is_dir():
+        logger.error("mapa %s ne postoji", args.raw_dir)
+        return 2
+    with closing(db.connect(args.db)) as conn:
+        stats = archive.import_raw(conn, args.raw_dir)
+    for source, item in stats.items():
+        print(f"{source}: datoteke {item.files}, novih u bazi {item.stored}, neučitane {item.failed}")
+    if not stats:
+        print(f"u {args.raw_dir} nema sirovih odgovora")
+    return 1 if any(item.failed for item in stats.values()) else 0
+
+
+def cmd_check(args: argparse.Namespace) -> int:
+    """Ispisuje redak po izvoru za jedan dan; vraća 1 ako nekom izvoru nedostaju sati ili prognoze."""
+    day = args.date or datetime.now(timezone.utc).date() - timedelta(days=1)
+    with closing(db.connect(args.db)) as conn:
+        lines = archive.check_day(conn, day)
+    for line, _ in lines:
+        print(line)
+    return 0 if all(complete for _, complete in lines) else 1
 
 
 def cmd_stations(args: argparse.Namespace) -> int:
@@ -263,6 +279,17 @@ def build_parser() -> argparse.ArgumentParser:
     collect.add_argument("--raw-dir", type=Path, default=Path("data/raw"),
                          help="mapa za sirove odgovore (zadano: data/raw)")
     collect.set_defaults(func=cmd_collect)
+
+    load = commands.add_parser("import", parents=[common], help="učitaj arhivu sirovih odgovora u bazu")
+    load.add_argument("--raw-dir", type=Path, default=Path("data/raw"),
+                      help="mapa sa sirovim odgovorima, pretražuje se i u podmapama (zadano: data/raw)")
+    load.set_defaults(func=cmd_import)
+
+    check = commands.add_parser("check", parents=[common],
+                                help="provjeri je li za dan u bazi svaki sat mjerenja i svaka prognoza")
+    check.add_argument("--date", type=date.fromisoformat,
+                       help="dan u UTC-u, npr. 2026-11-20 (zadano: jučer)")
+    check.set_defaults(func=cmd_check)
 
     stations = commands.add_parser("stations", parents=[common], help="ispiši postaje poznate bazi")
     stations.add_argument("--source", choices=db.SOURCES, help="samo postaje ovog izvora")
