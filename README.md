@@ -140,8 +140,13 @@ python -m zrakhr fetch --city "Slavonski Brod"
 `collect` sprema sirovi XML u `data/raw/dhmz_<vrijeme opažanja>.xml`, a mjerenja i postaje u
 bazu `data/zrakhr.db` (koju stvara i sam, ako ne postoji), i ispisuje broj postaja, zapisa,
 odbačenih vrijednosti i novih zapisa u bazi. Ponovljeno prikupljanje istog sata ne stvara
-duplikate, a svako pokretanje bilježi se u tablici `collection_runs`. `fetch` sprema sirove odgovore u
-`data/raw/<izvor>_<grad>_<vrijeme dohvata>.json`. Podržani gradovi: Zagreb, Rijeka, Split, Osijek,
+duplikate, a svako pokretanje bilježi se u tablici `collection_runs`.
+
+`fetch` sprema sirove odgovore u `data/raw/<izvor>_<grad>_<vrijeme dohvata>.json`, a prognozu
+vremena (iste veličine koje mjeri DHMZ, vjetar u m/s) i CAMS prognozu PM10 i PM2.5 u tablicu
+`forecasts` kao novo pokretanje prognoze. Vrijeme izdavanja je puni sat dohvata, a uz svaku
+vrijednost se čuva koliko sati unaprijed je prognozirana; sati prije izdavanja se ne spremaju, a
+ništa s Open-Meteo ne sprema se kao mjerenje. Podržani gradovi: Zagreb, Rijeka, Split, Osijek,
 Slavonski Brod. Sve opcije: `python -m zrakhr --help`.
 
 Testovi:

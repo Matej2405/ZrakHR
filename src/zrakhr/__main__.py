@@ -49,23 +49,44 @@ def print_preview(records: list[Record]) -> None:
 
 
 def cmd_fetch(args: argparse.Namespace) -> int:
-    """Pokreće sve kolektore za zadani grad; vraća 1 ako barem jedan nije uspio."""
+    """Dohvaća Open-Meteo prognoze za zadani grad i sprema ih kao novo pokretanje prognoze.
+
+    Vrijeme izdavanja je puni sat dohvata, pa ponovljeni dohvat u istom satu ne stvara duplikate.
+    Vraća 1 ako barem jedan kolektor nije uspio.
+    """
     city = CITIES[args.city]
-    stamp = utc_stamp(datetime.now(timezone.utc))
+    now = datetime.now(timezone.utc)
+    stamp = utc_stamp(now)
+    issued = now.replace(minute=0, second=0, microsecond=0)
     collectors: list[BaseCollector] = [OpenMeteoWeatherCollector(), OpenMeteoAirQualityCollector()]
 
     failed = 0
-    for collector in collectors:
-        try:
-            raw = collector.fetch(city)
-        except requests.RequestException:
-            failed += 1  # kolektor je grešku već zapisao u log
-            continue
-        path = save_raw(raw, collector.source, city, stamp, args.raw_dir)
-        records = collector.normalize(raw, city)
-        print(f"\n{collector.source} / {city.name}: {len(records)} normaliziranih zapisa")
-        print(f"  sirovi odgovor: {path}")
-        print_preview(records)
+    with closing(db.connect(args.db)) as conn:
+        for collector in collectors:
+            run = db.start_run(conn, collector.source)
+            try:
+                raw = collector.fetch(city)
+            except requests.RequestException as exc:
+                db.finish_run(conn, run, ok=False, message=str(exc))
+                failed += 1  # kolektor je grešku već zapisao u log
+                continue
+            path = save_raw(raw, collector.source, city, stamp, args.raw_dir)
+            try:
+                records = collector.normalize(raw, city)
+            except (KeyError, TypeError, ValueError) as exc:
+                logger.error("%s: odgovor nije moguće obraditi (%r); spremljen je u %s",
+                             collector.source, exc, path)
+                db.finish_run(conn, run, ok=False, message=f"neobradiv odgovor: {exc!r}")
+                failed += 1
+                continue
+            db.save_station(conn, collector.source, city.name, city.name, city.latitude,
+                            city.longitude, city.name)
+            stored = db.insert_forecasts(conn, records, issued)
+            db.finish_run(conn, run, ok=True, records=stored)
+            print(f"\n{collector.source} / {city.name}: prognoza izdana {issued.isoformat()}, "
+                  f"zapisi {len(records)}, novih u bazi {stored}")
+            print(f"  sirovi odgovor: {path}")
+            print_preview(records)
     return 1 if failed else 0
 
 
@@ -132,10 +153,12 @@ def build_parser() -> argparse.ArgumentParser:
     )
     commands = parser.add_subparsers(dest="command", required=True)
 
-    fetch = commands.add_parser("fetch", help="dohvati podatke za jedan grad")
+    fetch = commands.add_parser("fetch", help="dohvati Open-Meteo prognozu za jedan grad")
     fetch.add_argument("--city", required=True, choices=CITIES, help="naziv grada")
     fetch.add_argument("--raw-dir", type=Path, default=Path("data/raw"),
                        help="mapa za sirove JSON odgovore (zadano: data/raw)")
+    fetch.add_argument("--db", type=Path, default=db.DEFAULT_PATH,
+                       help=f"SQLite baza (zadano: {db.DEFAULT_PATH.as_posix()})")
     fetch.set_defaults(func=cmd_fetch)
 
     collect = commands.add_parser("collect", help="spremi tekući sat mjerenja s izvora")

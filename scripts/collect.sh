@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Prikupljanje podataka za ZrakHR: pokreće kolektore, sirove odgovore sprema u <podaci>/raw/,
-# DHMZ-ova mjerenja i u bazu <podaci>/zrakhr.db, a u <podaci>/logs/ dopisuje po jedan redak
+# mjerenja i prognoze i u bazu <podaci>/zrakhr.db, a u <podaci>/logs/ dopisuje po jedan redak
 # sažetka za svako pokretanje.
 #
 # Svaki sat ga pokreće GitHub Actions (.github/workflows/collect.yml), a radi i iz crona na
@@ -58,7 +58,8 @@ collect_forecasts() {
   # Gradovi dolaze iz paketa (zrakhr.cities), da popis postoji samo na jednom mjestu
   while IFS= read -r city; do
     count=$((count + 1))
-    if ! python -m zrakhr fetch --city "$city" --raw-dir "$data_dir/raw/open-meteo/$month"; then
+    if ! python -m zrakhr fetch --city "$city" --raw-dir "$data_dir/raw/open-meteo/$month" \
+        --db "$data_dir/zrakhr.db"; then
       failed=$((failed + 1))
     fi
   done < <(python -c 'from zrakhr.cities import CITIES; print("\n".join(CITIES))')
