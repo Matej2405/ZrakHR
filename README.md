@@ -131,13 +131,16 @@ izmjene koda vrijede odmah, bez ponovne instalacije.
 Dohvat podataka iz korijena repozitorija, s aktiviranim venvom:
 
 ```bash
+python -m zrakhr db init                   # stvara SQLite bazu data/zrakhr.db
 python -m zrakhr collect --source dhmz     # tekući sat DHMZ-ovih mjerenja
 python -m zrakhr fetch --city Zagreb       # Open-Meteo prognoza za jedan grad
 python -m zrakhr fetch --city "Slavonski Brod"
 ```
 
-`collect` sprema sirovi XML u `data/raw/dhmz_<vrijeme opažanja>.xml` i ispisuje broj postaja,
-zapisa i odbačenih vrijednosti, uz razlog za svaku odbačenu. `fetch` sprema sirove odgovore u
+`collect` sprema sirovi XML u `data/raw/dhmz_<vrijeme opažanja>.xml`, a mjerenja i postaje u
+bazu `data/zrakhr.db` (koju stvara i sam, ako ne postoji), i ispisuje broj postaja, zapisa,
+odbačenih vrijednosti i novih zapisa u bazi. Ponovljeno prikupljanje istog sata ne stvara
+duplikate, a svako pokretanje bilježi se u tablici `collection_runs`. `fetch` sprema sirove odgovore u
 `data/raw/<izvor>_<grad>_<vrijeme dohvata>.json`. Podržani gradovi: Zagreb, Rijeka, Split, Osijek,
 Slavonski Brod. Sve opcije: `python -m zrakhr --help`.
 

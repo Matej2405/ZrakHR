@@ -116,14 +116,17 @@ def test_collect_saves_raw_xml_named_by_observation_time(
 ) -> None:
     """Datoteka nosi vrijeme opažanja u UTC-u, pa ponovljeno prikupljanje istog sata ne stvara duplikat."""
     monkeypatch.setattr(DhmzCollector, "fetch", lambda self: FIXTURE.read_bytes())
+    raw = tmp_path / "raw"
+    args = ["collect", "--source", "dhmz", "--raw-dir", str(raw), "--db", str(tmp_path / "zrakhr.db")]
 
-    assert main(["collect", "--source", "dhmz", "--raw-dir", str(tmp_path)]) == 0
-    assert main(["collect", "--source", "dhmz", "--raw-dir", str(tmp_path)]) == 0
+    assert main(args) == 0
+    assert main(args) == 0
 
-    assert [p.name for p in tmp_path.iterdir()] == ["dhmz_20261117T220000Z.xml"]
-    assert (tmp_path / "dhmz_20261117T220000Z.xml").read_bytes() == FIXTURE.read_bytes()
+    assert [p.name for p in raw.iterdir()] == ["dhmz_20261117T220000Z.xml"]
+    assert (raw / "dhmz_20261117T220000Z.xml").read_bytes() == FIXTURE.read_bytes()
     summary = capsys.readouterr().out.splitlines()[0]
-    assert summary == "dhmz 2026-11-17T23:00:00+01:00: postaje 6, zapisi 26, odbačene vrijednosti 4"
+    assert summary == ("dhmz 2026-11-17T23:00:00+01:00: postaje 6, zapisi 26, odbačene vrijednosti 4, "
+                       "novih u bazi 26")
 
 
 def test_collect_keeps_raw_xml_that_cannot_be_parsed(
@@ -132,6 +135,9 @@ def test_collect_keeps_raw_xml_that_cannot_be_parsed(
     """Neobradiv odgovor se ipak sprema, da podatak ne propadne, a naredba javlja grešku."""
     monkeypatch.setattr(DhmzCollector, "fetch", lambda self: b"<Hrvatska></Hrvatska>")
 
-    assert main(["collect", "--source", "dhmz", "--raw-dir", str(tmp_path)]) == 1
-    [saved] = tmp_path.iterdir()
+    raw = tmp_path / "raw"
+
+    assert main(["collect", "--source", "dhmz", "--raw-dir", str(raw),
+                 "--db", str(tmp_path / "zrakhr.db")]) == 1
+    [saved] = raw.iterdir()
     assert saved.name.startswith("dhmz_") and saved.name.endswith("_neobradeno.xml")

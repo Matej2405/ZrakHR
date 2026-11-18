@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Prikupljanje podataka za ZrakHR: pokreće kolektore, sirove odgovore sprema u <podaci>/raw/,
-# a u <podaci>/logs/ dopisuje po jedan redak sažetka za svako pokretanje.
+# DHMZ-ova mjerenja i u bazu <podaci>/zrakhr.db, a u <podaci>/logs/ dopisuje po jedan redak
+# sažetka za svako pokretanje.
 #
 # Svaki sat ga pokreće GitHub Actions (.github/workflows/collect.yml), a radi i iz crona na
 # bilo kojem računalu, npr. svaki sat u 20 minuta:
@@ -42,7 +43,8 @@ note() {
 
 collect_dhmz() {
   local output
-  if ! output="$(python -m zrakhr collect --source dhmz --raw-dir "$data_dir/raw/dhmz/$month")"; then
+  if ! output="$(python -m zrakhr collect --source dhmz --raw-dir "$data_dir/raw/dhmz/$month" \
+      --db "$data_dir/zrakhr.db")"; then
     note "dhmz: prikupljanje nije uspjelo"
     return 1
   fi
