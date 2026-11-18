@@ -4,7 +4,7 @@ import { AppShell } from './components/AppShell'
 import { AnalysisPage } from './pages/AnalysisPage'
 import { DashboardPage } from './pages/DashboardPage'
 import { ErrorPage } from './pages/ErrorPage'
-import { MapPage } from './pages/MapPage'
+import { LazyMapPage } from './pages/LazyMapPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { StatusPage } from './pages/StatusPage'
 
@@ -18,7 +18,7 @@ export const routes: RouteObject[] = [
         errorElement: <ErrorPage />,
         children: [
           { index: true, element: <DashboardPage /> },
-          { path: 'karta', element: <MapPage /> },
+          { path: 'karta', element: <LazyMapPage /> },
           { path: 'analiza', element: <AnalysisPage /> },
           { path: 'status', element: <StatusPage /> },
           { path: '*', element: <NotFoundPage /> },

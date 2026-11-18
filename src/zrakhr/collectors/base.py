@@ -1,15 +1,18 @@
-"""Zajednička osnova svih kolektora: sučelje i HTTP dohvat s ponavljanjem."""
+"""Zajednička osnova kolektora: HTTP dohvat s ponavljanjem i sučelje kolektora po gradu."""
 
 import logging
 import time
 from abc import ABC, abstractmethod
-from typing import Any, TypedDict
+from collections.abc import Callable
+from typing import Any, TypedDict, TypeVar
 
 import requests
 
 from zrakhr.cities import City
 
 logger = logging.getLogger(__name__)
+
+T = TypeVar("T")
 
 
 class Record(TypedDict):
@@ -23,8 +26,8 @@ class Record(TypedDict):
     unit: str
 
 
-class BaseCollector(ABC):
-    """Apstraktni kolektor koji dohvaća sirove podatke za grad i normalizira ih."""
+class HttpSource:
+    """Izvor podataka dostupan preko HTTP-a: naziv izvora i dohvat koji ponavlja privremene greške."""
 
     source: str  # naziv izvora, upisuje se u zapise i u imena datoteka
 
@@ -36,22 +39,15 @@ class BaseCollector(ABC):
         self.retries = retries
         self.backoff = backoff
 
-    @abstractmethod
-    def fetch(self, city: City) -> dict[str, Any]:
-        """Dohvaća sirovi odgovor izvora za zadani grad."""
-
-    @abstractmethod
-    def normalize(self, raw: dict[str, Any], city: City) -> list[Record]:
-        """Pretvara sirovi odgovor u listu normaliziranih zapisa."""
-
-    def _get_json(self, url: str, params: dict[str, Any]) -> dict[str, Any]:
-        """HTTP GET koji vraća JSON; privremene greške ponavlja uz eksponencijalni backoff."""
+    def _get(self, url: str, params: dict[str, Any] | None,
+             parse: Callable[[requests.Response], T]) -> T:
+        """HTTP GET čiji odgovor pretvara funkcija parse; privremene greške ponavlja uz eksponencijalni backoff."""
         attempt = 1
         while True:
             try:
                 response = requests.get(url, params=params, timeout=self.timeout)
                 response.raise_for_status()
-                data = response.json()
+                result = parse(response)
             except requests.RequestException as exc:
                 if attempt >= self.retries or not _is_retryable(exc):
                     logger.error("%s: dohvat nije uspio (pokušaj %d/%d): %s",
@@ -65,7 +61,23 @@ class BaseCollector(ABC):
             else:
                 logger.info("%s: dohvaćeno (HTTP %d, pokušaj %d/%d)",
                             self.source, response.status_code, attempt, self.retries)
-                return data
+                return result
+
+    def _get_json(self, url: str, params: dict[str, Any]) -> dict[str, Any]:
+        """HTTP GET koji vraća JSON, uz ponavljanje kao u _get."""
+        return self._get(url, params, lambda response: response.json())
+
+
+class BaseCollector(HttpSource, ABC):
+    """Kolektor koji podatke dohvaća za pojedini grad (Open-Meteo) i normalizira ih."""
+
+    @abstractmethod
+    def fetch(self, city: City) -> dict[str, Any]:
+        """Dohvaća sirovi odgovor izvora za zadani grad."""
+
+    @abstractmethod
+    def normalize(self, raw: dict[str, Any], city: City) -> list[Record]:
+        """Pretvara sirovi odgovor u listu normaliziranih zapisa."""
 
 
 def _is_retryable(exc: requests.RequestException) -> bool:

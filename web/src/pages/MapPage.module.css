@@ -1,0 +1,30 @@
+/* Ploča lijevo, a karta ispunjava ostatak zaslona ispod zaglavlja */
+.layout {
+  display: grid;
+  grid-template-areas: 'panel map';
+  grid-template-columns: 22rem 1fr;
+  height: calc(100dvh - var(--header-height));
+}
+
+.panel {
+  display: grid;
+  grid-area: panel;
+  min-height: 0;
+}
+
+.map {
+  grid-area: map;
+  min-height: 0;
+}
+
+/* Na mobitelu je karta iznad ploče, a pomiče se cijela stranica */
+@media (max-width: 40rem) {
+  .layout {
+    grid-template-areas:
+      'map'
+      'panel';
+    grid-template-columns: 1fr;
+    grid-template-rows: 60dvh auto;
+    height: auto;
+  }
+}

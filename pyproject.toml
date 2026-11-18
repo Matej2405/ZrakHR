@@ -16,3 +16,5 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+# Testovi mogu importati samostalne skripte iz scripts/ (npr. export_stations)
+pythonpath = ["scripts"]
