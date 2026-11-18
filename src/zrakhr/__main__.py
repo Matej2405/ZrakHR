@@ -1,4 +1,7 @@
-"""Naredbeni redak, npr. ``python -m zrakhr collect --source azo`` ili ``python -m zrakhr db init``."""
+"""Naredbeni redak, npr. ``zrakhr collect --source azo``, ``zrakhr stations`` ili ``zrakhr db init``.
+
+Izlazni kodovi: 0 ako je sve uspjelo, 1 ako izvor nije uspio, 2 za pogrešnu upotrebu.
+"""
 
 import argparse
 import json
@@ -210,38 +213,64 @@ def cmd_db_init(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_stations(args: argparse.Namespace) -> int:
+    """Ispisuje postaje iz baze, po izvoru i nazivu; postaje se upisuju pri prikupljanju."""
+    query = "SELECT source, external_id, name, city, lat, lon FROM stations"
+    params: tuple[str, ...] = ()
+    if args.source:
+        query += " WHERE source = ?"
+        params = (args.source,)
+    with closing(db.connect(args.db)) as conn:
+        rows = conn.execute(query + " ORDER BY source, name", params).fetchall()
+    if not rows:
+        print(f"u bazi {args.db} nema postaja; upisuju se pri prikupljanju (zrakhr collect, zrakhr fetch)")
+        return 0
+    print(f"{'izvor':<22}  {'oznaka':<25}  {'naziv':<25}  {'grad':<15}  {'lat':>9}  {'lon':>9}")
+    for source, external_id, name, city, lat, lon in rows:
+        coords = f"{lat:>9.4f}  {lon:>9.4f}" if lat is not None and lon is not None else ""
+        print(f"{source:<22}  {external_id:<25}  {name or '':<25}  {city or '':<15}  {coords}".rstrip())
+    print(f"postaje: {len(rows)}")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     """Definira naredbe i argumente CLI-ja."""
+    # Opcije zajedničke svim naredbama, da rade i iza naziva naredbe (zrakhr collect -v ...)
+    common = argparse.ArgumentParser(add_help=False)
+    common.add_argument("--db", type=Path, default=db.DEFAULT_PATH,
+                        help=f"SQLite baza (zadano: {db.DEFAULT_PATH.as_posix()})")
+    common.add_argument("-v", "--verbose", action="store_true",
+                        help="ispiši i pojedinosti rada (npr. svaki HTTP upit), ne samo upozorenja i greške")
+
     parser = argparse.ArgumentParser(
         prog="zrakhr",
         description="Prikupljanje podataka o vremenu i kvaliteti zraka za hrvatske gradove.",
+        epilog="Izlazni kodovi: 0 ako je sve uspjelo, 1 ako izvor nije uspio, 2 za pogrešnu upotrebu.",
     )
     commands = parser.add_subparsers(dest="command", required=True)
 
-    fetch = commands.add_parser("fetch", help="dohvati Open-Meteo prognozu za jedan grad")
+    fetch = commands.add_parser("fetch", parents=[common], help="dohvati Open-Meteo prognozu za jedan grad")
     fetch.add_argument("--city", required=True, choices=CITIES, help="naziv grada")
     fetch.add_argument("--raw-dir", type=Path, default=Path("data/raw"),
                        help="mapa za sirove JSON odgovore (zadano: data/raw)")
-    fetch.add_argument("--db", type=Path, default=db.DEFAULT_PATH,
-                       help=f"SQLite baza (zadano: {db.DEFAULT_PATH.as_posix()})")
     fetch.set_defaults(func=cmd_fetch)
 
-    collect = commands.add_parser("collect", help="spremi mjerenja s izvora")
+    collect = commands.add_parser("collect", parents=[common], help="spremi mjerenja s izvora")
     collect.add_argument("--source", required=True, choices=("dhmz", "azo"),
                          help="izvor mjerenja: dhmz (tekući sat) ili azo (od --since do danas)")
     collect.add_argument("--since", type=date.fromisoformat,
                          help="samo za azo: prvi dan dohvata, npr. 2026-10-01 (zadano: jučer)")
     collect.add_argument("--raw-dir", type=Path, default=Path("data/raw"),
                          help="mapa za sirove odgovore (zadano: data/raw)")
-    collect.add_argument("--db", type=Path, default=db.DEFAULT_PATH,
-                         help=f"SQLite baza (zadano: {db.DEFAULT_PATH.as_posix()})")
     collect.set_defaults(func=cmd_collect)
+
+    stations = commands.add_parser("stations", parents=[common], help="ispiši postaje poznate bazi")
+    stations.add_argument("--source", choices=db.SOURCES, help="samo postaje ovog izvora")
+    stations.set_defaults(func=cmd_stations)
 
     database = commands.add_parser("db", help="upravljanje bazom")
     database_commands = database.add_subparsers(dest="db_command", required=True)
-    init = database_commands.add_parser("init", help="stvori bazu i tablice")
-    init.add_argument("--db", type=Path, default=db.DEFAULT_PATH,
-                      help=f"SQLite baza (zadano: {db.DEFAULT_PATH.as_posix()})")
+    init = database_commands.add_parser("init", parents=[common], help="stvori bazu i tablice")
     init.set_defaults(func=cmd_db_init)
     return parser
 
@@ -249,7 +278,8 @@ def build_parser() -> argparse.ArgumentParser:
 def main(argv: list[str] | None = None) -> int:
     """Ulazna točka CLI-ja."""
     args = build_parser().parse_args(argv)
-    logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+    logging.basicConfig(level=logging.INFO if args.verbose else logging.WARNING,
+                        format="%(asctime)s %(levelname)s %(name)s: %(message)s")
     return args.func(args)
 
 
