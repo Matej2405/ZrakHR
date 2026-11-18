@@ -7,19 +7,20 @@
 # bilo kojem računalu, npr. svaki sat u 20 minuta:
 #   20 * * * *  cd /putanja/do/ZrakHR && scripts/collect.sh dhmz data
 #
-# Upotreba: scripts/collect.sh <dhmz|forecasts> [mapa-podataka]
+# Upotreba: scripts/collect.sh <dhmz|azo|forecasts> [mapa-podataka]
 #   dhmz       tekući sat DHMZ-ovih mjerenja; feed sadrži samo tekući sat, pa ide svaki sat
+#   azo        AZO-ova satna mjerenja kvalitete zraka od jučer do danas; portal čuva povijest
 #   forecasts  Open-Meteo prognoze vremena i kvalitete zraka za gradove projekta
 # Izlazni kod je 0 ako je sve prikupljeno, 1 ako izvor nije uspio i 2 za pogrešnu upotrebu.
 set -euo pipefail
 
-usage='Upotreba: scripts/collect.sh <dhmz|forecasts> [mapa-podataka]'
+usage='Upotreba: scripts/collect.sh <dhmz|azo|forecasts> [mapa-podataka]'
 what="${1:-}"
 data_dir="${2:-data}"
 month="$(date -u +%Y-%m)"
 log="$data_dir/logs/collect-$month.log"
 
-if [[ "$what" != dhmz && "$what" != forecasts ]]; then
+if [[ "$what" != dhmz && "$what" != azo && "$what" != forecasts ]]; then
   echo "$usage" >&2
   exit 2
 fi
@@ -41,16 +42,20 @@ note() {
   fi
 }
 
-collect_dhmz() {
-  local output
-  if ! output="$(python -m zrakhr collect --source dhmz --raw-dir "$data_dir/raw/dhmz/$month" \
-      --db "$data_dir/zrakhr.db")"; then
-    note "dhmz: prikupljanje nije uspjelo"
+# Mjerenja s izvora (dhmz ili azo). AZO može djelomično uspjeti: tada ispisuje sažetak s brojem
+# nedohvaćenih nizova, koji se upisuje u log, a izlazni kod ostaje 1.
+collect_measurements() {
+  local source="$1" output status=0
+  output="$(python -m zrakhr collect --source "$source" --raw-dir "$data_dir/raw/$source/$month" \
+    --db "$data_dir/zrakhr.db")" || status=$?
+  if [[ -z "$output" ]]; then
+    note "$source: prikupljanje nije uspjelo"
     return 1
   fi
   echo "$output"
-  # Prvi redak ispisa naredbe collect je sažetak: postaje, zapisi i odbačene vrijednosti
+  # Prvi redak ispisa naredbe collect je sažetak: zapisi, odbačene vrijednosti i novi zapisi u bazi
   note "${output%%$'\n'*}"
+  return "$status"
 }
 
 collect_forecasts() {
@@ -68,6 +73,6 @@ collect_forecasts() {
 }
 
 case "$what" in
-  dhmz) collect_dhmz ;;
+  dhmz | azo) collect_measurements "$what" ;;
   forecasts) collect_forecasts ;;
 esac

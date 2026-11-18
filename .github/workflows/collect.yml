@@ -1,19 +1,21 @@
 # Satno prikupljanje podataka (#2). Sirovi odgovori spremaju se u granu data, koja služi kao
 # arhiva; obrada i baza ih čitaju naknadno. DHMZ objavljuje samo tekući sat, pa se pokreće
 # dvaput na sat: GitHubov raspored zna kasniti, a datoteka nosi vrijeme opažanja, pa drugo
-# pokretanje u istom satu ne stvara duplikat.
+# pokretanje u istom satu ne stvara duplikat. AZO čuva povijest i objavljuje sa zakašnjenjem od
+# oko 2 sata, pa se dohvaća svaka 3 sata, uvijek od jučer, i ništa se ne propušta.
 name: Collect
 
 on:
   schedule:
     - cron: '20,50 * * * *' # DHMZ mjerenja
     - cron: '35 */6 * * *' # Open-Meteo prognoze, svakih 6 sati
+    - cron: '5 */3 * * *' # AZO mjerenja, svaka 3 sata
   workflow_dispatch:
     inputs:
       what:
         description: Što prikupiti
         type: choice
-        options: [dhmz, forecasts]
+        options: [dhmz, azo, forecasts]
         default: dhmz
 
 permissions:
@@ -29,7 +31,10 @@ jobs:
     name: Collect
     runs-on: ubuntu-latest
     env:
-      WHAT: ${{ github.event.schedule == '35 */6 * * *' && 'forecasts' || inputs.what || 'dhmz' }}
+      WHAT: >-
+        ${{ github.event.schedule == '35 */6 * * *' && 'forecasts'
+        || github.event.schedule == '5 */3 * * *' && 'azo'
+        || inputs.what || 'dhmz' }}
     steps:
       - uses: actions/checkout@v7
       - uses: actions/checkout@v7

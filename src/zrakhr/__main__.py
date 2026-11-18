@@ -1,4 +1,4 @@
-"""Naredbeni redak, npr. ``python -m zrakhr collect --source dhmz`` ili ``python -m zrakhr db init``."""
+"""Naredbeni redak, npr. ``python -m zrakhr collect --source azo`` ili ``python -m zrakhr db init``."""
 
 import argparse
 import json
@@ -6,7 +6,7 @@ import logging
 import sys
 import xml.etree.ElementTree as ET
 from contextlib import closing
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -15,12 +15,15 @@ import requests
 from zrakhr import db
 from zrakhr.cities import CITIES, City
 from zrakhr.collectors import (
+    STATIONS,
+    AzoCollector,
     BaseCollector,
     DhmzCollector,
     OpenMeteoAirQualityCollector,
     OpenMeteoWeatherCollector,
     Record,
 )
+from zrakhr.collectors.azo import TIMEZONE as AZO_TIMEZONE
 
 PREVIEW_ROWS = 5
 
@@ -91,11 +94,22 @@ def cmd_fetch(args: argparse.Namespace) -> int:
 
 
 def cmd_collect(args: argparse.Namespace) -> int:
-    """Dohvaća tekući sat DHMZ-ova feeda, sprema sirovi XML i zapise u bazu te ispisuje sažetak.
+    """Prikuplja mjerenja s odabranog izvora i sprema ih u bazu.
 
-    Vraća 1 ako ne uspije. Prvi redak ispisa je sažetak koji scripts/collect.sh upisuje u log
-    prikupljanja. Svako pokretanje, uspješno ili ne, bilježi se u tablici collection_runs.
+    Vraća 1 ako ne uspije i 2 za pogrešnu upotrebu. Prvi redak ispisa je sažetak koji
+    scripts/collect.sh upisuje u log prikupljanja. Svako pokretanje, uspješno ili ne, bilježi se
+    u tablici collection_runs.
     """
+    if args.source == "azo":
+        return collect_azo(args)
+    if args.since is not None:
+        logger.error("--since vrijedi samo za izvor azo; DHMZ objavljuje samo tekući sat")
+        return 2
+    return collect_dhmz(args)
+
+
+def collect_dhmz(args: argparse.Namespace) -> int:
+    """Dohvaća tekući sat DHMZ-ova feeda, sprema sirovi XML i zapise u bazu te ispisuje sažetak."""
     collector = DhmzCollector()
     with closing(db.connect(args.db)) as conn:
         run = db.start_run(conn, collector.source)
@@ -136,6 +150,57 @@ def cmd_collect(args: argparse.Namespace) -> int:
     return 0
 
 
+def collect_azo(args: argparse.Namespace) -> int:
+    """Dohvaća AZO-ove satne nizove od --since (zadano: jučer) do danas, sprema sirovi JSON i zapise.
+
+    Portal čuva povijest, pa isti dohvat služi i za satno prikupljanje i za dohvat unatrag;
+    preklapanje s prethodnim pokretanjem ne stvara duplikate u bazi.
+    """
+    collector = AzoCollector()
+    now = datetime.now(timezone.utc)
+    today = now.astimezone(AZO_TIMEZONE).date()
+    start = args.since or today - timedelta(days=1)
+    if start > today:
+        logger.error("--since %s je u budućnosti", start)
+        return 2
+
+    with closing(db.connect(args.db)) as conn:
+        run = db.start_run(conn, collector.source)
+        series, failed = collector.fetch(start, today)
+        path = None
+        if series:
+            args.raw_dir.mkdir(parents=True, exist_ok=True)
+            path = args.raw_dir / f"{collector.source}_{utc_stamp(now)}.json"
+            raw = {"from": start.isoformat(), "to": today.isoformat(), "series": series}
+            path.write_text(json.dumps(raw, ensure_ascii=False), encoding="utf-8")
+        try:
+            snapshot = collector.parse(series)
+        except (KeyError, TypeError, ValueError) as exc:
+            logger.error("%s: odgovor nije moguće obraditi (%r); spremljen je u %s",
+                         collector.source, exc, path)
+            db.finish_run(conn, run, ok=False, message=f"neobradiv odgovor: {exc!r}")
+            return 1
+        for station in STATIONS:
+            db.save_station(conn, collector.source, str(station.id), station.name, station.lat,
+                            station.lon, station.city)
+        stored = db.insert_measurements(conn, snapshot.records)
+        db.finish_run(conn, run, ok=not failed, records=stored, rejected=len(snapshot.rejected),
+                      message=f"nedohvaćeni nizovi: {', '.join(failed)}" if failed else None)
+
+    print(f"{collector.source} {start.isoformat()} do {today.isoformat()}: nizovi {len(series)}, "
+          f"zapisi {len(snapshot.records)}, odbačene vrijednosti {len(snapshot.rejected)}, "
+          f"novih u bazi {stored}" + (f", nedohvaćeni nizovi {len(failed)}" if failed else ""))
+    if path:
+        print(f"  sirovi odgovor: {path}")
+    if failed:
+        print(f"  nedohvaćeni nizovi (postaja/tvar): {', '.join(failed)}")
+    for rejected in snapshot.rejected:
+        print(f"  odbačeno: {rejected['location']}, {rejected['metric']} = {rejected['raw']!r} "
+              f"({rejected['reason']})")
+    print_preview(snapshot.records[-PREVIEW_ROWS:])
+    return 1 if failed else 0
+
+
 def cmd_db_init(args: argparse.Namespace) -> int:
     """Stvara bazu i tablice; na postojećoj bazi ništa ne mijenja."""
     with closing(db.connect(args.db)) as conn:
@@ -161,9 +226,11 @@ def build_parser() -> argparse.ArgumentParser:
                        help=f"SQLite baza (zadano: {db.DEFAULT_PATH.as_posix()})")
     fetch.set_defaults(func=cmd_fetch)
 
-    collect = commands.add_parser("collect", help="spremi tekući sat mjerenja s izvora")
-    collect.add_argument("--source", required=True, choices=("dhmz",),
-                         help="izvor mjerenja (zasad dhmz)")
+    collect = commands.add_parser("collect", help="spremi mjerenja s izvora")
+    collect.add_argument("--source", required=True, choices=("dhmz", "azo"),
+                         help="izvor mjerenja: dhmz (tekući sat) ili azo (od --since do danas)")
+    collect.add_argument("--since", type=date.fromisoformat,
+                         help="samo za azo: prvi dan dohvata, npr. 2026-10-01 (zadano: jučer)")
     collect.add_argument("--raw-dir", type=Path, default=Path("data/raw"),
                          help="mapa za sirove odgovore (zadano: data/raw)")
     collect.add_argument("--db", type=Path, default=db.DEFAULT_PATH,
