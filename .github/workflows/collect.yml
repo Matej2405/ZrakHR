@@ -1,8 +1,11 @@
 # Satno prikupljanje podataka (#2). Sirovi odgovori spremaju se u granu data, koja služi kao
-# arhiva; obrada i baza ih čitaju naknadno. DHMZ objavljuje samo tekući sat, pa se pokreće
-# dvaput na sat: GitHubov raspored zna kasniti, a datoteka nosi vrijeme opažanja, pa drugo
-# pokretanje u istom satu ne stvara duplikat. AZO čuva povijest i objavljuje sa zakašnjenjem od
-# oko 2 sata, pa se dohvaća svaka 3 sata, uvijek od jučer, i ništa se ne propušta.
+# arhiva; baza se iz njih gradi naredbom zrakhr import. DHMZ objavljuje samo tekući sat, pa se
+# pokreće svaki sat. GitHubov raspored pod opterećenjem kasni ili preskače pokretanja (18.11.
+# izvršeno je jedno od 26), pa pokretanja pouzdano okida cron-job.org preko workflow_dispatch
+# (vidi README, Prikupljanje podataka); raspored ispod ostaje kao rezerva. Datoteka nosi vrijeme
+# opažanja, pa drugo pokretanje u istom satu ne stvara duplikat. AZO čuva povijest i objavljuje
+# sa zakašnjenjem od oko 2 sata, pa se dohvaća svaka 3 sata, uvijek od jučer, i ništa se ne
+# propušta. Dnevna provjera (check) u log upisuje koliko je sati jučer prikupljeno po izvoru.
 name: Collect
 
 on:
@@ -10,12 +13,13 @@ on:
     - cron: '20,50 * * * *' # DHMZ mjerenja
     - cron: '35 */6 * * *' # Open-Meteo prognoze, svakih 6 sati
     - cron: '5 */3 * * *' # AZO mjerenja, svaka 3 sata
+    - cron: '45 6 * * *' # dnevna provjera jučerašnjeg dana, nakon AZO-ova dohvata u 06:05
   workflow_dispatch:
     inputs:
       what:
         description: Što prikupiti
         type: choice
-        options: [dhmz, azo, forecasts]
+        options: [dhmz, azo, forecasts, check]
         default: dhmz
 
 permissions:
@@ -34,6 +38,7 @@ jobs:
       WHAT: >-
         ${{ github.event.schedule == '35 */6 * * *' && 'forecasts'
         || github.event.schedule == '5 */3 * * *' && 'azo'
+        || github.event.schedule == '45 6 * * *' && 'check'
         || inputs.what || 'dhmz' }}
     steps:
       - uses: actions/checkout@v7
@@ -57,8 +62,9 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add raw logs
-          # Drugo pokretanje u istom satu prepisuje istu DHMZ datoteku; tada nema što spremiti
-          if git diff --cached --quiet -- raw; then
+          # Drugo pokretanje u istom satu prepisuje istu DHMZ datoteku; tada nema što spremiti.
+          # Provjera ne dodaje sirove podatke, nego samo retke u logu, pa se ona uvijek sprema.
+          if [[ "$WHAT" != check ]] && git diff --cached --quiet -- raw; then
             echo "Nema novih podataka."
             exit 0
           fi

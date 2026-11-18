@@ -7,20 +7,23 @@
 # bilo kojem računalu, npr. svaki sat u 20 minuta:
 #   20 * * * *  cd /putanja/do/ZrakHR && scripts/collect.sh dhmz data
 #
-# Upotreba: scripts/collect.sh <dhmz|azo|forecasts> [mapa-podataka]
+# Upotreba: scripts/collect.sh <dhmz|azo|forecasts|check> [mapa-podataka]
 #   dhmz       tekući sat DHMZ-ovih mjerenja; feed sadrži samo tekući sat, pa ide svaki sat
 #   azo        AZO-ova satna mjerenja kvalitete zraka od jučer do danas; portal čuva povijest
 #   forecasts  Open-Meteo prognoze vremena i kvalitete zraka za gradove projekta
-# Izlazni kod je 0 ako je sve prikupljeno, 1 ako izvor nije uspio i 2 za pogrešnu upotrebu.
+#   check      dnevna provjera: učitava arhivu raw/ u bazu i za jučer (UTC) upisuje u log po
+#              jedan redak po izvoru s brojem sati i zapisa te satima koji nedostaju
+# Izlazni kod je 0 ako je sve prikupljeno (za check: ako je jučer potpun), 1 ako izvor nije
+# uspio i 2 za pogrešnu upotrebu.
 set -euo pipefail
 
-usage='Upotreba: scripts/collect.sh <dhmz|azo|forecasts> [mapa-podataka]'
+usage='Upotreba: scripts/collect.sh <dhmz|azo|forecasts|check> [mapa-podataka]'
 what="${1:-}"
 data_dir="${2:-data}"
 month="$(date -u +%Y-%m)"
 log="$data_dir/logs/collect-$month.log"
 
-if [[ "$what" != dhmz && "$what" != azo && "$what" != forecasts ]]; then
+if [[ "$what" != dhmz && "$what" != azo && "$what" != forecasts && "$what" != check ]]; then
   echo "$usage" >&2
   exit 2
 fi
@@ -72,7 +75,24 @@ collect_forecasts() {
   [[ $count -gt 0 && $failed -eq 0 ]]
 }
 
+# Baza se dopunjuje iz cijele arhive, pa je potpuna i kad je prikupljanje radilo negdje drugdje
+# (u GitHub Actionsu baza nakon pokretanja nestaje, a arhiva ostaje u grani data)
+check() {
+  local output status=0
+  python -m zrakhr import --raw-dir "$data_dir/raw" --db "$data_dir/zrakhr.db" || status=$?
+  output="$(python -m zrakhr check --db "$data_dir/zrakhr.db")" || status=$?
+  if [[ -z "$output" ]]; then
+    note "check: provjera nije uspjela"
+    return 1
+  fi
+  while IFS= read -r line; do
+    note "$line"
+  done <<< "$output"
+  return "$status"
+}
+
 case "$what" in
   dhmz | azo) collect_measurements "$what" ;;
   forecasts) collect_forecasts ;;
+  check) check ;;
 esac

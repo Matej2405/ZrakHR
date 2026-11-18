@@ -139,6 +139,8 @@ zrakhr collect --source azo --since 2026-10-01   # AZO-ova povijest od 1.10.
 zrakhr fetch --city Zagreb       # Open-Meteo prognoza za jedan grad
 zrakhr fetch --city "Slavonski Brod"
 zrakhr stations                  # postaje u bazi; --source dhmz|azo|... za jedan izvor
+zrakhr import --raw-dir data/raw # učitava arhivu sirovih odgovora u bazu
+zrakhr check                     # jesu li jučer u bazi svi sati mjerenja i sve prognoze
 ```
 
 Svaka naredba prima `--db <putanja>` (zadano `data/zrakhr.db`) i `-v`/`--verbose`, koji uz
@@ -174,13 +176,48 @@ Virtualno okruženje se isključuje naredbom `deactivate`.
 
 ## Prikupljanje podataka
 
-Podatke svaki sat prikuplja workflow [Collect](.github/workflows/collect.yml) na GitHub Actionsu:
-DHMZ mjerenja u :20 i :50 (dvaput na sat, jer GitHubov raspored zna kasniti), AZO mjerenja svaka
-3 sata (portal čuva povijest i objavljuje sa zakašnjenjem od oko 2 sata, pa se uvijek dohvaća od
-jučer) i Open-Meteo prognoze svakih 6 sati. Sirovi odgovori spremaju se u granu
-[`data`](https://github.com/Matej2405/ZrakHR/tree/data), koja služi kao arhiva. Arhiva je u
-zasebnoj grani jer računalo na kojem se workflow izvodi nakon svakog pokretanja nestaje, a sirovi
-podaci se ne commitaju u `main`.
+Podatke prikuplja workflow [Collect](.github/workflows/collect.yml) na GitHub Actionsu. Sirovi
+odgovori spremaju se u granu [`data`](https://github.com/Matej2405/ZrakHR/tree/data), koja služi
+kao arhiva, a log prikupljanja u njezinu mapu `logs/`. Arhiva je u zasebnoj grani jer računalo na
+kojem se workflow izvodi nakon svakog pokretanja nestaje, a sirovi podaci se ne commitaju u
+`main`. Iz istog razloga baza ne ostaje u Actionsu, nego se gradi iz arhive (`zrakhr import`).
+
+GitHubov raspored pod opterećenjem kasni ili preskače pokretanja (18.11.2026. izvršeno je jedno
+od 26 zakazanih DHMZ-ovih), a DHMZ objavljuje samo tekući sat, pa je propušteni sat izgubljen.
+Zato workflow pouzdano okida vanjski cron, [cron-job.org](https://cron-job.org), preko
+`workflow_dispatch`; raspored u workflowu ostaje kao rezerva. Ponovljeno pokretanje istog sata
+ne stvara duplikate.
+
+| Posao na cron-job.org | Kada                  | Zašto                                                                  |
+| --------------------- | --------------------- | ---------------------------------------------------------------------- |
+| `dhmz`                | svaki sat             | feed sadrži samo zadnji sat                                            |
+| `azo`                 | svaka 3 sata          | portal čuva povijest i kasni oko 2 sata, pa se uvijek dohvaća od jučer |
+| `forecasts`           | svakih 6 sati         | Open-Meteo osvježava prognozu nekoliko puta dnevno                     |
+| `check`               | jednom dnevno, ujutro | dnevna provjera jučerašnjeg dana (vidi dolje)                          |
+
+Svaki posao šalje `POST` na
+`https://api.github.com/repos/Matej2405/ZrakHR/actions/workflows/collect.yml/dispatches` s
+tijelom `{"ref": "main", "inputs": {"what": "dhmz"}}` (odnosno `azo`, `forecasts`, `check`) i
+zaglavljima `Accept: application/vnd.github+json` i `Authorization: Bearer <token>`. Token treba
+biti fine-grained, ograničen na ovaj repozitorij i samo s dozvolom _Actions: read and write_.
+Poslove i token održava Matej Brodarac na svom računu.
+
+Dnevna provjera (`check`) učita cijelu arhivu u bazu i u log upiše po jedan redak po izvoru za
+jučerašnji dan (UTC), npr.:
+
+```text
+dhmz 2026-11-20: sati 24/24, zapisi 8290
+azo 2026-11-20: sati 23/24, zapisi 875, nedostaju sati (UTC) 23
+open-meteo-weather 2026-11-20: pokretanja prognoze 4/4, zapisi 18240
+```
+
+Ako nekom izvoru nedostaje sat mjerenja ili pokretanje prognoze, job je crven. Isto se lokalno
+provjerava za bilo koji dan:
+
+```bash
+zrakhr import --raw-dir ../zrakhr-data/raw   # baza data/zrakhr.db iz arhive
+zrakhr check --date 2026-11-20
+```
 
 Arhiva se lokalno otvara u zasebnoj mapi, bez promjene trenutne grane:
 
@@ -195,6 +232,7 @@ Ista skripta radi i lokalno ili iz crona na stalno upaljenom računalu:
 scripts/collect.sh dhmz data        # u data/raw/dhmz/ i log u data/logs/
 scripts/collect.sh azo data         # u data/raw/azo/
 scripts/collect.sh forecasts data   # u data/raw/open-meteo/
+scripts/collect.sh check data       # dnevna provjera jučerašnjeg dana
 ```
 
 Na Windowsima skripta radi u Git Bashu ili WSL-u.
