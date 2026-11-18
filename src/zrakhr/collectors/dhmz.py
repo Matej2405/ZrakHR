@@ -7,7 +7,7 @@ fizikalno nemoguće vrijednosti (npr. vlažnost 0 %) se odbacuju i bilježe s ra
 """
 
 import xml.etree.ElementTree as ET
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from datetime import datetime
 from typing import TypedDict
 from zoneinfo import ZoneInfo
@@ -67,6 +67,8 @@ class DhmzSnapshot:
     stations: int
     records: list[Record]
     rejected: list[RejectedValue]
+    # (lat, lon) po nazivu postaje, za tablicu postaja; postaje s neispravnim koordinatama nisu tu
+    coordinates: dict[str, tuple[float, float]] = field(default_factory=dict)
 
 
 class DhmzCollector(HttpSource):
@@ -87,6 +89,7 @@ class DhmzCollector(HttpSource):
         stations = root.findall("Grad")
         records: list[Record] = []
         rejected: list[RejectedValue] = []
+        coordinates: dict[str, tuple[float, float]] = {}
 
         def add(location: str, metric: Metric, text: str) -> None:
             checked = _check(metric, text)
@@ -102,6 +105,11 @@ class DhmzCollector(HttpSource):
             data = station.find("Podatci")
             if not name or data is None:
                 continue
+            try:
+                coordinates[name] = (float(station.findtext("Lat") or ""),
+                                     float(station.findtext("Lon") or ""))
+            except ValueError:
+                pass  # postaja bez koordinata svejedno daje mjerenja
             for tag, metric in METRICS.items():
                 text = (data.findtext(tag) or "").strip()
                 if text in MISSING:
@@ -121,7 +129,7 @@ class DhmzCollector(HttpSource):
                                               reason="nepoznat smjer"))
 
         return DhmzSnapshot(observed_at=observed_at, stations=len(stations), records=records,
-                            rejected=rejected)
+                            rejected=rejected, coordinates=coordinates)
 
 
 def _observation_time(root: ET.Element) -> datetime:
