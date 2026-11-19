@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Hrvatska>
+<DatumTermin>
+<Datum>19.11.2026</Datum>
+<Termin>23</Termin>
+</DatumTermin>
+<Grad autom="0">
+<GradIme>Dubrovnik-aerodrom</GradIme>
+<Lat>42.563</Lat>
+<Lon>18.270 </Lon>
+<Podatci>
+<Temp> 17.6</Temp>
+<Vlaga>88</Vlaga>
+<Tlak>1004.2</Tlak>
+<TlakTend>+2.6</TlakTend>
+<VjetarSmjer>W</VjetarSmjer>
+<VjetarBrzina> 3</VjetarBrzina>
+<Vrijeme>umjereno oblačno</Vrijeme>
+<VrijemeZnak>3n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Pula-aerodrom</GradIme>
+<Lat>44.896</Lat>
+<Lon>13.932 </Lon>
+<Podatci>
+<Temp>  7.3</Temp>
+<Vlaga>97</Vlaga>
+<Tlak>1003.3</Tlak>
+<TlakTend>+2.4</TlakTend>
+<VjetarSmjer>E</VjetarSmjer>
+<VjetarBrzina> 2</VjetarBrzina>
+<Vrijeme>vedro</Vrijeme>
+<VrijemeZnak>1n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Rijeka-aerodrom</GradIme>
+<Lat>45.224</Lat>
+<Lon>14.582 </Lon>
+<Podatci>
+<Temp> 10.2</Temp>
+<Vlaga>92</Vlaga>
+<Tlak>1003.0</Tlak>
+<TlakTend>+2.7</TlakTend>
+<VjetarSmjer>E</VjetarSmjer>
+<VjetarBrzina> 2</VjetarBrzina>
+<Vrijeme>vedro</Vrijeme>
+<VrijemeZnak>1n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Split-aerodrom</GradIme>
+<Lat>43.539</Lat>
+<Lon>16.301 </Lon>
+<Podatci>
+<Temp> 13.6</Temp>
+<Vlaga>82</Vlaga>
+<Tlak>1004.3</Tlak>
+<TlakTend>+4.3</TlakTend>
+<VjetarSmjer>NW</VjetarSmjer>
+<VjetarBrzina> 3</VjetarBrzina>
+<Vrijeme>vedro</Vrijeme>
+<VrijemeZnak>1n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Zadar-aerodrom</GradIme>
+<Lat>44.097</Lat>
+<Lon>15.363 </Lon>
+<Podatci>
+<Temp>  8.8</Temp>
+<Vlaga>98</Vlaga>
+<Tlak>1004.7</Tlak>
+<TlakTend>+3.5</TlakTend>
+<VjetarSmjer>E</VjetarSmjer>
+<VjetarBrzina> 1</VjetarBrzina>
+<Vrijeme>potpuno oblačno</Vrijeme>
+<VrijemeZnak>6</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Zagreb-aerodrom</GradIme>
+<Lat>45.729</Lat>
+<Lon>16.054 </Lon>
+<Podatci>
+<Temp>  6.4</Temp>
+<Vlaga>99</Vlaga>
+<Tlak>1002.8</Tlak>
+<TlakTend>+3.1</TlakTend>
+<VjetarSmjer>W</VjetarSmjer>
+<VjetarBrzina> 2</VjetarBrzina>
+<Vrijeme>umjereno oblačno</Vrijeme>
+<VrijemeZnak>3n</VrijemeZnak>
+</Podatci>
+</Grad>
+</Hrvatska>
