@@ -440,21 +440,6 @@
 </Podatci>
 </Grad>
 <Grad autom="0">
-<GradIme>Makarska</GradIme>
-<Lat>43.288</Lat>
-<Lon>17.020 </Lon>
-<Podatci>
-<Temp> 15.9</Temp>
-<Vlaga>87</Vlaga>
-<Tlak>1000.0</Tlak>
-<TlakTend>-4.2</TlakTend>
-<VjetarSmjer>E</VjetarSmjer>
-<VjetarBrzina> 5.2</VjetarBrzina>
-<Vrijeme>kiša</Vrijeme>
-<VrijemeZnak>27</VrijemeZnak>
-</Podatci>
-</Grad>
-<Grad autom="0">
 <GradIme>Mali Lošinj</GradIme>
 <Lat>44.533</Lat>
 <Lon> 14.472 </Lon>
