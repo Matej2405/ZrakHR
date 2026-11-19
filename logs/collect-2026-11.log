@@ -26,3 +26,7 @@
 2026-11-19T14:01:31Z dhmz 2026-11-19T14:00:00+01:00: postaje 73, zapisi 397, odbačene vrijednosti 4, novih u bazi 397
 2026-11-19T15:01:27Z dhmz 2026-11-19T15:00:00+01:00: postaje 61, zapisi 348, odbačene vrijednosti 4, novih u bazi 348
 2026-11-19T16:01:23Z dhmz 2026-11-19T16:00:00+01:00: postaje 63, zapisi 357, odbačene vrijednosti 4, novih u bazi 357
+2026-11-19T16:03:01Z dhmz 2026-11-18: sati 4/24, zapisi 1389, nedostaju sati (UTC) 00-07, 09-16, 18-21
+2026-11-19T16:03:01Z azo 2026-11-18: sati 24/24, zapisi 933
+2026-11-19T16:03:01Z open-meteo-weather 2026-11-18: pokretanja prognoze 2/4, zapisi 9120
+2026-11-19T16:03:01Z open-meteo-air-quality 2026-11-18: pokretanja prognoze 2/4, zapisi 3010
