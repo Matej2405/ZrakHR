@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Hrvatska>
+<DatumTermin>
+<Datum>20.11.2026</Datum>
+<Termin>20</Termin>
+</DatumTermin>
+<Grad autom="0">
+<GradIme>RC Bilogora</GradIme>
+<Lat>45.884</Lat>
+<Lon>17.200 </Lon>
+<Podatci>
+<Temp> 10.2</Temp>
+<Vlaga>86</Vlaga>
+<Tlak>1008.9</Tlak>
+<TlakTend>+1.4</TlakTend>
+<VjetarSmjer>SW</VjetarSmjer>
+<VjetarBrzina> 7.9</VjetarBrzina>
+<Vrijeme>pretežno vedro</Vrijeme>
+<VrijemeZnak>2n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Bjelovar</GradIme>
+<Lat>45.910</Lat>
+<Lon>16.869 </Lon>
+<Podatci>
+<Temp>  7.3</Temp>
+<Vlaga>97</Vlaga>
+<Tlak>1010.3</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>S</VjetarSmjer>
+<VjetarBrzina> 0.3</VjetarBrzina>
+<Vrijeme>vedro</Vrijeme>
+<VrijemeZnak>1n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Bosiljevo</GradIme>
+<Lat>45.419</Lat>
+<Lon>15.287 </Lon>
+<Podatci>
+<Temp> 5.5</Temp>
+<Vlaga>0</Vlaga>
+<Tlak>1010.7</Tlak>
+<TlakTend>+1.8</TlakTend>
+<VjetarSmjer>NW</VjetarSmjer>
+<VjetarBrzina> 0.8</VjetarBrzina>
+<Vrijeme>lahor</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Crikvenica</GradIme>
+<Lat>45.173</Lat>
+<Lon>14.689 </Lon>
+<Podatci>
+<Temp> 13.5</Temp>
+<Vlaga>83</Vlaga>
+<Tlak>1011.2</Tlak>
+<TlakTend>+1.7</TlakTend>
+<VjetarSmjer>NE</VjetarSmjer>
+<VjetarBrzina> 2.0</VjetarBrzina>
+<Vrijeme>povjetarac</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Crni Lug - NP Risnjak</GradIme>
+<Lat>45.421</Lat>
+<Lon>14.692 </Lon>
+<Podatci>
+<Temp> 8.8</Temp>
+<Vlaga>86</Vlaga>
+<Tlak>1010.8</Tlak>
+<TlakTend>+1.4</TlakTend>
+<VjetarSmjer>NW</VjetarSmjer>
+<VjetarBrzina> 1.7</VjetarBrzina>
+<Vrijeme>povjetarac</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Daruvar</GradIme>
+<Lat>45.592</Lat>
+<Lon>17.210 </Lon>
+<Podatci>
+<Temp>  8.9</Temp>
+<Vlaga>87</Vlaga>
+<Tlak>1010.0</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>S</VjetarSmjer>
+<VjetarBrzina> 0.8</VjetarBrzina>
+<Vrijeme>vedro</Vrijeme>
+<VrijemeZnak>1n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Dubrovnik</GradIme>
+<Lat>42.645</Lat>
+<Lon>18.085 </Lon>
+<Podatci>
+<Temp> 15.3</Temp>
+<Vlaga>80</Vlaga>
+<Tlak>1012.7</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>E</VjetarSmjer>
+<VjetarBrzina> 3.6</VjetarBrzina>
+<Vrijeme>pretežno vedro</Vrijeme>
+<VrijemeZnak>2n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Dubrovnik-aerodrom</GradIme>
+<Lat>42.563</Lat>
+<Lon>18.270 </Lon>
+<Podatci>
+<Temp> 13.3</Temp>
+<Vlaga>87</Vlaga>
+<Tlak>1013.8</Tlak>
+<TlakTend>+0.7</TlakTend>
+<VjetarSmjer>E</VjetarSmjer>
+<VjetarBrzina> 3</VjetarBrzina>
+<Vrijeme>umjereno oblačno</Vrijeme>
+<VrijemeZnak>3n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Gospić</GradIme>
+<Lat>44.551</Lat>
+<Lon> 15.373 </Lon>
+<Podatci>
+<Temp> 10.5</Temp>
+<Vlaga>75</Vlaga>
+<Tlak>1010.8</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>SW</VjetarSmjer>
+<VjetarBrzina> 2.3</VjetarBrzina>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>RC Gorice (kod Nove Gradiške)</GradIme>
+<Lat>45.224</Lat>
+<Lon> 17.278 </Lon>
+<Podatci>
+<Temp>  9.5</Temp>
+<Vlaga>92</Vlaga>
+<Tlak>1009.3</Tlak>
+<TlakTend>+1.4</TlakTend>
+<VjetarSmjer>NE</VjetarSmjer>
+<VjetarBrzina> 1.8</VjetarBrzina>
+<Vrijeme>vedro</Vrijeme>
+<VrijemeZnak>1n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>RC Gradište (kod Županje)</GradIme>
+<Lat>45.159</Lat>
+<Lon>  18.704 </Lon>
+<Podatci>
+<Temp> 11.5</Temp>
+<Vlaga>68</Vlaga>
+<Tlak>1009.4</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>SW</VjetarSmjer>
+<VjetarBrzina> 2.5</VjetarBrzina>
+<Vrijeme>vedro</Vrijeme>
+<VrijemeZnak>1n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Hrvatska Kostajnica</GradIme>
+<Lat>45.230</Lat>
+<Lon>16.544 </Lon>
+<Podatci>
+<Temp> 8.2</Temp>
+<Vlaga>0</Vlaga>
+<Tlak>1010.6</Tlak>
+<TlakTend>+1.5</TlakTend>
+<VjetarSmjer>W</VjetarSmjer>
+<VjetarBrzina> 0.9</VjetarBrzina>
+<Vrijeme>lahor</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Hvar</GradIme>
+<Lat>43.171</Lat>
+<Lon>16.437 </Lon>
+<Podatci>
+<Temp> 16.7</Temp>
+<Vlaga>54</Vlaga>
+<Tlak>1012.8</Tlak>
+<TlakTend>+1.2</TlakTend>
+<VjetarSmjer>-</VjetarSmjer>
+<VjetarBrzina> 2.2</VjetarBrzina>
+<Vrijeme>povjetarac</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Karlovac</GradIme>
+<Lat>45.494</Lat>
+<Lon>15.565 </Lon>
+<Podatci>
+<Temp>  7.8</Temp>
+<Vlaga>97</Vlaga>
+<Tlak>1009.9</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>S</VjetarSmjer>
+<VjetarBrzina> 0.6</VjetarBrzina>
+<Vrijeme>umjereno oblačno</Vrijeme>
+<VrijemeZnak>3n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Knin</GradIme>
+<Lat>44.041</Lat>
+<Lon>16.207 </Lon>
+<Podatci>
+<Temp>  8.9</Temp>
+<Vlaga>96</Vlaga>
+<Tlak>1012.2</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>NW</VjetarSmjer>
+<VjetarBrzina> 0.5</VjetarBrzina>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Komiža</GradIme>
+<Lat>43.048</Lat>
+<Lon> 16.085 </Lon>
+<Podatci>
+<Temp> 14.9</Temp>
+<Vlaga>69</Vlaga>
+<Tlak>1011.9</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>E</VjetarSmjer>
+<VjetarBrzina> 1</VjetarBrzina>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Koprivnica</GradIme>
+<Lat>46.169</Lat>
+<Lon>16.814 </Lon>
+<Podatci>
+<Temp> 6.6</Temp>
+<Vlaga>0</Vlaga>
+<Tlak>1009.9</Tlak>
+<TlakTend>+1.6</TlakTend>
+<VjetarSmjer>SW</VjetarSmjer>
+<VjetarBrzina> 2.9</VjetarBrzina>
+<Vrijeme>povjetarac</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Krapina</GradIme>
+<Lat>46.138</Lat>
+<Lon>15.888 </Lon>
+<Podatci>
+<Temp>  5.5</Temp>
+<Vlaga>100</Vlaga>
+<Tlak>1010.4</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>N</VjetarSmjer>
+<VjetarBrzina> 1.2</VjetarBrzina>
+<Vrijeme>umjereno oblačno</Vrijeme>
+<VrijemeZnak>3n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Križevci</GradIme>
+<Lat>46.029</Lat>
+<Lon> 16.554 </Lon>
+<Podatci>
+<Temp>  6.4</Temp>
+<Vlaga>97</Vlaga>
+<Tlak>1009.1</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>N</VjetarSmjer>
+<VjetarBrzina> 0.9</VjetarBrzina>
+<Vrijeme>magla</Vrijeme>
+<VrijemeZnak>10</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Kutjevo</GradIme>
+<Lat>45.424</Lat>
+<Lon>17.876 </Lon>
+<Podatci>
+<Temp> 11.6</Temp>
+<Vlaga>77</Vlaga>
+<Tlak>1011.4</Tlak>
+<TlakTend>+1.4</TlakTend>
+<VjetarSmjer>W</VjetarSmjer>
+<VjetarBrzina> 1.4</VjetarBrzina>
+<Vrijeme>lahor</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Lastovo</GradIme>
+<Lat>42.768</Lat>
+<Lon>16.900 </Lon>
+<Podatci>
+<Temp> 15.3</Temp>
+<Vlaga>63</Vlaga>
+<Tlak>1014.3</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>SE</VjetarSmjer>
+<VjetarBrzina> 1</VjetarBrzina>
+<Vrijeme>pretežno vedro</Vrijeme>
+<VrijemeZnak>2n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Ličko Lešće</GradIme>
+<Lat>44.81</Lat>
+<Lon>   15.311 </Lon>
+<Podatci>
+<Temp> 8.2</Temp>
+<Vlaga>89</Vlaga>
+<Tlak>1012.2</Tlak>
+<TlakTend>+1.7</TlakTend>
+<VjetarSmjer>W</VjetarSmjer>
+<VjetarBrzina> 2.0</VjetarBrzina>
+<Vrijeme>povjetarac</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Malinska</GradIme>
+<Lat>45.126</Lat>
+<Lon>14.527 </Lon>
+<Podatci>
+<Temp> 12.7</Temp>
+<Vlaga>76</Vlaga>
+<Tlak>1010.7</Tlak>
+<TlakTend>+1.5</TlakTend>
+<VjetarSmjer>SE</VjetarSmjer>
+<VjetarBrzina> 2.6</VjetarBrzina>
+<Vrijeme>povjetarac</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Makarska</GradIme>
+<Lat>43.288</Lat>
+<Lon>17.020 </Lon>
+<Podatci>
+<Temp> 15.9</Temp>
+<Vlaga>60</Vlaga>
+<Tlak>1012.0</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>NW</VjetarSmjer>
+<VjetarBrzina> 2.7</VjetarBrzina>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Mali Lošinj</GradIme>
+<Lat>44.533</Lat>
+<Lon> 14.472 </Lon>
+<Podatci>
+<Temp> 13.7</Temp>
+<Vlaga>76</Vlaga>
+<Tlak>1011.2</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>W</VjetarSmjer>
+<VjetarBrzina> 2.3</VjetarBrzina>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Mali Lošinj - Ćunski</GradIme>
+<Lat>44.565</Lat>
+<Lon>  14.437 </Lon>
+<Podatci>
+<Temp> 10.5</Temp>
+<Vlaga>96</Vlaga>
+<Tlak>1011.3</Tlak>
+<TlakTend>+1.4</TlakTend>
+<VjetarSmjer>SW</VjetarSmjer>
+<VjetarBrzina> 1.5</VjetarBrzina>
+<Vrijeme>lahor</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Monte Kope</GradIme>
+<Lat>44.812</Lat>
+<Lon>13.873 </Lon>
+<Podatci>
+<Temp> 14.1</Temp>
+<Vlaga>79</Vlaga>
+<Tlak>1010.3</Tlak>
+<TlakTend>+1.1</TlakTend>
+<VjetarSmjer>SW</VjetarSmjer>
+<VjetarBrzina> 2.8</VjetarBrzina>
+<Vrijeme>povjetarac</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Ogulin</GradIme>
+<Lat>45.263</Lat>
+<Lon>15.222 </Lon>
+<Podatci>
+<Temp> 11.3</Temp>
+<Vlaga>72</Vlaga>
+<Tlak>1009.9</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>E</VjetarSmjer>
+<VjetarBrzina> 1.8</VjetarBrzina>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Opatija</GradIme>
+<Lat>45.341</Lat>
+<Lon>14.313 </Lon>
+<Podatci>
+<Temp> 11.6</Temp>
+<Vlaga>93</Vlaga>
+<Tlak>1008.2</Tlak>
+<TlakTend>+1.7</TlakTend>
+<VjetarSmjer>-</VjetarSmjer>
+<VjetarBrzina>-</VjetarBrzina>
+<Vrijeme>-</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>RC Osijek-Čepin</GradIme>
+<Lat>45.503</Lat>
+<Lon> 18.561 </Lon>
+<Podatci>
+<Temp> 10.0</Temp>
+<Vlaga>93</Vlaga>
+<Tlak>1008.9</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>W</VjetarSmjer>
+<VjetarBrzina> 0.4</VjetarBrzina>
+<Vrijeme>vedro</Vrijeme>
+<VrijemeZnak>1n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Otočac</GradIme>
+<Lat>44.868</Lat>
+<Lon> 15.227 </Lon>
+<Podatci>
+<Temp> 7.2</Temp>
+<Vlaga>92</Vlaga>
+<Tlak>-</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>-</VjetarSmjer>
+<VjetarBrzina>-</VjetarBrzina>
+<Vrijeme>-</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Parg-Čabar</GradIme>
+<Lat>45.594</Lat>
+<Lon> 14.631 </Lon>
+<Podatci>
+<Temp>  7.3</Temp>
+<Vlaga>70</Vlaga>
+<Tlak> 910.3*</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>SW</VjetarSmjer>
+<VjetarBrzina> 1.3</VjetarBrzina>
+<Vrijeme>umjereno oblačno</Vrijeme>
+<VrijemeZnak>3n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Pazin</GradIme>
+<Lat>45.241</Lat>
+<Lon>13.945 </Lon>
+<Podatci>
+<Temp>  6.9</Temp>
+<Vlaga>96</Vlaga>
+<Tlak>1011.1</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>N</VjetarSmjer>
+<VjetarBrzina> 0.6</VjetarBrzina>
+<Vrijeme>magla uz vidljivo nebo</Vrijeme>
+<VrijemeZnak>9n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Plaški</GradIme>
+<Lat>45.079</Lat>
+<Lon> 15.358 </Lon>
+<Podatci>
+<Temp> 12.5</Temp>
+<Vlaga>0</Vlaga>
+<Tlak>1010.2</Tlak>
+<TlakTend>+1.5</TlakTend>
+<VjetarSmjer>N</VjetarSmjer>
+<VjetarBrzina> 1.7</VjetarBrzina>
+<Vrijeme>povjetarac</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>NP Plitvička jezera</GradIme>
+<Lat>44.881</Lat>
+<Lon> 15.620 </Lon>
+<Podatci>
+<Temp> 10.7</Temp>
+<Vlaga>68</Vlaga>
+<Tlak>1010.6</Tlak>
+<TlakTend>+1.3</TlakTend>
+<VjetarSmjer>SE</VjetarSmjer>
+<VjetarBrzina> 3.2</VjetarBrzina>
+<Vrijeme>povjetarac</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Ploče</GradIme>
+<Lat>43.048</Lat>
+<Lon> 17.443 </Lon>
+<Podatci>
+<Temp> 15.2</Temp>
+<Vlaga>82</Vlaga>
+<Tlak>1012.9</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>NE</VjetarSmjer>
+<VjetarBrzina> 0.7</VjetarBrzina>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Porer - svjetionik</GradIme>
+<Lat>44.758</Lat>
+<Lon>13.890 </Lon>
+<Podatci>
+<Temp> 15.5</Temp>
+<Vlaga>78</Vlaga>
+<Tlak>1010.2</Tlak>
+<TlakTend>+1.1</TlakTend>
+<VjetarSmjer>S</VjetarSmjer>
+<VjetarBrzina> 3.4</VjetarBrzina>
+<Vrijeme>slab vjetar</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Požega</GradIme>
+<Lat>45.343</Lat>
+<Lon> 17.703 </Lon>
+<Podatci>
+<Temp> 7.3</Temp>
+<Vlaga>100</Vlaga>
+<Tlak>1009.2</Tlak>
+<TlakTend>+1.2</TlakTend>
+<VjetarSmjer>SW</VjetarSmjer>
+<VjetarBrzina> 1.4</VjetarBrzina>
+<Vrijeme>lahor</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Prevlaka</GradIme>
+<Lat>42.393</Lat>
+<Lon>18.531 </Lon>
+<Podatci>
+<Temp> 14.8</Temp>
+<Vlaga>99</Vlaga>
+<Tlak>1014.3</Tlak>
+<TlakTend>+0.5</TlakTend>
+<VjetarSmjer>NE</VjetarSmjer>
+<VjetarBrzina> 4.0</VjetarBrzina>
+<Vrijeme>slab vjetar</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Pula-aerodrom</GradIme>
+<Lat>44.896</Lat>
+<Lon>13.932 </Lon>
+<Podatci>
+<Temp>  8.3</Temp>
+<Vlaga>93</Vlaga>
+<Tlak>1011.1</Tlak>
+<TlakTend>+1.4</TlakTend>
+<VjetarSmjer>SE</VjetarSmjer>
+<VjetarBrzina> 1</VjetarBrzina>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>RC Puntijarka</GradIme>
+<Lat>45.908</Lat>
+<Lon>15.968 </Lon>
+<Podatci>
+<Temp>  5.8</Temp>
+<Vlaga>95</Vlaga>
+<Tlak> 895.6*</Tlak>
+<TlakTend>+1.0</TlakTend>
+<VjetarSmjer>W</VjetarSmjer>
+<VjetarBrzina> 4.0</VjetarBrzina>
+<Vrijeme>pretežno vedro</Vrijeme>
+<VrijemeZnak>2n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Rab</GradIme>
+<Lat>44.756</Lat>
+<Lon>14.769 </Lon>
+<Podatci>
+<Temp> 13.4</Temp>
+<Vlaga>75</Vlaga>
+<Tlak>1010.9</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>SE</VjetarSmjer>
+<VjetarBrzina> 1.7</VjetarBrzina>
+<Vrijeme>umjereno oblačno</Vrijeme>
+<VrijemeZnak>3n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Rašćane</GradIme>
+<Lat>43.284</Lat>
+<Lon>  17.195 </Lon>
+<Podatci>
+<Temp> 10.3</Temp>
+<Vlaga>77</Vlaga>
+<Tlak>1012.9</Tlak>
+<TlakTend>+1.4</TlakTend>
+<VjetarSmjer>SE</VjetarSmjer>
+<VjetarBrzina> 0.8</VjetarBrzina>
+<Vrijeme>lahor</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Rijeka</GradIme>
+<Lat>45.337</Lat>
+<Lon>14.443 </Lon>
+<Podatci>
+<Temp> 11.6</Temp>
+<Vlaga>86</Vlaga>
+<Tlak>1010.5</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>E</VjetarSmjer>
+<VjetarBrzina> 0.8</VjetarBrzina>
+<Vrijeme>umjereno oblačno</Vrijeme>
+<VrijemeZnak>3n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Rijeka-aerodrom</GradIme>
+<Lat>45.224</Lat>
+<Lon>14.582 </Lon>
+<Podatci>
+<Temp> 12.1</Temp>
+<Vlaga>84</Vlaga>
+<Tlak>1010.9</Tlak>
+<TlakTend>+1.6</TlakTend>
+<VjetarSmjer>SE</VjetarSmjer>
+<VjetarBrzina> 2</VjetarBrzina>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Sv. Ivan na pučini - svjetionik</GradIme>
+<Lat>45.043</Lat>
+<Lon> 13.614 </Lon>
+<Podatci>
+<Temp> 15.8</Temp>
+<Vlaga>72</Vlaga>
+<Tlak>1010.8</Tlak>
+<TlakTend>+1.2</TlakTend>
+<VjetarSmjer>SW</VjetarSmjer>
+<VjetarBrzina> 5.2</VjetarBrzina>
+<Vrijeme>slab vjetar</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Senj</GradIme>
+<Lat>44.993</Lat>
+<Lon>14.903 </Lon>
+<Podatci>
+<Temp> 14.5</Temp>
+<Vlaga>76</Vlaga>
+<Tlak>1010.7</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>SE</VjetarSmjer>
+<VjetarBrzina> 1.1</VjetarBrzina>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Sisak</GradIme>
+<Lat>45.499</Lat>
+<Lon>16.367 </Lon>
+<Podatci>
+<Temp> 10.5</Temp>
+<Vlaga>82</Vlaga>
+<Tlak>1009.4</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>S</VjetarSmjer>
+<VjetarBrzina> 1.3</VjetarBrzina>
+<Vrijeme>vedro</Vrijeme>
+<VrijemeZnak>1n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Slavonski Brod</GradIme>
+<Lat>45.159</Lat>
+<Lon>17.995 </Lon>
+<Podatci>
+<Temp>  8.9</Temp>
+<Vlaga>79</Vlaga>
+<Tlak>1008.9</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>S</VjetarSmjer>
+<VjetarBrzina> 1.9</VjetarBrzina>
+<Vrijeme>vedro</Vrijeme>
+<VrijemeZnak>1n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Split-Marjan</GradIme>
+<Lat>43.508</Lat>
+<Lon>16.426 </Lon>
+<Podatci>
+<Temp> 15.1</Temp>
+<Vlaga>70</Vlaga>
+<Tlak>1012.1</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>NW</VjetarSmjer>
+<VjetarBrzina> 3</VjetarBrzina>
+<Vrijeme>umjereno oblačno</Vrijeme>
+<VrijemeZnak>3n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Split-aerodrom</GradIme>
+<Lat>43.539</Lat>
+<Lon>16.301 </Lon>
+<Podatci>
+<Temp> 14.9</Temp>
+<Vlaga>74</Vlaga>
+<Tlak>1012.6</Tlak>
+<TlakTend>+1.3</TlakTend>
+<VjetarSmjer>NW</VjetarSmjer>
+<VjetarBrzina> 3</VjetarBrzina>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Šibenik</GradIme>
+<Lat>43.728</Lat>
+<Lon> 15.906 </Lon>
+<Podatci>
+<Temp> 15.3</Temp>
+<Vlaga>71</Vlaga>
+<Tlak>1011.8</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>E</VjetarSmjer>
+<VjetarBrzina> 0.4</VjetarBrzina>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Štrigova</GradIme>
+<Lat>46.494</Lat>
+<Lon> 16.299 </Lon>
+<Podatci>
+<Temp> 2.1</Temp>
+<Vlaga>97</Vlaga>
+<Tlak>1010.1</Tlak>
+<TlakTend>+1.9</TlakTend>
+<VjetarSmjer>-</VjetarSmjer>
+<VjetarBrzina>-</VjetarBrzina>
+<Vrijeme>-</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Varaždin</GradIme>
+<Lat>46.283</Lat>
+<Lon> 16.364 </Lon>
+<Podatci>
+<Temp>  5.1</Temp>
+<Vlaga>99</Vlaga>
+<Tlak>1011.0</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>S</VjetarSmjer>
+<VjetarBrzina> 1.3</VjetarBrzina>
+<Vrijeme>pretežno vedro</Vrijeme>
+<VrijemeZnak>2n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Virovitica</GradIme>
+<Lat>45.860</Lat>
+<Lon>17.390 </Lon>
+<Podatci>
+<Temp> 7.6</Temp>
+<Vlaga>100</Vlaga>
+<Tlak>1010.1</Tlak>
+<TlakTend>+1.5</TlakTend>
+<VjetarSmjer>NE</VjetarSmjer>
+<VjetarBrzina> 0.9</VjetarBrzina>
+<Vrijeme>lahor</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Vukovar-Grabovo</GradIme>
+<Lat>45.355</Lat>
+<Lon>19.001 </Lon>
+<Podatci>
+<Temp> 10.8</Temp>
+<Vlaga>99</Vlaga>
+<Tlak>1008.5</Tlak>
+<TlakTend>+1.6</TlakTend>
+<VjetarSmjer>SW</VjetarSmjer>
+<VjetarBrzina> 3.5</VjetarBrzina>
+<Vrijeme>slab vjetar</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Zadar</GradIme>
+<Lat>44.130</Lat>
+<Lon>15.206 </Lon>
+<Podatci>
+<Temp> 14.0</Temp>
+<Vlaga>90</Vlaga>
+<Tlak>1011.3</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>E</VjetarSmjer>
+<VjetarBrzina> 1.4</VjetarBrzina>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Zadar-aerodrom</GradIme>
+<Lat>44.097</Lat>
+<Lon>15.363 </Lon>
+<Podatci>
+<Temp>  8.9</Temp>
+<Vlaga>97</Vlaga>
+<Tlak>1012.2</Tlak>
+<TlakTend>+1.5</TlakTend>
+<VjetarSmjer>E</VjetarSmjer>
+<VjetarBrzina> 2</VjetarBrzina>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Zagreb-Grič</GradIme>
+<Lat>45.814</Lat>
+<Lon> 15.972 </Lon>
+<Podatci>
+<Temp>  9.8</Temp>
+<Vlaga>93</Vlaga>
+<Tlak>1009.4</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>NW</VjetarSmjer>
+<VjetarBrzina> 1</VjetarBrzina>
+<Vrijeme>vedro</Vrijeme>
+<VrijemeZnak>1n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Zagreb-Maksimir</GradIme>
+<Lat>45.822</Lat>
+<Lon>16.034 </Lon>
+<Podatci>
+<Temp>  6.4</Temp>
+<Vlaga>96</Vlaga>
+<Tlak>1009.6</Tlak>
+<TlakTend>+1.7</TlakTend>
+<VjetarSmjer>N</VjetarSmjer>
+<VjetarBrzina> 0.9</VjetarBrzina>
+<Vrijeme>vedro</Vrijeme>
+<VrijemeZnak>1n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Zagreb-aerodrom</GradIme>
+<Lat>45.729</Lat>
+<Lon>16.054 </Lon>
+<Podatci>
+<Temp>  7.2</Temp>
+<Vlaga>95</Vlaga>
+<Tlak>1009.7</Tlak>
+<TlakTend>+1.5</TlakTend>
+<VjetarSmjer>W</VjetarSmjer>
+<VjetarBrzina> 2</VjetarBrzina>
+<Vrijeme>umjereno oblačno</Vrijeme>
+<VrijemeZnak>3n</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="0">
+<GradIme>Zavižan</GradIme>
+<Lat>44.815</Lat>
+<Lon> 14.975 </Lon>
+<Podatci>
+<Temp>  3.0</Temp>
+<Vlaga>100</Vlaga>
+<Tlak> 834.8*</Tlak>
+<TlakTend>-</TlakTend>
+<VjetarSmjer>W</VjetarSmjer>
+<VjetarBrzina> 4.7</VjetarBrzina>
+<Vrijeme>magla</Vrijeme>
+<VrijemeZnak>10</VrijemeZnak>
+</Podatci>
+</Grad>
+<Grad autom="1">
+<GradIme>Živogošće</GradIme>
+<Lat>43.17</Lat>
+<Lon>   17.179 </Lon>
+<Podatci>
+<Temp> 14.6</Temp>
+<Vlaga>80</Vlaga>
+<Tlak>1013.0</Tlak>
+<TlakTend>+1.0</TlakTend>
+<VjetarSmjer>W</VjetarSmjer>
+<VjetarBrzina> 2.9</VjetarBrzina>
+<Vrijeme>povjetarac</Vrijeme>
+<VrijemeZnak>-</VrijemeZnak>
+</Podatci>
+</Grad>
+</Hrvatska>
