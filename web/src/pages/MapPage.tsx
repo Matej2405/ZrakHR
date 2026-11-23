@@ -1,6 +1,7 @@
 import type { Map as LeafletMap } from 'leaflet'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
+import { liveIndex, type LiveStation } from '../api/live'
 import type { City, StationSource } from '../api/stations'
 import { CROATIA_BOUNDS, SOURCES } from '../components/map/constants'
 import { groupByLocation } from '../components/map/locations'
@@ -8,14 +9,23 @@ import { prefersReducedMotion } from '../components/map/motion'
 import { StationMap } from '../components/map/StationMap'
 import { StationPanel } from '../components/map/StationPanel'
 import { Page } from '../components/Page'
+import { useLive } from '../hooks/useLive'
 import { useStations } from '../hooks/useStations'
 import styles from './MapPage.module.css'
 
 /** Zoom na kojem se vide sve postaje unutar kruga oko grada */
 const CITY_ZOOM = 11
 
+const NO_LIVE: ReadonlyMap<string, LiveStation> = new Map()
+
 export function MapPage() {
   const stations = useStations()
+  // Mjerenja su dodatak: bez njih karta i dalje prikazuje postaje
+  const live = useLive()
+  const liveStations = useMemo(
+    () => (live.status === 'ready' ? liveIndex(live.data) : NO_LIVE),
+    [live],
+  )
   const [map, setMap] = useState<LeafletMap | null>(null)
   const [visibleSources, setVisibleSources] = useState<ReadonlySet<StationSource>>(
     () => new Set(SOURCES),
@@ -67,6 +77,7 @@ export function MapPage() {
       <div className={styles.panel}>
         <StationPanel
           data={data}
+          live={live}
           visibleSources={visibleSources}
           onToggleSource={toggleSource}
           onSelectCity={showCity}
@@ -74,7 +85,7 @@ export function MapPage() {
         />
       </div>
       <div className={styles.map}>
-        <StationMap ref={setMap} locations={locations} cities={data.cities} />
+        <StationMap ref={setMap} locations={locations} cities={data.cities} live={liveStations} />
       </div>
     </div>
   )

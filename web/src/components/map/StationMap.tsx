@@ -5,11 +5,13 @@ import { divIcon, type DivIcon, type Map as LeafletMap } from 'leaflet'
 import type { Ref } from 'react'
 import { Circle, MapContainer, Marker, Popup, TileLayer, Tooltip } from 'react-leaflet'
 
+import { liveKey, type LiveStation } from '../../api/live'
 import type { City, StationSource } from '../../api/stations'
 import { useColorScheme } from '../../hooks/useColorScheme'
 import { CITY_RADIUS_M, CROATIA_BOUNDS } from './constants'
 import type { StationLocation } from './locations'
 import { prefersReducedMotion } from './motion'
+import { PM10_BANDS, pm10Band, type Pm10BandNumber } from './pm10'
 import styles from './StationMap.module.css'
 import { StationPopup } from './StationPopup'
 
@@ -26,13 +28,34 @@ const ICONS: Record<StationSource, DivIcon> = {
   azo: divIcon({ className: 'zr-marker zr-marker-azo', iconSize: [24, 24] }),
 }
 
+// AZO romb s mjerenjem ispunjen je bojom razreda PM10; bez svježeg mjerenja ostaje šupalj
+const PM10_ICONS = new Map<Pm10BandNumber, DivIcon>(
+  PM10_BANDS.map(({ band }) => [
+    band,
+    divIcon({ className: `zr-marker zr-marker-azo zr-pm10-${String(band)}`, iconSize: [24, 24] }),
+  ]),
+)
+
+const NO_LIVE: ReadonlyMap<string, LiveStation> = new Map()
+
+function iconFor(location: StationLocation, live: ReadonlyMap<string, LiveStation>): DivIcon {
+  if (location.source === 'dhmz') return ICONS.dhmz
+  // Na istoj lokaciji može biti više postaja; vrijedi prva koja ima PM10
+  const pm10 = location.stations
+    .map((station) => live.get(liveKey(station.source, station.external_id))?.values.pm10?.value)
+    .find((value) => value !== undefined)
+  return pm10 === undefined ? ICONS.azo : (PM10_ICONS.get(pm10Band(pm10).band) ?? ICONS.azo)
+}
+
 interface StationMapProps {
   locations: StationLocation[]
   cities: City[]
+  /** Zadnja mjerenja po ključu postaje (liveKey) */
+  live?: ReadonlyMap<string, LiveStation>
   ref?: Ref<LeafletMap>
 }
 
-export function StationMap({ locations, cities, ref }: StationMapProps) {
+export function StationMap({ locations, cities, live = NO_LIVE, ref }: StationMapProps) {
   const [scheme] = useColorScheme()
   // Leaflet ne prati postavku sustava za animacije, pa se prijelazi isključuju ovdje
   const animate = !prefersReducedMotion()
@@ -71,11 +94,11 @@ export function StationMap({ locations, cities, ref }: StationMapProps) {
         <Marker
           key={location.key}
           position={[location.lat, location.lon]}
-          icon={ICONS[location.source]}
+          icon={iconFor(location, live)}
           title={location.stations.map((station) => station.name).join(', ')}
         >
           <Popup>
-            <StationPopup location={location} />
+            <StationPopup location={location} live={live} />
           </Popup>
         </Marker>
       ))}

@@ -33,12 +33,33 @@
   background: var(--color-dhmz);
 }
 
-/* AZO: šuplji romb; kad stignu mjerenja, ispunit će ga boja indeksa kvalitete zraka */
+/* AZO: šuplji romb, dok postaja nema mjerenja */
 .zr-marker-azo::before {
   inset: 6px;
   border: 2px solid var(--color-azo);
   background: var(--color-surface);
   transform: rotate(45deg);
+}
+
+/* AZO romb s mjerenjem: ispuna je razred PM10 (vidi pm10.ts) */
+.zr-marker-azo.zr-pm10-1::before {
+  background: var(--color-pm10-1);
+}
+
+.zr-marker-azo.zr-pm10-2::before {
+  background: var(--color-pm10-2);
+}
+
+.zr-marker-azo.zr-pm10-3::before {
+  background: var(--color-pm10-3);
+}
+
+.zr-marker-azo.zr-pm10-4::before {
+  background: var(--color-pm10-4);
+}
+
+.zr-marker-azo.zr-pm10-5::before {
+  background: var(--color-pm10-5);
 }
 
 .zr-marker:focus-visible {
@@ -117,6 +138,55 @@
 
 .zr-popup p {
   margin: 0;
+  color: var(--color-ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Zadnja mjerenja postaje: parovi naziv i vrijednost u dva stupca */
+.zr-popup-live {
+  display: grid;
+  gap: var(--space-1);
+  margin-top: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-line);
+}
+
+.zr-popup-live dl > div {
+  display: contents;
+}
+
+.zr-popup-live dd {
+  font-variant-numeric: tabular-nums;
+}
+
+.zr-sparkline {
+  display: grid;
+  gap: var(--space-1);
+  margin: var(--space-1) 0 0;
+}
+
+.zr-sparkline svg {
+  width: 10rem;
+  height: 2rem;
+  overflow: visible;
+}
+
+.zr-sparkline polyline {
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Dnevna granična vrijednost EU */
+.zr-sparkline line {
+  stroke: var(--color-pm10-4);
+  stroke-width: 1;
+  stroke-dasharray: 3 3;
+}
+
+.zr-sparkline figcaption {
   color: var(--color-ink-muted);
   font-variant-numeric: tabular-nums;
 }
