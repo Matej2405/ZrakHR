@@ -15,7 +15,7 @@ from typing import Any
 
 import requests
 
-from zrakhr import archive, db
+from zrakhr import archive, db, live
 from zrakhr.cities import CITIES, City
 from zrakhr.collectors import (
     AzoCollector,
@@ -219,6 +219,18 @@ def cmd_import(args: argparse.Namespace) -> int:
     return 1 if any(item.failed for item in stats.values()) else 0
 
 
+def cmd_live(args: argparse.Namespace) -> int:
+    """Zapisuje snimku zadnjih mjerenja za dashboard; prvi redak ispisa je sažetak za log."""
+    with closing(db.connect(args.db)) as conn:
+        snapshot = live.build_snapshot(conn, datetime.now(timezone.utc))
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+    args.out.write_text(json.dumps(snapshot, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    sources = [station["source"] for station in snapshot["stations"]]
+    print(f"live: postaje s mjerenjima DHMZ {sources.count('dhmz')}, AZO {sources.count('azo')}")
+    print(f"  snimka: {args.out}")
+    return 0
+
+
 def cmd_check(args: argparse.Namespace) -> int:
     """Ispisuje redak po izvoru za jedan dan; vraća 1 ako nekom izvoru nedostaju sati ili prognoze."""
     day = args.date or datetime.now(timezone.utc).date() - timedelta(days=1)
@@ -290,6 +302,12 @@ def build_parser() -> argparse.ArgumentParser:
     check.add_argument("--date", type=date.fromisoformat,
                        help="dan u UTC-u, npr. 2026-11-20 (zadano: jučer)")
     check.set_defaults(func=cmd_check)
+
+    snapshot = commands.add_parser("live", parents=[common],
+                                   help="zapiši snimku zadnjih mjerenja za dashboard")
+    snapshot.add_argument("--out", type=Path, default=Path("data/live/latest.json"),
+                          help="izlazna datoteka (zadano: data/live/latest.json)")
+    snapshot.set_defaults(func=cmd_live)
 
     stations = commands.add_parser("stations", parents=[common], help="ispiši postaje poznate bazi")
     stations.add_argument("--source", choices=db.SOURCES, help="samo postaje ovog izvora")

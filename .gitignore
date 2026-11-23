@@ -13,9 +13,10 @@ dist/
 # Tajne i lokalne postavke
 .env
 
-# Podaci (sirovi odgovori i baza se ne commitaju)
+# Podaci (sirovi odgovori, baza i snimka za dashboard se ne commitaju)
 data/raw/*
 !data/raw/.gitkeep
+data/live/
 *.db
 
 # macOS
