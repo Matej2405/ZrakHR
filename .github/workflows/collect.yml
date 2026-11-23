@@ -53,6 +53,14 @@ jobs:
           cache-dependency-path: requirements.txt
       - run: pip install -r requirements.txt -e .
       - run: scripts/collect.sh "$WHAT" data-branch
+      # Snimka zadnjih mjerenja za dashboard (#61). Baza se gradi iz cijele arhive, pa snimka ima
+      # oba izvora i kad je ovo pokretanje donijelo samo jedan. Dashboard je čita izravno s
+      # raw.githubusercontent.com, pa se osvježava bez novog deploya.
+      - name: Live snapshot for the dashboard
+        if: ${{ !cancelled() && (env.WHAT == 'dhmz' || env.WHAT == 'azo') }}
+        run: |
+          python -m zrakhr import --raw-dir data-branch/raw --db "$RUNNER_TEMP/live.db"
+          python -m zrakhr live --db "$RUNNER_TEMP/live.db" --out data-branch/live/latest.json
       # Sprema i kad prikupljanje djelomično padne (jedan grad bez prognoze, neobradiv DHMZ feed
       # spremljen kao *_neobradeno.xml), da te datoteke ne propadnu; job svejedno ostaje crven
       - name: Commit to the data branch
@@ -62,6 +70,10 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add raw logs
+          # Snimka postoji tek nakon prvog DHMZ ili AZO pokretanja
+          if [[ -e live ]]; then
+            git add live
+          fi
           # Drugo pokretanje u istom satu prepisuje istu DHMZ datoteku; tada nema što spremiti.
           # Provjera ne dodaje sirove podatke, nego samo retke u logu, pa se ona uvijek sprema.
           if [[ "$WHAT" != check ]] && git diff --cached --quiet -- raw; then
