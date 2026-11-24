@@ -3,6 +3,8 @@
  * dostupan. Polja prate planiranu tablicu stations u backendu, zato su u snake_caseu.
  */
 
+import { finiteNumber, invalid, isObject, text } from './validate'
+
 export type StationSource = 'dhmz' | 'azo'
 
 interface StationFields {
@@ -49,69 +51,52 @@ export async function fetchStations(signal?: AbortSignal): Promise<StationsExpor
   return parseStationsExport(await response.json())
 }
 
-type JsonObject = Record<string, unknown>
-
-function isObject(value: unknown): value is JsonObject {
-  return typeof value === 'object' && value !== null && !Array.isArray(value)
-}
-
-function invalid(path: string, expected: string): never {
-  throw new Error(`Neispravan izvoz postaja: ${path} mora biti ${expected}.`)
-}
-
-function text(object: JsonObject, key: string, path: string): string {
-  const value = object[key]
-  return typeof value === 'string' ? value : invalid(`${path}.${key}`, 'tekst')
-}
-
-function coordinate(object: JsonObject, key: string, path: string): number {
-  const value = object[key]
-  return typeof value === 'number' && Number.isFinite(value)
-    ? value
-    : invalid(`${path}.${key}`, 'broj')
-}
+const SUBJECT = 'Neispravan izvoz postaja'
 
 function parseCity(value: unknown, path: string): City {
-  if (!isObject(value)) invalid(path, 'objekt')
+  if (!isObject(value)) invalid(SUBJECT, path, 'objekt')
   return {
-    name: text(value, 'name', path),
-    lat: coordinate(value, 'lat', path),
-    lon: coordinate(value, 'lon', path),
+    name: text(SUBJECT, value, 'name', path),
+    lat: finiteNumber(SUBJECT, value, 'lat', path),
+    lon: finiteNumber(SUBJECT, value, 'lon', path),
   }
 }
 
 function parseStation(value: unknown, path: string): Station {
-  if (!isObject(value)) invalid(path, 'objekt')
+  if (!isObject(value)) invalid(SUBJECT, path, 'objekt')
   const fields: StationFields = {
-    external_id: text(value, 'external_id', path),
-    name: text(value, 'name', path),
-    lat: coordinate(value, 'lat', path),
-    lon: coordinate(value, 'lon', path),
+    external_id: text(SUBJECT, value, 'external_id', path),
+    name: text(SUBJECT, value, 'name', path),
+    lat: finiteNumber(SUBJECT, value, 'lat', path),
+    lon: finiteNumber(SUBJECT, value, 'lon', path),
   }
   switch (value.source) {
     case 'dhmz': {
       const automatic = value.automatic
-      if (typeof automatic !== 'boolean') invalid(`${path}.automatic`, 'true ili false')
+      if (typeof automatic !== 'boolean') invalid(SUBJECT, `${path}.automatic`, 'true ili false')
       return { source: 'dhmz', ...fields, automatic }
     }
     case 'azo':
-      return { source: 'azo', ...fields, network: text(value, 'network', path) }
+      return { source: 'azo', ...fields, network: text(SUBJECT, value, 'network', path) }
     default:
-      return invalid(`${path}.source`, '"dhmz" ili "azo"')
+      return invalid(SUBJECT, `${path}.source`, '"dhmz" ili "azo"')
   }
 }
 
 /** Provjerava oblik izvoza, jer datoteka dolazi izvan aplikacije; greška navodi točno polje. */
 export function parseStationsExport(data: unknown): StationsExport {
-  if (!isObject(data)) invalid('izvoz', 'objekt')
+  if (!isObject(data)) invalid(SUBJECT, 'izvoz', 'objekt')
   const { sources, cities, stations } = data
-  if (!isObject(sources)) invalid('sources', 'objekt')
-  if (!Array.isArray(cities)) invalid('cities', 'popis')
-  if (!Array.isArray(stations)) invalid('stations', 'popis')
+  if (!isObject(sources)) invalid(SUBJECT, 'sources', 'objekt')
+  if (!Array.isArray(cities)) invalid(SUBJECT, 'cities', 'popis')
+  if (!Array.isArray(stations)) invalid(SUBJECT, 'stations', 'popis')
 
   return {
-    generated_at: text(data, 'generated_at', 'izvoz'),
-    sources: { dhmz: text(sources, 'dhmz', 'sources'), azo: text(sources, 'azo', 'sources') },
+    generated_at: text(SUBJECT, data, 'generated_at', 'izvoz'),
+    sources: {
+      dhmz: text(SUBJECT, sources, 'dhmz', 'sources'),
+      azo: text(SUBJECT, sources, 'azo', 'sources'),
+    },
     cities: cities.map((city: unknown, index) => parseCity(city, `cities[${String(index)}]`)),
     stations: stations.map((station: unknown, index) =>
       parseStation(station, `stations[${String(index)}]`),

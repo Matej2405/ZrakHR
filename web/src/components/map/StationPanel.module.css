@@ -78,6 +78,22 @@
   font-variant-numeric: tabular-nums;
 }
 
+.legend {
+  display: grid;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  list-style: none;
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
 .cities {
   display: flex;
   flex-wrap: wrap;

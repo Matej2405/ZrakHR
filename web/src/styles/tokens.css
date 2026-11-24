@@ -13,9 +13,20 @@
   --color-line: light-dark(#d3dbe0, #2a3a46);
 
   /* Boje podataka. DHMZ je plava iz palete Okabe–Ito, razlučiva i uz poremećaj raspoznavanja
-     boja; AZO je zasad u tinti, a boju će mu davati indeks kvalitete zraka */
+     boja; AZO je obrub u tinti, a ispunu mu daje razred PM10 */
   --color-dhmz: light-dark(#0072b2, #56b4e9);
   --color-azo: var(--color-ink);
+
+  /* Razredi PM10, od zlatne do crvene. Svjetlina pada s koncentracijom (OKLCH L od 0,77 do 0,49,
+     u koracima od 0,07), pa se razredi razlikuju i bez razlikovanja boja. Boje su iste u obje
+     teme jer su podatak, a ne dio sučelja, pa oba kraja ljestvice moraju odskakati od podloge:
+     najsvjetlija ima kontrast 2,1 : 1 prema bijeloj (blijeda žuta ne bi se razlikovala od šuplje
+     oznake bez mjerenja), a najtamnija 2,3 : 1 prema tamnoj */
+  --color-pm10-1: #ddad09;
+  --color-pm10-2: #d58d06;
+  --color-pm10-3: #ca6e03;
+  --color-pm10-4: #bf4a04;
+  --color-pm10-5: #b31415;
 
   /* Archivo ima os širine (62–125 %), koju naslovi koriste kao izražajno sredstvo */
   --font-sans: 'Archivo Variable', system-ui, sans-serif;

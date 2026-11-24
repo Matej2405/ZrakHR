@@ -2,20 +2,42 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, describe, expect, it, vi } from 'vitest'
 
+import { LIVE_URL, type LiveStation } from '../api/live'
+import { STATIONS_URL } from '../api/stations'
 import type { StationLocation } from '../components/map/locations'
-import { STATIONS_EXPORT } from '../test/fixtures'
+import { LIVE_SNAPSHOT, STATIONS_EXPORT } from '../test/fixtures'
 import { MapPage } from './MapPage'
 
 // Leaflet treba stvarne dimenzije elemenata, kojih u jsdomu nema; test provjerava što stranica
 // šalje karti, a samu kartu provjerava pregled u pregledniku
 vi.mock('../components/map/StationMap', () => ({
-  StationMap: ({ locations }: { locations: StationLocation[] }) => (
-    <output aria-label="Oznake na karti">{locations.length}</output>
+  StationMap: ({
+    locations,
+    live,
+  }: {
+    locations: StationLocation[]
+    live: ReadonlyMap<string, LiveStation>
+  }) => (
+    <>
+      <output aria-label="Oznake na karti">{locations.length}</output>
+      <output aria-label="Postaje s mjerenjima">{live.size}</output>
+    </>
   ),
 }))
 
-function serveExport(response: Response) {
-  vi.stubGlobal('fetch', vi.fn().mockResolvedValue(response))
+const json = (data: unknown) => () => new Response(JSON.stringify(data))
+const missing = () => new Response('', { status: 404 })
+
+/** Odgovara na dohvat izvoza postaja i snimke mjerenja; tijelo odgovora čita se samo jednom */
+function serve({ stations = json(STATIONS_EXPORT), live = json(LIVE_SNAPSHOT) } = {}) {
+  const routes = new Map([
+    [STATIONS_URL, stations],
+    [LIVE_URL, live],
+  ])
+  vi.stubGlobal(
+    'fetch',
+    vi.fn((url: string) => Promise.resolve((routes.get(url) ?? missing)())),
+  )
 }
 
 describe('MapPage', () => {
@@ -24,7 +46,7 @@ describe('MapPage', () => {
   })
 
   it('nakon učitavanja prikazuje sve izvore i oznaku za svaku lokaciju', async () => {
-    serveExport(new Response(JSON.stringify(STATIONS_EXPORT)))
+    serve()
     render(<MapPage />)
 
     expect(await screen.findByRole('checkbox', { name: /DHMZ/ })).toBeChecked()
@@ -33,7 +55,7 @@ describe('MapPage', () => {
   })
 
   it('isključen izvor uklanja svoje oznake s karte', async () => {
-    serveExport(new Response(JSON.stringify(STATIONS_EXPORT)))
+    serve()
     const user = userEvent.setup()
     render(<MapPage />)
 
@@ -43,10 +65,27 @@ describe('MapPage', () => {
   })
 
   it('kad izvoz nije dostupan, kaže kako ga ponovno stvoriti', async () => {
-    serveExport(new Response('', { status: 404 }))
+    serve({ stations: missing })
     render(<MapPage />)
 
     expect(await screen.findByText(/HTTP 404/)).toBeInTheDocument()
     expect(screen.getByText(/scripts\/export_stations\.py/)).toBeInTheDocument()
+  })
+
+  it('mjerenja iz snimke šalje karti i navodi vrijeme snimke', async () => {
+    serve()
+    render(<MapPage />)
+
+    expect(await screen.findByText(/Snimka od 24\. studenoga 2026\. u 09:05/)).toBeInTheDocument()
+    expect(screen.getByRole('status', { name: 'Postaje s mjerenjima' })).toHaveTextContent(/^2$/)
+  })
+
+  it('bez snimke mjerenja karta i dalje prikazuje postaje', async () => {
+    serve({ live: missing })
+    render(<MapPage />)
+
+    expect(await screen.findByText(/karta prikazuje samo postaje/)).toBeInTheDocument()
+    expect(screen.getByRole('status', { name: 'Oznake na karti' })).toHaveTextContent(/^3$/)
+    expect(screen.getByRole('status', { name: 'Postaje s mjerenjima' })).toHaveTextContent(/^0$/)
   })
 })

@@ -3,23 +3,77 @@ import './map.css'
 import { useId } from 'react'
 
 import type { City, StationsExport, StationSource } from '../../api/stations'
+import type { LiveState } from '../../hooks/useLive'
 import { CITY_RADIUS_M, SOURCE_LABELS, SOURCES } from './constants'
 import { formatCount, formatDateTime } from './format'
+import { EU_DAILY_LIMIT, PM10_BANDS } from './pm10'
 import styles from './StationPanel.module.css'
 
 const STATION_FORMS = { one: 'postaja', few: 'postaje', other: 'postaja' }
 
+/** Ista oznaka AZO postaje kao na karti, s ispunom razreda PM10 ili šuplja */
+function AzoSymbol({ band }: { band?: number }) {
+  const classes = [styles.symbol, 'zr-marker', 'zr-marker-azo']
+  if (band !== undefined) classes.push(`zr-pm10-${String(band)}`)
+  return <span className={classes.join(' ')} aria-hidden="true" />
+}
+
+function LiveSection({ live }: { live: LiveState }) {
+  const headingId = useId()
+
+  return (
+    <section className={styles.section} aria-labelledby={headingId}>
+      <h2 id={headingId} className={styles.heading}>
+        Mjerenja uživo
+      </h2>
+      {live.status === 'loading' && <p className={styles.secondary}>Učitavam zadnja mjerenja…</p>}
+      {live.status === 'error' && (
+        <p className={styles.secondary}>
+          Zadnja mjerenja trenutačno nisu dostupna, pa karta prikazuje samo postaje.
+        </p>
+      )}
+      {live.status === 'ready' && (
+        <>
+          <p className={styles.secondary}>
+            Snimka od {formatDateTime(live.data.generated_at)}. Nova stiže svaki sat, bez ponovnog
+            učitavanja stranice.
+          </p>
+          <p>PM10 na AZO postajama, μg/m³</p>
+          <ul className={styles.legend}>
+            {PM10_BANDS.map(({ band, label }) => (
+              <li key={band}>
+                <AzoSymbol band={band} />
+                {label}
+              </li>
+            ))}
+            <li>
+              <AzoSymbol />
+              bez mjerenja
+            </li>
+          </ul>
+          <p className={styles.secondary}>
+            Projekt prikuplja mjerenja s AZO-ovih postaja državne mreže u gradovima projekta.
+            Prikazana je satna vrijednost; dnevna granična vrijednost EU je {EU_DAILY_LIMIT} μg/m³.
+          </p>
+        </>
+      )}
+    </section>
+  )
+}
+
 interface StationPanelProps {
   data: StationsExport
+  live: LiveState
   visibleSources: ReadonlySet<StationSource>
   onToggleSource: (source: StationSource) => void
   onSelectCity: (city: City) => void
   onShowCroatia: () => void
 }
 
-/** Kontrole karte: koji se izvori prikazuju, skok na grad projekta i porijeklo podataka. */
+/** Kontrole karte: izvori, mjerenja uživo, skok na grad projekta i porijeklo podataka. */
 export function StationPanel({
   data,
+  live,
   visibleSources,
   onToggleSource,
   onSelectCity,
@@ -66,6 +120,8 @@ export function StationPanel({
           </label>
         ))}
       </fieldset>
+
+      <LiveSection live={live} />
 
       <section className={styles.section} aria-labelledby={citiesHeadingId}>
         <h2 id={citiesHeadingId} className={styles.heading}>
