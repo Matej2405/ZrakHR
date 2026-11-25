@@ -1,6 +1,7 @@
 """Testovi Open-Meteo prognoza: što se traži od API-ja i kako se pokretanja prognoze spremaju, bez mreže."""
 
 import sqlite3
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
@@ -52,6 +53,35 @@ def test_weather_forecast_matches_dhmz_metrics_and_units(monkeypatch: pytest.Mon
     assert {"temperature_2m", "relative_humidity_2m", "pressure_msl", "wind_speed_10m",
             "wind_direction_10m"} <= set(params["hourly"].split(","))
     assert params["wind_speed_unit"] == "ms"
+
+
+def test_forecast_waits_out_a_stall_of_a_few_minutes(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Open-Meteo zna nekoliko minuta ne odgovarati (24. i 25.11.2026. GitHubovu runneru do 3 minute),
+    pa se pokušaji raspoređuju na minute: tri istekla pokušaja zaredom još ne znače neuspjeh."""
+    waits: list[float] = []
+
+    class Response:
+        status_code = 200
+
+        def raise_for_status(self) -> None:
+            pass
+
+        def json(self) -> dict[str, Any]:
+            return {"hourly": {}}
+
+    answers = iter([requests.ReadTimeout("Read timed out.")] * 3 + [Response()])
+
+    def stalled_get(url: str, **_: object) -> Response:
+        answer = next(answers)
+        if isinstance(answer, Exception):
+            raise answer
+        return answer
+
+    monkeypatch.setattr(requests, "get", stalled_get)
+    monkeypatch.setattr(time, "sleep", waits.append)
+
+    assert OpenMeteoWeatherCollector().fetch(ZAGREB) == {"hourly": {}}
+    assert waits == [15, 30, 60]
 
 
 def response(variables: dict[str, str], start: datetime, hours: int) -> dict[str, Any]:

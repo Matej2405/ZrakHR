@@ -98,10 +98,10 @@ class AzoCollector(HttpSource):
     source = "azo"
     url = "https://iszz.azo.hr/iskzl/rs/podatak/export/json"
 
-    def __init__(self, timeout: float = 30.0, retries: int = 4, backoff: float = 15.0,
-                 pause: float = 2.0) -> None:
-        """Uz postavke HttpSource-a, pause je čekanje (s) između upita, zbog ograničenja portala."""
-        super().__init__(timeout=timeout, retries=retries, backoff=backoff)
+    def __init__(self, *, pause: float = 2.0, **settings: Any) -> None:
+        """Uz postavke HttpSource-a (timeout, retries, backoff), pause je čekanje (s) između upita,
+        zbog ograničenja portala."""
+        super().__init__(**settings)
         self.pause = pause
 
     def fetch_series(self, station: AzoStation, pollutant: int, start: date, end: date) -> list[dict[str, Any]]:
