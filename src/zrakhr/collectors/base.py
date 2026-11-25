@@ -31,8 +31,13 @@ class HttpSource:
 
     source: str  # naziv izvora, upisuje se u zapise i u imena datoteka
 
-    def __init__(self, timeout: float = 10.0, retries: int = 3, backoff: float = 1.0) -> None:
-        """Postavlja timeout (s), broj pokušaja i početno čekanje (s) koje se udvostručuje."""
+    def __init__(self, timeout: float = 30.0, retries: int = 4, backoff: float = 15.0) -> None:
+        """Postavlja timeout (s), broj pokušaja i početno čekanje (s) koje se udvostručuje.
+
+        Izvori znaju nekoliko minuta ne odgovarati (Open-Meteo je 24. i 25.11.2026. GitHubovu
+        runneru zastajao i do 3 minute), pa zadani pokušaji čekaju 15, 30 i 60 s i ukupno traju do
+        oko 4 minute. S kraćim razmacima svi pokušaji padnu u isti zastoj.
+        """
         if retries < 1:
             raise ValueError("retries mora biti barem 1")
         self.timeout = timeout
