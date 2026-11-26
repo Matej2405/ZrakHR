@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-26T03:01:26Z",
+ "generated_at": "2026-11-26T03:31:46Z",
  "trend_metric": "pm10",
  "stations": [
   {
@@ -7,19 +7,19 @@
    "external_id": "155",
    "values": {
     "nitrogen_dioxide": {
-     "value": 17.6,
+     "value": 11.9,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm10": {
-     "value": 38.2,
+     "value": 35.1,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T01:00:00Z"
     },
     "pm2_5": {
-     "value": 33.6,
+     "value": 31.2,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T01:00:00Z"
     }
    },
    "trend": [
@@ -202,6 +202,10 @@
     [
      "2026-11-26T00:00:00Z",
      38.2
+    ],
+    [
+     "2026-11-26T01:00:00Z",
+     35.1
     ]
    ]
   },
@@ -210,19 +214,19 @@
    "external_id": "156",
    "values": {
     "nitrogen_dioxide": {
-     "value": 16.5,
+     "value": 11.1,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm10": {
-     "value": 30.2,
+     "value": 24.1,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm2_5": {
-     "value": 29.3,
+     "value": 23.8,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     }
    },
    "trend": [
@@ -389,6 +393,14 @@
     [
      "2026-11-26T00:00:00Z",
      30.2
+    ],
+    [
+     "2026-11-26T01:00:00Z",
+     27.7
+    ],
+    [
+     "2026-11-26T02:00:00Z",
+     24.1
     ]
    ]
   },
@@ -397,24 +409,24 @@
    "external_id": "157",
    "values": {
     "nitrogen_dioxide": {
-     "value": 12.5,
+     "value": 10.5,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "ozone": {
-     "value": 25.6,
+     "value": 30.3,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm10": {
-     "value": 33.1,
+     "value": 26.0,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm2_5": {
-     "value": 32.0,
+     "value": 25.4,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     }
    },
    "trend": [
@@ -597,6 +609,14 @@
     [
      "2026-11-26T00:00:00Z",
      33.1
+    ],
+    [
+     "2026-11-26T01:00:00Z",
+     30.3
+    ],
+    [
+     "2026-11-26T02:00:00Z",
+     26.0
     ]
    ]
   },
@@ -605,24 +625,24 @@
    "external_id": "159",
    "values": {
     "nitrogen_dioxide": {
-     "value": 2.1,
+     "value": 3.0,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "ozone": {
-     "value": 67.1,
+     "value": 60.4,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm10": {
-     "value": 3.7,
+     "value": 9.9,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm2_5": {
-     "value": 1.1,
+     "value": 6.8,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     }
    },
    "trend": [
@@ -805,6 +825,14 @@
     [
      "2026-11-26T00:00:00Z",
      3.7
+    ],
+    [
+     "2026-11-26T01:00:00Z",
+     5.2
+    ],
+    [
+     "2026-11-26T02:00:00Z",
+     9.9
     ]
    ]
   },
@@ -813,19 +841,19 @@
    "external_id": "160",
    "values": {
     "nitrogen_dioxide": {
-     "value": 12.3,
+     "value": 8.7,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "ozone": {
-     "value": 22.6,
+     "value": 24.1,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm10": {
-     "value": 29.4,
+     "value": 25.1,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     }
    },
    "trend": [
@@ -1008,6 +1036,14 @@
     [
      "2026-11-26T00:00:00Z",
      29.4
+    ],
+    [
+     "2026-11-26T01:00:00Z",
+     26.9
+    ],
+    [
+     "2026-11-26T02:00:00Z",
+     25.1
     ]
    ]
   },
@@ -1016,24 +1052,24 @@
    "external_id": "165",
    "values": {
     "nitrogen_dioxide": {
-     "value": 20.9,
+     "value": 13.3,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "ozone": {
-     "value": 12.3,
+     "value": 19.7,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm10": {
-     "value": 38.0,
+     "value": 27.0,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm2_5": {
-     "value": 39.6,
+     "value": 28.4,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     }
    },
    "trend": [
@@ -1216,6 +1252,14 @@
     [
      "2026-11-26T00:00:00Z",
      38.0
+    ],
+    [
+     "2026-11-26T01:00:00Z",
+     32.8
+    ],
+    [
+     "2026-11-26T02:00:00Z",
+     27.0
     ]
    ]
   },
@@ -1224,14 +1268,14 @@
    "external_id": "275",
    "values": {
     "pm10": {
-     "value": 48.7,
+     "value": 39.7,
      "unit": "μg/m³",
-     "observed_at": "2026-11-25T23:00:00Z"
+     "observed_at": "2026-11-26T01:00:00Z"
     },
     "pm2_5": {
-     "value": 44.0,
+     "value": 36.4,
      "unit": "μg/m³",
-     "observed_at": "2026-11-25T23:00:00Z"
+     "observed_at": "2026-11-26T01:00:00Z"
     }
    },
    "trend": [
@@ -1402,6 +1446,14 @@
     [
      "2026-11-25T23:00:00Z",
      48.7
+    ],
+    [
+     "2026-11-26T00:00:00Z",
+     47.0
+    ],
+    [
+     "2026-11-26T01:00:00Z",
+     39.7
     ]
    ]
   },
@@ -1410,24 +1462,24 @@
    "external_id": "299",
    "values": {
     "nitrogen_dioxide": {
-     "value": 12.0,
+     "value": 9.4,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "ozone": {
-     "value": 21.5,
+     "value": 22.1,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm10": {
-     "value": 27.7,
+     "value": 23.7,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm2_5": {
-     "value": 21.5,
+     "value": 18.9,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     }
    },
    "trend": [
@@ -1610,6 +1662,14 @@
     [
      "2026-11-26T00:00:00Z",
      27.7
+    ],
+    [
+     "2026-11-26T01:00:00Z",
+     26.4
+    ],
+    [
+     "2026-11-26T02:00:00Z",
+     23.7
     ]
    ]
   },
@@ -1618,24 +1678,24 @@
    "external_id": "303",
    "values": {
     "nitrogen_dioxide": {
-     "value": 15.4,
+     "value": 11.4,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "ozone": {
-     "value": 25.1,
+     "value": 31.2,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm10": {
-     "value": 40.0,
+     "value": 31.8,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm2_5": {
-     "value": 30.1,
+     "value": 24.4,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     }
    },
    "trend": [
@@ -1818,6 +1878,14 @@
     [
      "2026-11-26T00:00:00Z",
      40.0
+    ],
+    [
+     "2026-11-26T01:00:00Z",
+     36.1
+    ],
+    [
+     "2026-11-26T02:00:00Z",
+     31.8
     ]
    ]
   },
@@ -1826,24 +1894,24 @@
    "external_id": "304",
    "values": {
     "nitrogen_dioxide": {
-     "value": 2.6,
+     "value": 1.9,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "ozone": {
-     "value": 81.6,
+     "value": 85.2,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm10": {
-     "value": 4.4,
+     "value": 4.1,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm2_5": {
-     "value": 3.8,
+     "value": 3.7,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     }
    },
    "trend": [
@@ -2026,6 +2094,14 @@
     [
      "2026-11-26T00:00:00Z",
      4.4
+    ],
+    [
+     "2026-11-26T01:00:00Z",
+     5.2
+    ],
+    [
+     "2026-11-26T02:00:00Z",
+     4.1
     ]
    ]
   },
@@ -2034,24 +2110,24 @@
    "external_id": "305",
    "values": {
     "nitrogen_dioxide": {
-     "value": 1.5,
+     "value": 1.0,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "ozone": {
-     "value": 81.9,
+     "value": 85.7,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm10": {
-     "value": 8.1,
+     "value": 7.7,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     },
     "pm2_5": {
-     "value": 4.1,
+     "value": 4.0,
      "unit": "μg/m³",
-     "observed_at": "2026-11-26T00:00:00Z"
+     "observed_at": "2026-11-26T02:00:00Z"
     }
    },
    "trend": [
@@ -2234,6 +2310,14 @@
     [
      "2026-11-26T00:00:00Z",
      8.1
+    ],
+    [
+     "2026-11-26T01:00:00Z",
+     10.0
+    ],
+    [
+     "2026-11-26T02:00:00Z",
+     7.7
     ]
    ]
   },
