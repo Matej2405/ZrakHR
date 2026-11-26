@@ -10,8 +10,20 @@ hrvatske gradove, uz prognoze s Open-Meteo, čisti ih, sprema i prikazuje na web
 
 Semestralni projekt iz kolegija **Programiranje skriptnih jezika** (RITEH).
 
-- Dashboard: https://matej2405.github.io/ZrakHR/
-- Plan i tiketi: [GitHub Project](https://github.com/users/Matej2405/projects/4)
+## Pogledaj uživo
+
+**[matej2405.github.io/ZrakHR](https://matej2405.github.io/ZrakHR/)**: dashboard je javno
+objavljen, pa se projekt može provjeriti odmah, u pregledniku i bez instalacije.
+
+[![Karta postaja na javnoj stranici: Zagreb s mjerenjima postaje ZAGREB-1](docs/img/karta.jpg)](https://matej2405.github.io/ZrakHR/karta)
+
+- **[Karta postaja](https://matej2405.github.io/ZrakHR/karta)** prikazuje 74 DHMZ-ove i 106
+  AZO-ovih postaja. AZO postaje u gradovima projekta obojene su prema zadnjoj satnoj vrijednosti
+  PM10, a klik na postaju otvara zadnja mjerenja i graf PM10 za 48 sati.
+- Mjerenja se osvježavaju svaki sat, bez poslužitelja i bez novog deploya (vidi
+  [Podaci uživo](#podaci-uživo)).
+- Plan i tiketi su na [GitHub Projectu](https://github.com/users/Matej2405/projects/4), a izvješća
+  za kontrolne točke u tablici [Plan po kontrolnim točkama](#plan-po-kontrolnim-točkama).
 
 ## Istraživačko pitanje
 
@@ -23,18 +35,18 @@ Gradovi obuhvaćeni projektom: Zagreb, Rijeka, Split, Osijek i Slavonski Brod.
 
 ## Tim
 
-| Član           | GitHub                                       | Zaduženja                                                     |
-| -------------- | -------------------------------------------- | ------------------------------------------------------------- |
-| Matej Brodarac | [Matej2405](https://github.com/Matej2405)    | web dashboard, izvještaji, dokumentacija i prezentacija       |
-| Bruno Bezjak   | [Bruno0211](https://github.com/Bruno0211)    | skriptni dio: kolektori, pohrana, REST API i analitika        |
+| Član           | GitHub                                    | Zaduženja                                               |
+| -------------- | ----------------------------------------- | ------------------------------------------------------- |
+| Matej Brodarac | [Matej2405](https://github.com/Matej2405) | web dashboard, izvještaji, dokumentacija i prezentacija |
+| Bruno Bezjak   | [Bruno0211](https://github.com/Bruno0211) | skriptni dio: kolektori, pohrana, REST API i analitika  |
 
 ## Izvori podataka
 
-| Izvor                                                   | Što daje                                                                                  | Uloga u projektu                                                                                              |
-| ------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| [DHMZ](https://vrijeme.hr/hrvatska_n.xml)               | trenutno vrijeme sa 60 do 75 postaja, ovisno o satu: temperatura, vlažnost, tlak i vjetar (XML) | **mjerenja**; feed sadrži samo tekući sat, pa povijest nastaje isključivo satnim prikupljanjem                |
-| [AZO, Kvaliteta zraka u RH](https://iszz.azo.hr/iskzl/) | koncentracije PM10, PM2.5, NO₂ i O₃ sa službenih mjernih postaja (REST, JSON/XML)          | **mjerenja**; portal čuva povijest, pa se podaci mogu dohvatiti i unatrag                                       |
-| [Open-Meteo](https://open-meteo.com/)                   | prognoza vremena i CAMS prognoza PM10 i PM2.5 za koordinate grada                         | **samo prognoza**: CAMS je model na mreži od oko 11 km, a ne mjerenje; prognoze se čuvaju radi usporedbe s mjerenjima |
+| Izvor                                                   | Što daje                                                                                        | Uloga u projektu                                                                                                      |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| [DHMZ](https://vrijeme.hr/hrvatska_n.xml)               | trenutno vrijeme sa 60 do 75 postaja, ovisno o satu: temperatura, vlažnost, tlak i vjetar (XML) | **mjerenja**; feed sadrži samo tekući sat, pa povijest nastaje isključivo satnim prikupljanjem                        |
+| [AZO, Kvaliteta zraka u RH](https://iszz.azo.hr/iskzl/) | koncentracije PM10, PM2.5, NO₂ i O₃ sa službenih mjernih postaja (REST, JSON/XML)               | **mjerenja**; portal čuva povijest, pa se podaci mogu dohvatiti i unatrag                                             |
+| [Open-Meteo](https://open-meteo.com/)                   | prognoza vremena i CAMS prognoza PM10 i PM2.5 za koordinate grada                               | **samo prognoza**: CAMS je model na mreži od oko 11 km, a ne mjerenje; prognoze se čuvaju radi usporedbe s mjerenjima |
 
 Nakon povratne informacije nastavnika Open-Meteo više nije izvor mjerenja nego samo prognoze, a
 HNB-ova tečajna lista izbačena je iz projekta.
@@ -64,6 +76,8 @@ flowchart TD
     dhmz & azo & openmeteo --> raw[("sirovi odgovori<br/>grana data")]
     raw --> clean["čišćenje, normalizacija i validacija"]
     clean --> db[("SQLite<br/>postaje, mjerenja, prognoze")]
+    db --> live["snimka zadnjih mjerenja<br/>live/latest.json u grani data"]
+    live --> web
     db --> analytics["analitika<br/>evaluacija prognoze, vlastiti model, EAQI"]
     db --> api["REST API i SSE"]
     analytics --> api
@@ -82,18 +96,18 @@ koje ne prođu provjeru (npr. vlažnost 0 %) odbacuju se i bilježe s razlogom.
 | `tests/`             | pytest testovi i primjeri stvarnih podataka (`tests/fixtures/`)   |
 | `api/`               | REST API i SSE                                                    |
 | `web/`               | web dashboard                                                     |
-| `docs/`              | dokumentacija                                                     |
+| `docs/`              | izvješća za kontrolne točke i dokumentacija                       |
 | `.github/workflows/` | provjere, satno prikupljanje i objava dashboarda                  |
 
 ## Plan po kontrolnim točkama
 
-| KT      | Datum       | Cilj                                                                                                                                                   |
-| ------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| KT I    | 1.11.2026.  | Struktura repozitorija, README, prototip kolektora s naredbenim retkom                                                                                 |
-| KT II   | 27.11.2026. | DHMZ i AZO kolektori, satno prikupljanje, SQLite shema, Open-Meteo samo za prognozu; okvir dashboarda i karta postaja                                  |
-| KT III  | 18.12.2026. | Pridruživanje postaja gradovima, provjere kvalitete podataka, REST API i SSE, dohvat povijesti; grafovi, prikaz uživo i karta obojena prema PM10       |
-| KT IV   | 22.1.2027.  | Evaluacija CAMS prognoze, vlastiti model za PM10, analiza utjecaja vremena, indeks kvalitete zraka (EAQI), pravila upozorenja, Bash i PowerShell skripte |
-| Završno | 4.2.2027.   | Završno izvješće i dokumentacija; obrana 11.2.2027.                                                                                                    |
+| KT      | Datum       | Cilj                                                                                                                                                                            | Izvješće                            |
+| ------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------- |
+| KT I    | 1.11.2026.  | Struktura repozitorija, README, prototip kolektora s naredbenim retkom                                                                                                          | [PDF](docs/ZrakHR_KT1_izvjesce.pdf) |
+| KT II   | 27.11.2026. | DHMZ i AZO kolektori, satno prikupljanje, SQLite shema, Open-Meteo samo za prognozu; dashboard, karta postaja i mjerenja uživo                                                  | [PDF](docs/ZrakHR_KT2_izvjesce.pdf) |
+| KT III  | 18.12.2026. | Pridruživanje postaja gradovima, provjere kvalitete podataka, REST API i SSE, dohvat povijesti; grafovi, osvježavanje preko SSE-a, usporedba gradova, pretraživanje i CSV izvoz |                                     |
+| KT IV   | 22.1.2027.  | Evaluacija CAMS prognoze, vlastiti model za PM10, analiza utjecaja vremena, indeks kvalitete zraka (EAQI), pravila upozorenja, Bash i PowerShell skripte                        |                                     |
+| Završno | 4.2.2027.   | Završno izvješće i dokumentacija; obrana 11.2.2027.                                                                                                                             |                                     |
 
 Tiketi po iteracijama i njihovo stanje su na [GitHub Projectu](https://github.com/users/Matej2405/projects/4).
 
@@ -141,6 +155,7 @@ zrakhr fetch --city "Slavonski Brod"
 zrakhr stations                  # postaje u bazi; --source dhmz|azo|... za jedan izvor
 zrakhr import --raw-dir data/raw # učitava arhivu sirovih odgovora u bazu
 zrakhr check                     # jesu li jučer u bazi svi sati mjerenja i sve prognoze
+zrakhr live                      # snimka zadnjih mjerenja za dashboard, data/live/latest.json
 ```
 
 Svaka naredba prima `--db <putanja>` (zadano `data/zrakhr.db`) i `-v`/`--verbose`, koji uz
@@ -188,22 +203,24 @@ Zato workflow pouzdano okida vanjski cron, [cron-job.org](https://cron-job.org),
 `workflow_dispatch`; raspored u workflowu ostaje kao rezerva. Ponovljeno pokretanje istog sata
 ne stvara duplikate.
 
-| Posao na cron-job.org | Kada                  | Zašto                                                                  |
-| --------------------- | --------------------- | ---------------------------------------------------------------------- |
-| `dhmz`                | svaki sat             | feed sadrži samo zadnji sat                                            |
-| `azo`                 | svaka 3 sata          | portal čuva povijest i kasni oko 2 sata, pa se uvijek dohvaća od jučer |
-| `forecasts`           | svakih 6 sati         | Open-Meteo osvježava prognozu nekoliko puta dnevno                     |
-| `check`               | jednom dnevno, ujutro | dnevna provjera jučerašnjeg dana (vidi dolje)                          |
+| Posao na cron-job.org | Kada (hrvatsko vrijeme) | Zašto                                                                                 |
+| --------------------- | ----------------------- | ------------------------------------------------------------------------------------- |
+| `dhmz`                | svaki sat, u :00        | feed sadrži samo zadnji sat                                                           |
+| `azo`                 | svaka 3 sata, u :05     | portal čuva povijest i kasni oko 2 sata, pa se uvijek dohvaća od jučer                |
+| `forecasts`           | svakih 6 sati, u :35    | Open-Meteo osvježava prognozu nekoliko puta dnevno; u :35 se ne preklapa s mjerenjima |
 
 Svaki posao šalje `POST` na
 `https://api.github.com/repos/Matej2405/ZrakHR/actions/workflows/collect.yml/dispatches` s
-tijelom `{"ref": "main", "inputs": {"what": "dhmz"}}` (odnosno `azo`, `forecasts`, `check`) i
+tijelom `{"ref": "main", "inputs": {"what": "dhmz"}}` (odnosno `azo` ili `forecasts`) i
 zaglavljima `Accept: application/vnd.github+json` i `Authorization: Bearer <token>`. Token treba
 biti fine-grained, ograničen na ovaj repozitorij i samo s dozvolom _Actions: read and write_.
 Poslove i token održava Matej Brodarac na svom računu.
 
-Dnevna provjera (`check`) učita cijelu arhivu u bazu i u log upiše po jedan redak po izvoru za
-jučerašnji dan (UTC), npr.:
+Izvori znaju nekoliko minuta ne odgovarati, pa kolektori neuspjeli upit ponavljaju do četiri
+puta, s čekanjem od 15, 30 i 60 s.
+
+Dnevna provjera (`check`) pokreće se iz rasporeda u samom workflowu (06:45 UTC). Učita cijelu
+arhivu u bazu i u log upiše po jedan redak po izvoru za jučerašnji dan (UTC), npr.:
 
 ```text
 dhmz 2026-11-20: sati 24/24, zapisi 8290
@@ -237,6 +254,15 @@ scripts/collect.sh check data       # dnevna provjera jučerašnjeg dana
 
 Na Windowsima skripta radi u Git Bashu ili WSL-u.
 
+## Podaci uživo
+
+Dashboard nema poslužitelja. Nakon svakog DHMZ i AZO prikupljanja workflow gradi bazu iz arhive i
+naredbom `zrakhr live` zapisuje `live/latest.json` u granu `data`: zadnju vrijednost svake postaje
+i veličine iz zadnja 24 sata te PM10 za zadnjih 48 sati. Dashboard snimku čita izravno s
+`raw.githubusercontent.com` i provjerava je svakih 10 minuta, pa nova mjerenja stižu bez ponovnog
+učitavanja stranice i bez novog deploya. Ako snimka nije dostupna, karta i dalje prikazuje postaje.
+Za lokalni razvoj adresa snimke mijenja se varijablom `VITE_LIVE_URL`.
+
 ## Web dashboard
 
 React, TypeScript i Vite u mapi `web/`. Nakon svakog mergea u `main` dashboard se automatski
@@ -254,13 +280,13 @@ Naredbe, struktura i odluke o alatima opisani su u [`web/README.md`](web/README.
 
 Svaki pull request pokreće provjere za dio repozitorija koji mijenja:
 
-| Workflow | Provjere                                                                   |
-| -------- | -------------------------------------------------------------------------- |
-| Python   | pytest na Pythonu 3.10 do 3.15                                             |
-| Web      | lint, provjera tipova, testovi s pokrivenošću i build                      |
-| Scripts  | ShellCheck za Bash skripte i actionlint za same workflowe                  |
-| PR title | naslov PR-a prati Conventional Commits (`feat:`, `fix:`, `docs:` …)        |
-| Labels   | oznake frontend, backend, docs i infra prema mapama koje PR mijenja        |
+| Workflow | Provjere                                                            |
+| -------- | ------------------------------------------------------------------- |
+| Python   | pytest na Pythonu 3.10 do 3.15                                      |
+| Web      | lint, provjera tipova, testovi s pokrivenošću i build               |
+| Scripts  | ShellCheck za Bash skripte i actionlint za same workflowe           |
+| PR title | naslov PR-a prati Conventional Commits (`feat:`, `fix:`, `docs:` …) |
+| Labels   | oznake frontend, backend, docs i infra prema mapama koje PR mijenja |
 
 Dependabot jednom mjesečno predlaže ažuriranja ovisnosti, a CODEOWNERS svaki pull request
 automatski šalje na pregled drugom članu tima.
