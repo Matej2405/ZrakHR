@@ -1,0 +1,417 @@
+<!doctype html>
+<!--
+  Izvor izvješća za II. kontrolnu točku; PDF (ZrakHR_KT2_izvjesce.pdf) nastaje ispisom u Chromeu:
+  "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --no-pdf-header-footer \
+    --allow-file-access-from-files --print-to-pdf=docs/ZrakHR_KT2_izvjesce.pdf docs/ZrakHR_KT2_izvjesce.html
+  Font je Calibri iz Microsoft Worda, kao u izvješću za KT I; bez Worda se koristi zamjenski font.
+-->
+<html lang="hr">
+  <head>
+    <meta charset="utf-8" />
+    <title>ZrakHR – izvješće za II. kontrolnu točku</title>
+    <style>
+      @font-face {
+        font-family: 'Calibri';
+        src: url('file:///Applications/Microsoft%20Word.app/Contents/Resources/DFonts/Calibri.ttf');
+      }
+      @font-face {
+        font-family: 'Calibri';
+        font-weight: bold;
+        src: url('file:///Applications/Microsoft%20Word.app/Contents/Resources/DFonts/Calibrib.ttf');
+      }
+      @font-face {
+        font-family: 'Calibri';
+        font-style: italic;
+        src: url('file:///Applications/Microsoft%20Word.app/Contents/Resources/DFonts/Calibrii.ttf');
+      }
+      @page {
+        size: A4;
+        margin: 15mm 19mm 14mm;
+      }
+
+      :root {
+        --blue: #2f5597;
+        --shade: #dce6f2;
+        --line: #bfbfbf;
+        --muted: #595959;
+      }
+
+      body {
+        margin: 0;
+        color: #000;
+        font: 10.5pt/1.28 Calibri, Carlito, 'Segoe UI', Arial, sans-serif;
+      }
+
+      header {
+        text-align: center;
+      }
+
+      .faculty {
+        margin: 0;
+        color: var(--muted);
+        font-size: 9pt;
+      }
+
+      .course {
+        margin: 1pt 0 0;
+        color: var(--muted);
+        font-size: 10pt;
+      }
+
+      h1 {
+        margin: 8pt 0 0;
+        color: var(--blue);
+        font-size: 20pt;
+        line-height: 1.1;
+      }
+
+      .subtitle {
+        margin: 2pt 0 7pt;
+        font-size: 11pt;
+        font-style: italic;
+      }
+
+      h2 {
+        margin: 8pt 0 2pt;
+        color: var(--blue);
+        font-size: 12.5pt;
+        break-after: avoid;
+      }
+
+      p {
+        margin: 0 0 3pt;
+      }
+
+      ul {
+        margin: 0 0 3pt;
+        padding-left: 16pt;
+      }
+
+      li {
+        margin: 0 0 1pt;
+      }
+
+      a {
+        color: var(--blue);
+        text-decoration: none;
+      }
+
+      /* Wordov Consolas Chrome odbija (OTS: prazna tablica prep), pa je kod u Menlu; 0,86 em
+         izjednačava visinu malih slova Menla (0,545 em) s Calibrijem (0,466 em) */
+      code {
+        font-family: Menlo, Consolas, monospace;
+        font-size: 0.86em;
+      }
+
+      figure {
+        margin: 4pt auto 2pt;
+        width: 64%;
+        text-align: center;
+      }
+
+      figure img {
+        display: block;
+        width: 100%;
+        border: 0.5pt solid var(--line);
+      }
+
+      figcaption {
+        margin-top: 2pt;
+        color: var(--muted);
+        font-size: 9pt;
+      }
+
+      table {
+        width: 100%;
+        margin: 2pt 0 4pt;
+        border-collapse: collapse;
+        font-size: 9.5pt;
+        line-height: 1.22;
+        break-inside: avoid;
+      }
+
+      th,
+      td {
+        padding: 1.6pt 4pt;
+        border: 0.5pt solid var(--line);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        background: var(--shade);
+      }
+
+      .info th {
+        width: 25%;
+      }
+
+      .num {
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .note {
+        color: var(--muted);
+        font-size: 9.5pt;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <p class="faculty">
+        Sveučilište u Rijeci, Tehnički fakultet · Diplomski studij računarstva · ak. god. 2026./2027.
+      </p>
+      <p class="course">Programiranje skriptnih jezika — Projektni zadatak, II. kontrolna točka</p>
+      <h1>ZrakHR</h1>
+      <p class="subtitle">
+        Sustav za periodičko prikupljanje, analizu i vizualizaciju podataka o vremenu i kvaliteti
+        zraka u hrvatskim gradovima
+      </p>
+    </header>
+
+    <table class="info">
+      <tr>
+        <th>Članovi tima</th>
+        <td>Matej Brodarac, Bruno Bezjak</td>
+      </tr>
+      <tr>
+        <th>Tema</th>
+        <td>2 — periodičko preuzimanje podataka putem API-ja, strukturiranje i vizualizacija</td>
+      </tr>
+      <tr>
+        <th>Repozitorij</th>
+        <td><a href="https://github.com/Matej2405/ZrakHR">https://github.com/Matej2405/ZrakHR</a></td>
+      </tr>
+      <tr>
+        <th>Projekt uživo</th>
+        <td>
+          <a href="https://matej2405.github.io/ZrakHR/">https://matej2405.github.io/ZrakHR/</a> —
+          otvara se u pregledniku, bez instalacije
+        </td>
+      </tr>
+      <tr>
+        <th>Datum</th>
+        <td>27. 11. 2026.</td>
+      </tr>
+    </table>
+
+    <h2>1. Promjena izvora podataka</h2>
+    <p>
+      U I. kontrolnoj točki glavni izvor bio je Open-Meteo, a HNB-ova tečajna lista trebala je
+      pokazati proširivost na drugu domenu. Nakon povratne informacije nastavnika izvori su
+      promijenjeni. Istraživačko pitanje traži izmjerene vrijednosti, a Open-Meteo daje modelske
+      podatke (CAMS na mreži od oko 11 km), pa mjerenja sada dolaze iz službenih hrvatskih izvora.
+      Open-Meteo ostaje samo kao prognoza, a HNB je izbačen jer ne pridonosi istraživačkom pitanju.
+      Pitanje je zato prošireno: <em>koliko je točna prognoza zagađenja u usporedbi s izmjerenim
+      vrijednostima?</em>
+    </p>
+    <table>
+      <tr>
+        <th style="width: 23%">Izvor</th>
+        <th style="width: 40%">Podaci</th>
+        <th>Uloga u projektu</th>
+      </tr>
+      <tr>
+        <td>DHMZ (vrijeme.hr, XML)</td>
+        <td>temperatura, vlažnost, tlak i vjetar s 60–75 postaja, ovisno o satu</td>
+        <td>mjerenja; feed sadrži samo tekući sat, pa se prikuplja svaki sat</td>
+      </tr>
+      <tr>
+        <td>AZO, Kvaliteta zraka u RH (REST, JSON)</td>
+        <td>PM10, PM2.5, NO₂ i O₃ s 11 postaja državne mreže u gradovima projekta</td>
+        <td>mjerenja; portal čuva povijest, pa se podaci mogu dohvatiti i unatrag</td>
+      </tr>
+      <tr>
+        <td>Open-Meteo</td>
+        <td>prognoza vremena i CAMS prognoza PM10 i PM2.5 za pet gradova</td>
+        <td>samo prognoza, sprema se radi usporedbe s mjerenjima</td>
+      </tr>
+    </table>
+
+    <h2>2. Napravljeno u II. kontrolnoj točki</h2>
+    <p>
+      Plan za KT II iz prvog izvješća (adapteri za sve izvore, periodičko prikupljanje s
+      ponavljanjem i logiranjem, SQLite shema, CLI i dohvat povijesti) ostvaren je u cijelosti, a
+      dio plana za KT III (dashboard s kartom i prikazom uživo) napravljen je unaprijed. Svaki
+      zadatak ima tiket na GitHub Projectu i pull request koji pregledava drugi član tima.
+    </p>
+    <table>
+      <tr>
+        <th style="width: 17%">Područje</th>
+        <th>Što je napravljeno</th>
+        <th style="width: 16%">Pull requestovi</th>
+      </tr>
+      <tr>
+        <td>Kolektori (Python)</td>
+        <td>
+          zajedničko sučelje izvora s ponavljanjem uz eksponencijalni odmak; DHMZ s čišćenjem
+          (nemoguće vrijednosti se odbacuju uz razlog); AZO s dohvatom povijesti i pauzom zbog
+          ograničenja portala; Open-Meteo prognoze s vremenom izdavanja i horizontom
+        </td>
+        <td>
+          <a href="https://github.com/Matej2405/ZrakHR/pull/51">#51</a>,
+          <a href="https://github.com/Matej2405/ZrakHR/pull/57">#57</a>,
+          <a href="https://github.com/Matej2405/ZrakHR/pull/56">#56</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Pohrana</td>
+        <td>
+          SQLite shema (izvori, postaje, mjerenja, prognoze, pokretanja prikupljanja) bez duplikata;
+          gradnja baze iz arhive sirovih odgovora
+        </td>
+        <td>
+          <a href="https://github.com/Matej2405/ZrakHR/pull/55">#55</a>,
+          <a href="https://github.com/Matej2405/ZrakHR/pull/60">#60</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Prikupljanje</td>
+        <td>
+          Bash skripta <code>scripts/collect.sh</code> u GitHub Actionsu: DHMZ svaki sat, AZO
+          svaka 3 sata, prognoze svakih 6 sati; sirovi odgovori u grani <code>data</code>; dnevna
+          provjera potpunosti
+        </td>
+        <td>
+          <a href="https://github.com/Matej2405/ZrakHR/pull/53">#53</a>,
+          <a href="https://github.com/Matej2405/ZrakHR/pull/60">#60</a>,
+          <a href="https://github.com/Matej2405/ZrakHR/pull/64">#64</a>
+        </td>
+      </tr>
+      <tr>
+        <td>CLI</td>
+        <td>
+          <code>zrakhr db init</code>, <code>collect</code>, <code>fetch</code>,
+          <code>import</code>, <code>check</code>, <code>stations</code>, <code>live</code>;
+          izlazni kodovi za cron i skripte
+        </td>
+        <td>
+          <a href="https://github.com/Matej2405/ZrakHR/pull/59">#59</a>,
+          <a href="https://github.com/Matej2405/ZrakHR/pull/62">#62</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Web (TypeScript)</td>
+        <td>
+          dashboard u Reactu; karta 74 DHMZ i 106 AZO postaja s mjerenjima uživo; automatska objava
+          na GitHub Pages nakon svakog mergea
+        </td>
+        <td>
+          <a href="https://github.com/Matej2405/ZrakHR/pull/43">#43</a>,
+          <a href="https://github.com/Matej2405/ZrakHR/pull/50">#50</a>,
+          <a href="https://github.com/Matej2405/ZrakHR/pull/62">#62</a>
+        </td>
+      </tr>
+      <tr>
+        <td>Testovi i CI</td>
+        <td>
+          69 pytest testova na Pythonu 3.10–3.15; lint, provjera tipova i 65 testova dashboarda;
+          ShellCheck za Bash i actionlint za workflowe, na svakom pull requestu
+        </td>
+        <td><a href="https://github.com/Matej2405/ZrakHR/pull/45">#45</a></td>
+      </tr>
+    </table>
+    <p>
+      Od I. kontrolne točke (stanje 26. 11., bez merge commitova) Matej Brodarac ima 24, a Bruno
+      Bezjak 8 novih commitova.
+    </p>
+
+    <h2>3. Projekt uživo</h2>
+    <p>
+      Dashboard je javno objavljen na
+      <a href="https://matej2405.github.io/ZrakHR/">matej2405.github.io/ZrakHR</a> i može se
+      provjeriti bez instalacije. <a href="https://matej2405.github.io/ZrakHR/karta">Karta
+      postaja</a> prikazuje AZO postaje u gradovima projekta obojene prema zadnjoj satnoj
+      vrijednosti PM10, a oblačić postaje pokazuje zadnja mjerenja i graf PM10 za 48 sati. Nakon
+      svakog prikupljanja naredba <code>zrakhr live</code> zapisuje snimku zadnjih mjerenja u granu
+      <code>data</code>, a dashboard je provjerava svakih 10 minuta, pa se podaci osvježavaju bez
+      poslužitelja i bez novog deploya.
+    </p>
+    <figure>
+      <img src="img/karta.jpg" alt="Karta postaja s otvorenim oblačićem postaje ZAGREB-1" />
+      <figcaption>
+        Slika 1. Karta postaja na javnoj stranici: Zagreb, s mjerenjima postaje ZAGREB-1 i grafom
+        PM10 za 48 sati (26. 11. 2026.)
+      </figcaption>
+    </figure>
+
+    <h2>4. Prvi podaci (18.–26. 11. 2026.)</h2>
+    <table>
+      <tr>
+        <th style="width: 19%">Izvor</th>
+        <th class="num" style="width: 11%">Zapisa</th>
+        <th style="width: 30%">Obuhvat</th>
+        <th>Potpunost</th>
+      </tr>
+      <tr>
+        <td>DHMZ mjerenja</td>
+        <td class="num">68&nbsp;126</td>
+        <td>88 postaja, 7 veličina</td>
+        <td>24/24 sata svaki dan od 19. 11.</td>
+      </tr>
+      <tr>
+        <td>AZO mjerenja</td>
+        <td class="num">8&nbsp;160</td>
+        <td>11 postaja, 4 tvari</td>
+        <td>24/24 sata svaki dan od 18. 11.</td>
+      </tr>
+      <tr>
+        <td>Open-Meteo prognoze</td>
+        <td class="num">173&nbsp;630</td>
+        <td>5 gradova, 28 pokretanja prognoze vremena i 31 kvalitete zraka</td>
+        <td>do 22. 11. dva od četiri pokretanja dnevno, od 24. 11. sva</td>
+      </tr>
+    </table>
+    <p>
+      Arhiva u grani <code>data</code> ima 514 sirovih odgovora (11 MB), iz kojih se baza može
+      izgraditi u svakom trenutku. Prvog dana (18. 11.) DHMZ ima samo 4 od 24 sata, jer je
+      GitHubov raspored izvršio samo dio zakazanih pokretanja.
+    </p>
+    <p>
+      Prosječni PM10 od 19. do 25. 11. iznosi u Zagrebu 30,2, Slavonskom Brodu 28,0, Osijeku
+      17,5, Splitu 13,1 i Rijeci 10,0 μg/m³. Zagreb i Slavonski Brod imaju dva do tri puta veće
+      koncentracije od priobalnih Splita i Rijeke, što je obrazac iz definicije problema. Dnevni
+      prosjek iznad granične vrijednosti EU (50 μg/m³) izmjeren je samo na dvije zagrebačke
+      postaje, po jedan dan, a satne vrijednosti dosezale su 110,8 μg/m³.
+      <span class="note">AZO objavljuje izvorne, još nevalidirane podatke.</span>
+    </p>
+
+    <h2>5. Problemi i rješenja</h2>
+    <ul>
+      <li>
+        GitHubov raspored pod opterećenjem preskače pokretanja (18. 11. izvršeno je 1 od 26
+        zakazanih), a DHMZ objavljuje samo tekući sat. Pokretanja zato okida vanjski cron
+        (cron-job.org) preko <code>workflow_dispatch</code>, a raspored u workflowu ostaje rezerva.
+      </li>
+      <li>
+        Računalo GitHub Actionsa nakon pokretanja nestaje, pa se sirovi odgovori spremaju u zasebnu
+        granu <code>data</code>, a baza se iz njih gradi naredbom <code>zrakhr import</code>.
+      </li>
+      <li>
+        AZO objavljuje s oko 2 sata zakašnjenja i odbija prečeste upite, pa se uvijek dohvaća od
+        jučer, uz pauzu od 2 s između upita.
+      </li>
+      <li>
+        Open-Meteo 24. i 25. 11. GitHubovim runnerima povremeno 2–3 minute nije odgovarao, pa su
+        sva tri pokušaja padala u isti zastoj. Ponavljanje je sada raspoređeno na oko 4 minute
+        (čekanja od 15, 30 i 60 s), što je potvrđeno na stvarnom zastoju.
+      </li>
+    </ul>
+
+    <h2>6. Plan za III. kontrolnu točku (18. 12.)</h2>
+    <ul>
+      <li>
+        <strong>Bruno Bezjak:</strong> REST API (FastAPI) za postaje, mjerenja, prognoze i
+        pretraživanje; SSE za osvježavanje uživo; pridruživanje postaja gradovima; provjere
+        kvalitete podataka; dohvat povijesti preko CLI-ja i API-ja.
+      </li>
+      <li>
+        <strong>Matej Brodarac:</strong> tipizirani klijent za API, grafovi vremenskih nizova s
+        filtrima po gradu, metrici i razdoblju, osvježavanje preko SSE-a, usporedba gradova,
+        pretraživanje i CSV izvoz; izvješće za KT III.
+      </li>
+      <li>Karta obojena prema PM10, planirana za KT III, već je napravljena.</li>
+    </ul>
+  </body>
+</html>
