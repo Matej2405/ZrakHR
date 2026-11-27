@@ -99,12 +99,12 @@
 <Lat>42.645</Lat>
 <Lon>18.085 </Lon>
 <Podatci>
-<Temp> 16.7</Temp>
-<Vlaga>84</Vlaga>
-<Tlak>1011.7</Tlak>
+<Temp> 17.1</Temp>
+<Vlaga>82</Vlaga>
+<Tlak>1011.5</Tlak>
 <TlakTend>+0.3</TlakTend>
-<VjetarSmjer>SE</VjetarSmjer>
-<VjetarBrzina> 5.6</VjetarBrzina>
+<VjetarSmjer>S</VjetarSmjer>
+<VjetarBrzina> 5.5</VjetarBrzina>
 <Vrijeme>umjeren vjetar</Vrijeme>
 <VrijemeZnak>-</VrijemeZnak>
 </Podatci>
@@ -129,12 +129,12 @@
 <Lat>44.551</Lat>
 <Lon> 15.373 </Lon>
 <Podatci>
-<Temp>  2.6</Temp>
-<Vlaga>99</Vlaga>
-<Tlak>1013.6</Tlak>
+<Temp> 2.6</Temp>
+<Vlaga>98</Vlaga>
+<Tlak>1014.0</Tlak>
 <TlakTend>+1.1</TlakTend>
 <VjetarSmjer>N</VjetarSmjer>
-<VjetarBrzina> 0.9</VjetarBrzina>
+<VjetarBrzina> 0.7</VjetarBrzina>
 <Vrijeme>lahor</Vrijeme>
 <VrijemeZnak>-</VrijemeZnak>
 </Podatci>
@@ -149,7 +149,7 @@
 <Tlak>1013.0</Tlak>
 <TlakTend>-0.8</TlakTend>
 <VjetarSmjer>E</VjetarSmjer>
-<VjetarBrzina> 2.0</VjetarBrzina>
+<VjetarBrzina> 2.3</VjetarBrzina>
 <Vrijeme>kiša</Vrijeme>
 <VrijemeZnak>27</VrijemeZnak>
 </Podatci>
@@ -159,12 +159,12 @@
 <Lat>45.159</Lat>
 <Lon>  18.704 </Lon>
 <Podatci>
-<Temp>  2.9</Temp>
-<Vlaga>99</Vlaga>
-<Tlak>1015.2</Tlak>
-<TlakTend>+0.9</TlakTend>
+<Temp> 3.0</Temp>
+<Vlaga>100</Vlaga>
+<Tlak>1015.3</Tlak>
+<TlakTend>+0.8</TlakTend>
 <VjetarSmjer>NW</VjetarSmjer>
-<VjetarBrzina> 3.7</VjetarBrzina>
+<VjetarBrzina> 3.8</VjetarBrzina>
 <Vrijeme>slab vjetar</Vrijeme>
 <VrijemeZnak>-</VrijemeZnak>
 </Podatci>
@@ -219,12 +219,12 @@
 <Lat>44.041</Lat>
 <Lon>16.207 </Lon>
 <Podatci>
-<Temp>  6.4</Temp>
-<Vlaga>99</Vlaga>
-<Tlak>1011.4</Tlak>
+<Temp> 6.5</Temp>
+<Vlaga>95</Vlaga>
+<Tlak>1011.5</Tlak>
 <TlakTend>+1.2</TlakTend>
-<VjetarSmjer>NE</VjetarSmjer>
-<VjetarBrzina> 1.6</VjetarBrzina>
+<VjetarSmjer>N</VjetarSmjer>
+<VjetarBrzina> 2.3</VjetarBrzina>
 <Vrijeme>povjetarac</Vrijeme>
 <VrijemeZnak>-</VrijemeZnak>
 </Podatci>
@@ -264,12 +264,12 @@
 <Lat>46.029</Lat>
 <Lon> 16.554 </Lon>
 <Podatci>
-<Temp>  1.2</Temp>
-<Vlaga>99</Vlaga>
-<Tlak>1015.7</Tlak>
-<TlakTend>-</TlakTend>
+<Temp> 1.2</Temp>
+<Vlaga>100</Vlaga>
+<Tlak>1015.9</Tlak>
+<TlakTend>+0.2</TlakTend>
 <VjetarSmjer>N</VjetarSmjer>
-<VjetarBrzina> 2.1</VjetarBrzina>
+<VjetarBrzina> 2.8</VjetarBrzina>
 <Vrijeme>povjetarac</Vrijeme>
 <VrijemeZnak>-</VrijemeZnak>
 </Podatci>
@@ -279,13 +279,13 @@
 <Lat>45.424</Lat>
 <Lon>17.876 </Lon>
 <Podatci>
-<Temp>  2.0</Temp>
-<Vlaga>99</Vlaga>
-<Tlak>1016.4</Tlak>
-<TlakTend>-</TlakTend>
-<VjetarSmjer>E</VjetarSmjer>
-<VjetarBrzina> 1.7</VjetarBrzina>
-<Vrijeme>povjetarac</Vrijeme>
+<Temp> 2.5</Temp>
+<Vlaga>100</Vlaga>
+<Tlak>1015.2</Tlak>
+<TlakTend>+1.1</TlakTend>
+<VjetarSmjer>SE</VjetarSmjer>
+<VjetarBrzina> 1.3</VjetarBrzina>
+<Vrijeme>lahor</Vrijeme>
 <VrijemeZnak>-</VrijemeZnak>
 </Podatci>
 </Grad>
@@ -384,13 +384,13 @@
 <Lat>45.263</Lat>
 <Lon>15.222 </Lon>
 <Podatci>
-<Temp>  0.3</Temp>
-<Vlaga>99</Vlaga>
-<Tlak>1016.1</Tlak>
-<TlakTend>-</TlakTend>
-<VjetarSmjer>-</VjetarSmjer>
-<VjetarBrzina> 0.1</VjetarBrzina>
-<Vrijeme>-</Vrijeme>
+<Temp> 0.2</Temp>
+<Vlaga>100</Vlaga>
+<Tlak>1016.2</Tlak>
+<TlakTend>+1.1</TlakTend>
+<VjetarSmjer>N</VjetarSmjer>
+<VjetarBrzina> 0.6</VjetarBrzina>
+<Vrijeme>lahor</Vrijeme>
 <VrijemeZnak>-</VrijemeZnak>
 </Podatci>
 </Grad>
@@ -703,8 +703,8 @@
 <Vlaga>97</Vlaga>
 <Tlak>1014.5</Tlak>
 <TlakTend>+1.1</TlakTend>
-<VjetarSmjer>SW</VjetarSmjer>
-<VjetarBrzina> 1.7</VjetarBrzina>
+<VjetarSmjer>W</VjetarSmjer>
+<VjetarBrzina> 1.8</VjetarBrzina>
 <Vrijeme>potpuno oblačno</Vrijeme>
 <VrijemeZnak>6</VrijemeZnak>
 </Podatci>
@@ -840,8 +840,8 @@
 <TlakTend>+1.0</TlakTend>
 <VjetarSmjer>W</VjetarSmjer>
 <VjetarBrzina> 1</VjetarBrzina>
-<Vrijeme>potpuno oblačno</Vrijeme>
-<VrijemeZnak>6</VrijemeZnak>
+<Vrijeme>pretežno oblačno</Vrijeme>
+<VrijemeZnak>4n</VrijemeZnak>
 </Podatci>
 </Grad>
 <Grad autom="0">
@@ -854,7 +854,7 @@
 <Tlak>1015.3</Tlak>
 <TlakTend>+0.3</TlakTend>
 <VjetarSmjer>N</VjetarSmjer>
-<VjetarBrzina> 0.4</VjetarBrzina>
+<VjetarBrzina> 0.5</VjetarBrzina>
 <Vrijeme>slaba susnježica</Vrijeme>
 <VrijemeZnak>33</VrijemeZnak>
 </Podatci>
@@ -879,13 +879,13 @@
 <Lat>44.815</Lat>
 <Lon> 14.975 </Lon>
 <Podatci>
-<Temp> -3.3</Temp>
-<Vlaga>71</Vlaga>
-<Tlak>-</Tlak>
-<TlakTend>-</TlakTend>
-<VjetarSmjer>W</VjetarSmjer>
-<VjetarBrzina> 3.3</VjetarBrzina>
-<Vrijeme>povjetarac</Vrijeme>
+<Temp> 0.2</Temp>
+<Vlaga>100</Vlaga>
+<Tlak>831.9*</Tlak>
+<TlakTend>+0.4</TlakTend>
+<VjetarSmjer>SW</VjetarSmjer>
+<VjetarBrzina> 4.1</VjetarBrzina>
+<Vrijeme>slab vjetar</Vrijeme>
 <VrijemeZnak>-</VrijemeZnak>
 </Podatci>
 </Grad>
