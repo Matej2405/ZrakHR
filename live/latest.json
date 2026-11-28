@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-28T17:07:21Z",
+ "generated_at": "2026-11-28T17:31:08Z",
  "trend_metric": "pm10",
  "stations": [
   {
@@ -833,19 +833,19 @@
    "external_id": "160",
    "values": {
     "nitrogen_dioxide": {
-     "value": 11.4,
+     "value": 12.8,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T15:00:00Z"
+     "observed_at": "2026-11-28T16:00:00Z"
     },
     "ozone": {
-     "value": 23.7,
+     "value": 22.8,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T15:00:00Z"
+     "observed_at": "2026-11-28T16:00:00Z"
     },
     "pm10": {
-     "value": 20.8,
+     "value": 19.7,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T15:00:00Z"
+     "observed_at": "2026-11-28T16:00:00Z"
     }
    },
    "trend": [
@@ -1032,6 +1032,10 @@
     [
      "2026-11-28T15:00:00Z",
      20.8
+    ],
+    [
+     "2026-11-28T16:00:00Z",
+     19.7
     ]
    ]
   },
@@ -1040,24 +1044,24 @@
    "external_id": "165",
    "values": {
     "nitrogen_dioxide": {
-     "value": 10.7,
+     "value": 10.4,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T15:00:00Z"
+     "observed_at": "2026-11-28T16:00:00Z"
     },
     "ozone": {
-     "value": 11.3,
+     "value": 10.2,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T15:00:00Z"
+     "observed_at": "2026-11-28T16:00:00Z"
     },
     "pm10": {
-     "value": 21.5,
+     "value": 22.6,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T15:00:00Z"
+     "observed_at": "2026-11-28T16:00:00Z"
     },
     "pm2_5": {
-     "value": 23.0,
+     "value": 24.2,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T15:00:00Z"
+     "observed_at": "2026-11-28T16:00:00Z"
     }
    },
    "trend": [
@@ -1244,6 +1248,10 @@
     [
      "2026-11-28T15:00:00Z",
      21.5
+    ],
+    [
+     "2026-11-28T16:00:00Z",
+     22.6
     ]
    ]
   },
@@ -1252,14 +1260,14 @@
    "external_id": "275",
    "values": {
     "pm10": {
-     "value": 29.0,
+     "value": 42.0,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T14:00:00Z"
+     "observed_at": "2026-11-28T15:00:00Z"
     },
     "pm2_5": {
-     "value": 28.8,
+     "value": 41.7,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T14:00:00Z"
+     "observed_at": "2026-11-28T15:00:00Z"
     }
    },
    "trend": [
@@ -1426,6 +1434,10 @@
     [
      "2026-11-28T14:00:00Z",
      29.0
+    ],
+    [
+     "2026-11-28T15:00:00Z",
+     42.0
     ]
    ]
   },
@@ -1434,24 +1446,24 @@
    "external_id": "299",
    "values": {
     "nitrogen_dioxide": {
-     "value": 9.1,
+     "value": 8.1,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T15:00:00Z"
+     "observed_at": "2026-11-28T16:00:00Z"
     },
     "ozone": {
-     "value": 23.9,
+     "value": 25.3,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T15:00:00Z"
+     "observed_at": "2026-11-28T16:00:00Z"
     },
     "pm10": {
-     "value": 21.5,
+     "value": 19.5,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T15:00:00Z"
+     "observed_at": "2026-11-28T16:00:00Z"
     },
     "pm2_5": {
-     "value": 17.7,
+     "value": 15.8,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T15:00:00Z"
+     "observed_at": "2026-11-28T16:00:00Z"
     }
    },
    "trend": [
@@ -1638,6 +1650,10 @@
     [
      "2026-11-28T15:00:00Z",
      21.5
+    ],
+    [
+     "2026-11-28T16:00:00Z",
+     19.5
     ]
    ]
   },
@@ -2070,14 +2086,14 @@
    "external_id": "305",
    "values": {
     "nitrogen_dioxide": {
-     "value": 6.2,
+     "value": 8.7,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T15:00:00Z"
+     "observed_at": "2026-11-28T16:00:00Z"
     },
     "ozone": {
-     "value": 51.1,
+     "value": 50.4,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T15:00:00Z"
+     "observed_at": "2026-11-28T16:00:00Z"
     },
     "pm10": {
      "value": 7.0,
@@ -2085,9 +2101,9 @@
      "observed_at": "2026-11-28T15:00:00Z"
     },
     "pm2_5": {
-     "value": 3.1,
+     "value": 6.2,
      "unit": "μg/m³",
-     "observed_at": "2026-11-28T15:00:00Z"
+     "observed_at": "2026-11-28T16:00:00Z"
     }
    },
    "trend": [
