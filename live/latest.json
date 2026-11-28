@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-28T13:01:30Z",
+ "generated_at": "2026-11-28T14:01:33Z",
  "trend_metric": "pm10",
  "stations": [
   {
@@ -23,10 +23,6 @@
     }
    },
    "trend": [
-    [
-     "2026-11-26T14:00:00Z",
-     12.3
-    ],
     [
      "2026-11-26T15:00:00Z",
      16.0
@@ -223,10 +219,6 @@
    },
    "trend": [
     [
-     "2026-11-26T14:00:00Z",
-     11.6
-    ],
-    [
      "2026-11-26T15:00:00Z",
      14.7
     ],
@@ -414,10 +406,6 @@
     }
    },
    "trend": [
-    [
-     "2026-11-26T14:00:00Z",
-     11.7
-    ],
     [
      "2026-11-26T15:00:00Z",
      11.5
@@ -619,10 +607,6 @@
    },
    "trend": [
     [
-     "2026-11-26T14:00:00Z",
-     6.3
-    ],
-    [
      "2026-11-26T15:00:00Z",
      5.5
     ],
@@ -817,10 +801,6 @@
     }
    },
    "trend": [
-    [
-     "2026-11-26T14:00:00Z",
-     13.2
-    ],
     [
      "2026-11-26T15:00:00Z",
      14.9
@@ -1022,10 +1002,6 @@
    },
    "trend": [
     [
-     "2026-11-26T14:00:00Z",
-     5.7
-    ],
-    [
      "2026-11-26T15:00:00Z",
      10.8
     ],
@@ -1216,10 +1192,6 @@
    },
    "trend": [
     [
-     "2026-11-26T14:00:00Z",
-     6.1
-    ],
-    [
      "2026-11-26T15:00:00Z",
      12.4
     ],
@@ -1399,10 +1371,6 @@
     }
    },
    "trend": [
-    [
-     "2026-11-26T14:00:00Z",
-     14.9
-    ],
     [
      "2026-11-26T15:00:00Z",
      16.3
@@ -1604,10 +1572,6 @@
    },
    "trend": [
     [
-     "2026-11-26T14:00:00Z",
-     9.3
-    ],
-    [
      "2026-11-26T15:00:00Z",
      10.3
     ],
@@ -1808,10 +1772,6 @@
    },
    "trend": [
     [
-     "2026-11-26T14:00:00Z",
-     19.1
-    ],
-    [
      "2026-11-26T15:00:00Z",
      19.5
     ],
@@ -2011,10 +1971,6 @@
     }
    },
    "trend": [
-    [
-     "2026-11-26T14:00:00Z",
-     28.3
-    ],
     [
      "2026-11-26T15:00:00Z",
      29.4
@@ -2228,24 +2184,51 @@
    "external_id": "Beli Manastir",
    "values": {
     "relative_humidity_2m": {
-     "value": 100.0,
+     "value": 97.0,
      "unit": "%",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
      "value": 2.8,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 315.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.0,
+     "value": 4.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
+    }
+   },
+   "trend": []
+  },
+  {
+   "source": "dhmz",
+   "external_id": "Bilje",
+   "values": {
+    "relative_humidity_2m": {
+     "value": 88.0,
+     "unit": "%",
+     "observed_at": "2026-11-28T13:00:00Z"
+    },
+    "temperature_2m": {
+     "value": 3.2,
+     "unit": "°C",
+     "observed_at": "2026-11-28T13:00:00Z"
+    },
+    "wind_direction_10m": {
+     "value": 0.0,
+     "unit": "°",
+     "observed_at": "2026-11-28T13:00:00Z"
+    },
+    "wind_speed_10m": {
+     "value": 7.0,
+     "unit": "m/s",
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2255,34 +2238,34 @@
    "external_id": "Bjelovar",
    "values": {
     "pressure_msl": {
-     "value": 1030.5,
+     "value": 1030.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
      "value": 0.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 88.0,
+     "value": 87.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 1.3,
+     "value": 1.6,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 3.1,
+     "value": 2.6,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2292,29 +2275,29 @@
    "external_id": "Bosiljevo",
    "values": {
     "pressure_msl": {
-     "value": 1031.0,
+     "value": 1030.8,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.0,
+     "value": -0.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 0.3,
+     "value": 0.6,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 225.0,
+     "value": 180.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 0.6,
+     "value": 0.5,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2368,34 +2351,34 @@
    "external_id": "Crikvenica",
    "values": {
     "pressure_msl": {
-     "value": 1023.7,
+     "value": 1023.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.4,
+     "value": -0.9,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 49.0,
+     "value": 46.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 8.5,
+     "value": 8.9,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 4.5,
+     "value": 4.1,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2405,34 +2388,34 @@
    "external_id": "Crni Lug - NP Risnjak",
    "values": {
     "pressure_msl": {
-     "value": 1029.9,
+     "value": 1029.8,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.0,
+     "value": -0.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 93.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
      "value": -1.5,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 1.5,
+     "value": 1.4,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2442,34 +2425,34 @@
    "external_id": "Daruvar",
    "values": {
     "pressure_msl": {
-     "value": 1030.2,
+     "value": 1030.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.5,
+     "value": 0.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 99.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 0.7,
+     "value": 0.5,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 0.0,
+     "value": 315.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 1.6,
+     "value": 1.4,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2503,32 +2486,32 @@
     "pressure_msl": {
      "value": 1013.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.0,
+     "value": -0.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 42.0,
+     "value": 41.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 12.5,
+     "value": 11.7,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 9.4,
+     "value": 8.4,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2538,34 +2521,34 @@
    "external_id": "Dubrovnik-aerodrom",
    "values": {
     "pressure_msl": {
-     "value": 1014.1,
+     "value": 1013.9,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.5,
+     "value": -0.8,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 52.0,
+     "value": 53.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 11.1,
+     "value": 10.2,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
      "value": 13.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2575,34 +2558,34 @@
    "external_id": "Gospić",
    "values": {
     "pressure_msl": {
-     "value": 1027.8,
+     "value": 1027.9,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
      "value": 0.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 76.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": -0.4,
+     "value": -0.2,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 0.0,
+     "value": 315.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.7,
+     "value": 2.4,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2612,24 +2595,24 @@
    "external_id": "Gračac",
    "values": {
     "relative_humidity_2m": {
-     "value": 94.0,
+     "value": 91.0,
      "unit": "%",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": -1.4,
+     "value": 0.2,
      "unit": "°C",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.0,
+     "value": 4.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2641,27 +2624,27 @@
     "pressure_msl": {
      "value": 1030.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.1,
+     "value": 0.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 0.1,
+     "value": 0.2,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 270.0,
+     "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 0.5,
+     "value": 1.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2671,34 +2654,34 @@
    "external_id": "Hvar",
    "values": {
     "pressure_msl": {
-     "value": 1016.6,
+     "value": 1016.5,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.2,
+     "value": -0.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 37.0,
+     "value": 38.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 15.0,
+     "value": 13.7,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 90.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 3.4,
+     "value": 4.9,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2710,22 +2693,22 @@
     "relative_humidity_2m": {
      "value": 100.0,
      "unit": "%",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 1.4,
+     "value": 2.6,
      "unit": "°C",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.0,
+     "value": 4.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2735,24 +2718,24 @@
    "external_id": "Imotski",
    "values": {
     "relative_humidity_2m": {
-     "value": 52.0,
+     "value": 47.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 9.7,
+     "value": 9.5,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 9.0,
+     "value": 7.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2762,34 +2745,34 @@
    "external_id": "Karlovac",
    "values": {
     "pressure_msl": {
-     "value": 1030.5,
+     "value": 1030.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.4,
+     "value": -0.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 93.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 1.3,
+     "value": 1.8,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
      "value": 1.7,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2799,34 +2782,34 @@
    "external_id": "Knin",
    "values": {
     "pressure_msl": {
-     "value": 1019.8,
+     "value": 1019.7,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
      "value": -0.5,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 49.0,
+     "value": 51.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 8.0,
+     "value": 7.8,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 5.7,
+     "value": 7.9,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2838,32 +2821,32 @@
     "pressure_msl": {
      "value": 1016.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.2,
+     "value": 0.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 47.0,
+     "value": 48.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 14.6,
+     "value": 14.8,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
      "value": 2.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2873,29 +2856,29 @@
    "external_id": "Koprivnica",
    "values": {
     "pressure_msl": {
-     "value": 1031.0,
+     "value": 1030.7,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.0,
+     "value": -0.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 0.9,
+     "value": 1.4,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 6.0,
+     "value": 4.2,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2907,32 +2890,32 @@
     "pressure_msl": {
      "value": 1031.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
      "value": 0.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 77.0,
+     "value": 81.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 2.0,
+     "value": 1.8,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 4.1,
+     "value": 2.8,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2942,34 +2925,34 @@
    "external_id": "Križevci",
    "values": {
     "pressure_msl": {
-     "value": 1030.9,
+     "value": 1030.8,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.1,
+     "value": 0.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 79.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 1.6,
+     "value": 1.8,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 5.1,
+     "value": 3.7,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -2989,24 +2972,24 @@
      "observed_at": "2026-11-28T12:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 97.0,
+     "value": 100.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 1.4,
+     "value": 1.1,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.1,
+     "value": 3.3,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3016,34 +2999,34 @@
    "external_id": "Lastovo",
    "values": {
     "pressure_msl": {
-     "value": 1017.0,
+     "value": 1017.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.2,
+     "value": 0.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 46.0,
+     "value": 44.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 12.9,
+     "value": 12.4,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 9.6,
+     "value": 10.9,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3053,24 +3036,24 @@
    "external_id": "Lekenik",
    "values": {
     "relative_humidity_2m": {
-     "value": 91.0,
+     "value": 90.0,
      "unit": "%",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 0.9,
+     "value": 2.0,
      "unit": "°C",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
      "value": 1.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3117,24 +3100,24 @@
      "observed_at": "2026-11-28T12:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 90.0,
+     "value": 81.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": -0.3,
+     "value": -0.1,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 315.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.3,
+     "value": 2.6,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3144,34 +3127,34 @@
    "external_id": "Makarska",
    "values": {
     "pressure_msl": {
-     "value": 1015.4,
+     "value": 1015.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.5,
+     "value": -0.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 42.0,
+     "value": 38.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 16.7,
+     "value": 14.8,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 180.0,
+     "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 1.5,
+     "value": 3.9,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3181,34 +3164,34 @@
    "external_id": "Mali Lošinj",
    "values": {
     "pressure_msl": {
-     "value": 1021.5,
+     "value": 1021.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.2,
+     "value": -0.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 67.0,
+     "value": 65.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 10.0,
+     "value": 10.1,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 0.0,
+     "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 6.5,
+     "value": 5.6,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3218,34 +3201,34 @@
    "external_id": "Mali Lošinj - Ćunski",
    "values": {
     "pressure_msl": {
-     "value": 1021.8,
+     "value": 1021.7,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.2,
+     "value": -0.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 64.0,
+     "value": 65.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
      "value": 8.5,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 7.6,
+     "value": 7.3,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3255,34 +3238,34 @@
    "external_id": "Malinska",
    "values": {
     "pressure_msl": {
-     "value": 1023.9,
+     "value": 1023.7,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.2,
+     "value": -0.7,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 43.0,
+     "value": 45.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 10.6,
+     "value": 10.5,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 90.0,
+     "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.7,
+     "value": 2.8,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3292,34 +3275,34 @@
    "external_id": "Monte Kope",
    "values": {
     "pressure_msl": {
-     "value": 1022.7,
+     "value": 1022.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.2,
+     "value": -0.7,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 48.0,
+     "value": 50.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 9.1,
+     "value": 9.2,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 7.8,
+     "value": 6.2,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3356,34 +3339,34 @@
    "external_id": "NP Plitvička jezera",
    "values": {
     "pressure_msl": {
-     "value": 1030.3,
+     "value": 1030.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.0,
+     "value": -0.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 98.0,
+     "value": 100.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": -2.2,
+     "value": -2.1,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 1.2,
+     "value": 1.4,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3393,34 +3376,34 @@
    "external_id": "Ogulin",
    "values": {
     "pressure_msl": {
-     "value": 1030.8,
+     "value": 1030.6,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.1,
+     "value": -0.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 94.0,
+     "value": 93.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 0.0,
+     "value": 0.1,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 0.9,
+     "value": 0.7,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3430,34 +3413,34 @@
    "external_id": "Opatija",
    "values": {
     "pressure_msl": {
-     "value": 1021.2,
+     "value": 1021.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.9,
+     "value": -0.6,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 46.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 9.5,
+     "value": 9.3,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 0.0,
+     "value": 315.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 3.6,
+     "value": 3.1,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3504,14 +3487,14 @@
    "external_id": "Otočac",
    "values": {
     "relative_humidity_2m": {
-     "value": 89.0,
+     "value": 88.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": -0.6,
+     "value": -0.5,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3553,34 +3536,34 @@
    "external_id": "Parg-Čabar",
    "values": {
     "pressure_tendency": {
-     "value": 0.1,
+     "value": -0.5,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 94.0,
+     "value": 97.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "surface_pressure": {
-     "value": 924.4,
+     "value": 924.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": -2.4,
+     "value": -2.8,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 0.0,
+     "value": 135.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 1.1,
+     "value": 1.3,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3592,32 +3575,32 @@
     "pressure_msl": {
      "value": 1022.8,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.1,
+     "value": -0.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 48.0,
+     "value": 49.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
      "value": 8.6,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 45.0,
+     "value": 90.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.1,
+     "value": 2.6,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3627,29 +3610,29 @@
    "external_id": "Plaški",
    "values": {
     "pressure_msl": {
-     "value": 1030.9,
+     "value": 1030.8,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.0,
+     "value": -0.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
      "value": -0.7,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 1.9,
+     "value": 2.2,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3659,34 +3642,34 @@
    "external_id": "Ploče",
    "values": {
     "pressure_msl": {
-     "value": 1017.2,
+     "value": 1016.9,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.1,
+     "value": -0.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 43.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 13.1,
+     "value": 12.5,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 6.4,
+     "value": 6.9,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3696,34 +3679,34 @@
    "external_id": "Porer - svjetionik",
    "values": {
     "pressure_msl": {
-     "value": 1022.5,
+     "value": 1022.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.1,
+     "value": -0.5,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 58.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
      "value": 9.8,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 0.0,
+     "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 3.2,
+     "value": 2.7,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3733,24 +3716,24 @@
    "external_id": "Poreč",
    "values": {
     "relative_humidity_2m": {
-     "value": 49.0,
+     "value": 48.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 10.5,
+     "value": 10.7,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 7.0,
+     "value": 4.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3762,32 +3745,32 @@
     "pressure_msl": {
      "value": 1027.9,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.2,
+     "value": -0.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 100.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 1.9,
+     "value": 1.5,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 315.0,
+     "value": 225.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.0,
+     "value": 0.9,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3797,34 +3780,34 @@
    "external_id": "Prevlaka",
    "values": {
     "pressure_msl": {
-     "value": 1013.6,
+     "value": 1013.7,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -1.1,
+     "value": -0.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 57.0,
+     "value": 55.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
      "value": 12.0,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 90.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 17.5,
+     "value": 15.4,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3856,34 +3839,34 @@
    "external_id": "Pula-aerodrom",
    "values": {
     "pressure_msl": {
-     "value": 1023.3,
+     "value": 1022.9,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.0,
+     "value": -0.8,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 52.0,
+     "value": 53.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 8.4,
+     "value": 8.2,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 7.0,
+     "value": 8.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3895,32 +3878,32 @@
     "pressure_msl": {
      "value": 1029.9,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.4,
+     "value": 0.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 100.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": -0.4,
+     "value": -0.2,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 4.5,
+     "value": 5.1,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3932,32 +3915,32 @@
     "pressure_msl": {
      "value": 1028.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.2,
+     "value": -0.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 96.0,
+     "value": 93.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 2.0,
+     "value": 1.8,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 270.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.9,
+     "value": 2.7,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -3969,32 +3952,32 @@
     "pressure_msl": {
      "value": 1028.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.4,
+     "value": 0.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 99.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
      "value": 2.4,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 3.7,
+     "value": 3.6,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4006,32 +3989,32 @@
     "pressure_msl": {
      "value": 1027.9,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
      "value": -0.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 95.0,
+     "value": 94.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 2.8,
+     "value": 2.9,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 3.5,
+     "value": 3.1,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4041,34 +4024,34 @@
    "external_id": "RC Puntijarka",
    "values": {
     "pressure_tendency": {
-     "value": 0.1,
+     "value": 0.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 96.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "surface_pressure": {
-     "value": 909.3,
+     "value": 909.6,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": -4.3,
+     "value": -4.2,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
      "value": 5.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4078,34 +4061,34 @@
    "external_id": "Rab",
    "values": {
     "pressure_msl": {
-     "value": 1020.3,
+     "value": 1020.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.1,
+     "value": -0.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 39.0,
+     "value": 41.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 13.6,
+     "value": 12.3,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 135.0,
+     "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 1.7,
+     "value": 4.7,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4117,22 +4100,22 @@
     "relative_humidity_2m": {
      "value": 96.0,
      "unit": "%",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 0.7,
+     "value": 0.2,
      "unit": "°C",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 270.0,
      "unit": "°",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
      "value": 4.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4144,32 +4127,32 @@
     "pressure_msl": {
      "value": 1017.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.9,
+     "value": -0.6,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 43.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 10.1,
+     "value": 9.7,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 270.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
      "value": 9.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4179,34 +4162,34 @@
    "external_id": "Rijeka",
    "values": {
     "pressure_msl": {
-     "value": 1023.8,
+     "value": 1024.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -1.0,
+     "value": -0.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 57.0,
+     "value": 51.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 8.7,
+     "value": 8.9,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 45.0,
+     "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 3.4,
+     "value": 2.9,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4216,34 +4199,34 @@
    "external_id": "Rijeka-aerodrom",
    "values": {
     "pressure_msl": {
-     "value": 1023.6,
+     "value": 1023.5,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.2,
+     "value": -0.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 48.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 8.1,
+     "value": 8.5,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 45.0,
+     "value": 90.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 7.0,
+     "value": 4.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4253,24 +4236,24 @@
    "external_id": "Rovinj",
    "values": {
     "relative_humidity_2m": {
-     "value": 96.0,
+     "value": 50.0,
      "unit": "%",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 0.6,
+     "value": 11.2,
      "unit": "°C",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 90.0,
+     "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 1.0,
+     "value": 4.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4280,34 +4263,34 @@
    "external_id": "Senj",
    "values": {
     "pressure_msl": {
-     "value": 1022.4,
+     "value": 1022.6,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.4,
+     "value": -0.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 64.0,
+     "value": 62.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 4.4,
+     "value": 4.2,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 13.0,
+     "value": 14.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4317,24 +4300,24 @@
    "external_id": "Sinj",
    "values": {
     "relative_humidity_2m": {
-     "value": 68.0,
+     "value": 56.0,
      "unit": "%",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 5.6,
+     "value": 8.6,
      "unit": "°C",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 0.0,
+     "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 7.0,
+     "value": 9.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4344,34 +4327,34 @@
    "external_id": "Sisak",
    "values": {
     "pressure_msl": {
-     "value": 1030.4,
+     "value": 1030.5,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.2,
+     "value": 0.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 95.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 1.2,
+     "value": 1.3,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.7,
+     "value": 2.3,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4395,32 +4378,32 @@
     "pressure_msl": {
      "value": 1027.5,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
      "value": -0.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 96.0,
+     "value": 95.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 1.3,
+     "value": 1.8,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 270.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 1.6,
+     "value": 2.1,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4430,34 +4413,34 @@
    "external_id": "Split-Marjan",
    "values": {
     "pressure_msl": {
-     "value": 1016.3,
+     "value": 1016.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
      "value": -0.5,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 42.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 11.8,
+     "value": 11.4,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 7.0,
+     "value": 8.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4494,34 +4477,34 @@
    "external_id": "Split-aerodrom",
    "values": {
     "pressure_msl": {
-     "value": 1017.5,
+     "value": 1017.7,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.2,
+     "value": -0.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 38.0,
+     "value": 41.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 13.2,
+     "value": 12.9,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 9.0,
+     "value": 8.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4531,34 +4514,34 @@
    "external_id": "Sv. Ivan na pučini - svjetionik",
    "values": {
     "pressure_msl": {
-     "value": 1023.6,
+     "value": 1023.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.5,
+     "value": -1.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 47.0,
+     "value": 49.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 11.4,
+     "value": 11.7,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 270.0,
+     "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.1,
+     "value": 3.8,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4568,24 +4551,24 @@
    "external_id": "Valpovo-Tiborjanci",
    "values": {
     "relative_humidity_2m": {
-     "value": 97.0,
+     "value": 90.0,
      "unit": "%",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 1.0,
+     "value": 2.8,
      "unit": "°C",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 315.0,
      "unit": "°",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
      "value": 2.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T06:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4595,34 +4578,34 @@
    "external_id": "Varaždin",
    "values": {
     "pressure_msl": {
-     "value": 1030.9,
+     "value": 1030.7,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.4,
+     "value": -0.5,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 76.0,
+     "value": 74.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 1.4,
+     "value": 1.6,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 3.3,
+     "value": 4.3,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4632,34 +4615,34 @@
    "external_id": "Virovitica",
    "values": {
     "pressure_msl": {
-     "value": 1030.7,
+     "value": 1030.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.3,
+     "value": -0.2,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 99.0,
+     "value": 96.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 0.9,
+     "value": 1.1,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 315.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.5,
+     "value": 3.2,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4669,34 +4652,34 @@
    "external_id": "Vukovar-Grabovo",
    "values": {
     "pressure_msl": {
-     "value": 1026.4,
+     "value": 1026.5,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.3,
+     "value": -0.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 98.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 2.4,
+     "value": 2.7,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 3.9,
+     "value": 5.2,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4706,34 +4689,34 @@
    "external_id": "Zadar",
    "values": {
     "pressure_msl": {
-     "value": 1019.9,
+     "value": 1019.7,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.1,
+     "value": -0.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 48.0,
+     "value": 45.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 12.5,
+     "value": 13.5,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 4.9,
+     "value": 4.7,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4743,34 +4726,34 @@
    "external_id": "Zadar-aerodrom",
    "values": {
     "pressure_msl": {
-     "value": 1020.2,
+     "value": 1020.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.2,
+     "value": 0.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 45.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 9.9,
+     "value": 9.8,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 9.0,
+     "value": 8.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4780,34 +4763,34 @@
    "external_id": "Zagreb-Grič",
    "values": {
     "pressure_msl": {
-     "value": 1029.9,
+     "value": 1030.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.1,
+     "value": 0.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 76.0,
+     "value": 82.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 2.4,
+     "value": 2.3,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
-     "value": 45.0,
+     "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.0,
+     "value": 1.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4819,32 +4802,32 @@
     "pressure_msl": {
      "value": 1030.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.1,
+     "value": 0.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 76.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 2.4,
+     "value": 2.5,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 2.9,
+     "value": 3.1,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4854,34 +4837,34 @@
    "external_id": "Zagreb-aerodrom",
    "values": {
     "pressure_msl": {
-     "value": 1030.6,
+     "value": 1030.4,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.1,
+     "value": 0.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 79.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 2.2,
+     "value": 2.4,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 45.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 5.0,
+     "value": 4.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4891,34 +4874,61 @@
    "external_id": "Zavižan",
    "values": {
     "pressure_tendency": {
-     "value": 0.0,
+     "value": -0.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 98.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "surface_pressure": {
-     "value": 840.6,
+     "value": 840.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": -6.6,
+     "value": -6.3,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 315.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 5.8,
+     "value": 5.4,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
+    }
+   },
+   "trend": []
+  },
+  {
+   "source": "dhmz",
+   "external_id": "Čepić",
+   "values": {
+    "relative_humidity_2m": {
+     "value": 56.0,
+     "unit": "%",
+     "observed_at": "2026-11-28T13:00:00Z"
+    },
+    "temperature_2m": {
+     "value": 9.4,
+     "unit": "°C",
+     "observed_at": "2026-11-28T13:00:00Z"
+    },
+    "wind_direction_10m": {
+     "value": 90.0,
+     "unit": "°",
+     "observed_at": "2026-11-28T13:00:00Z"
+    },
+    "wind_speed_10m": {
+     "value": 7.0,
+     "unit": "m/s",
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4950,34 +4960,34 @@
    "external_id": "Šibenik",
    "values": {
     "pressure_msl": {
-     "value": 1017.8,
+     "value": 1017.9,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.4,
+     "value": 0.1,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
-     "value": 47.0,
+     "value": 46.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 9.8,
+     "value": 10.2,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 9.2,
+     "value": 7.0,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -4987,24 +4997,24 @@
    "external_id": "Štrigova",
    "values": {
     "pressure_msl": {
-     "value": 1031.3,
+     "value": 1031.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": 0.0,
+     "value": -0.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 79.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
      "value": 1.2,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
@@ -5014,34 +5024,34 @@
    "external_id": "Živogošće",
    "values": {
     "pressure_msl": {
-     "value": 1015.9,
+     "value": 1016.0,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "pressure_tendency": {
-     "value": -0.2,
+     "value": -0.3,
      "unit": "hPa",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "relative_humidity_2m": {
      "value": 39.0,
      "unit": "%",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "temperature_2m": {
-     "value": 13.0,
+     "value": 12.4,
      "unit": "°C",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_direction_10m": {
      "value": 0.0,
      "unit": "°",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     },
     "wind_speed_10m": {
-     "value": 10.8,
+     "value": 10.3,
      "unit": "m/s",
-     "observed_at": "2026-11-28T12:00:00Z"
+     "observed_at": "2026-11-28T13:00:00Z"
     }
    },
    "trend": []
